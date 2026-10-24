@@ -6,6 +6,12 @@
 
 <p align="center">See what's taking up space on Windows: every folder and file, biggest first, with a treemap. Free and open source.</p>
 
+<p align="center">
+  <a href="https://github.com/azeembukhariprivate/kudutree/releases/latest/download/KUDUTREE-setup.exe"><img src="https://img.shields.io/badge/Download-KUDUTREE%20for%20Windows-2ea44f?style=for-the-badge" alt="Download KUDUTREE for Windows"></a>
+  <br>
+  <sub>The installer for Windows 10 and 11, always the latest version · <a href="https://github.com/azeembukhariprivate/kudutree/releases/latest">portable zip and what's new</a></sub>
+</p>
+
 ---
 
 ## Features
@@ -30,7 +36,7 @@
 
 ## Download
 
-Get the latest version from the [Releases](../../releases/latest) page:
+**[Download the installer](https://github.com/azeembukhariprivate/kudutree/releases/latest/download/KUDUTREE-setup.exe)** (`KUDUTREE-setup.exe`, always the latest version), or get any of these from the [Releases page](https://github.com/azeembukhariprivate/kudutree/releases/latest):
 
 - `KUDUTREE-x.y.z-setup.exe` installs KUDUTREE for your Windows account (no administrator rights needed to install).
 - `KUDUTREE-x.y.z-portable.zip` runs without installing: unzip it anywhere and open `KUDUTREE.exe`.

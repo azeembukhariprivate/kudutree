@@ -86,6 +86,11 @@ jobs:
           name: KUDUTREE-${{ steps.ver.outputs.version }}
           path: artifacts/*
 
+      - name: Add a copy of the installer without the version in its name
+        if: github.ref_type == 'tag' || steps.rel.outputs.new == 'true'
+        shell: pwsh
+        run: Copy-Item "artifacts/KUDUTREE-${{ steps.ver.outputs.version }}-setup.exe" "artifacts/KUDUTREE-setup.exe"
+
       - name: Publish GitHub release
         if: github.ref_type == 'tag' || steps.rel.outputs.new == 'true'
         uses: softprops/action-gh-release@v2
@@ -95,3 +100,24 @@ jobs:
           name: KUDUTREE ${{ steps.ver.outputs.version }}
           files: artifacts/*
           generate_release_notes: true
+
+      - name: Give the latest release a copy of the installer without the version in its name
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && steps.rel.outputs.new != 'true'
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          # The README's download button links to releases/latest/download/KUDUTREE-setup.exe.
+          $json = gh release view --json tagName,assets 2>$null
+          if ($LASTEXITCODE -ne 0 -or -not $json) { Write-Host "No release yet."; $global:LASTEXITCODE = 0; exit 0 }
+          $latest = $json | ConvertFrom-Json
+          $names = @($latest.assets | ForEach-Object { $_.name })
+          if ($names -contains "KUDUTREE-setup.exe") { Write-Host "$($latest.tagName) already has KUDUTREE-setup.exe."; exit 0 }
+          $versioned = $names | Where-Object { $_ -like "KUDUTREE-*-setup.exe" } | Select-Object -First 1
+          if (-not $versioned) { Write-Host "$($latest.tagName) has no installer."; exit 0 }
+          New-Item -ItemType Directory -Force latest | Out-Null
+          gh release download $latest.tagName --pattern $versioned --dir latest
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          Copy-Item "latest/$versioned" latest/KUDUTREE-setup.exe
+          gh release upload $latest.tagName latest/KUDUTREE-setup.exe
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
