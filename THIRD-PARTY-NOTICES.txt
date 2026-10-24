@@ -1,0 +1,19 @@
+KUDUTREE - third-party notices
+==============================
+
+KUDUTREE is released under the MIT License (see LICENSE.txt).
+It does not include any third-party code or files. Its scanners (reading the
+NTFS file index directly, and listing folders) and its treemap are its own
+code. The treemap uses the published "squarified treemap" layout (Bruls,
+Huizing and van Wijk) and "cushion treemap" shading (van Wijk and van de
+Wetering) methods.
+
+It uses the following part of Windows, which is NOT included with KUDUTREE:
+
+1. Microsoft .NET Framework 4.8
+-------------------------------
+KUDUTREE runs on the .NET Framework 4.8, which is part of Windows 10 and 11
+and is not redistributed with KUDUTREE.
+
+KUDUTREE is not affiliated with, sponsored or endorsed by Microsoft.
+Windows and NTFS are names of Microsoft Corporation.

@@ -58,6 +58,7 @@ namespace Kudutree.Core
         };
         public const int Grey = 0xA3A3A3;
         public const int FolderGrey = 0x8A8A8A;
+        public const int Dimmed = 0x3A3A3A;
 
         // Cushion shading (van Wijk and van de Wetering), with WinDirStat's usual settings.
         private const double Height = 0.38, ScaleFactor = 0.91, Ambient = 0.15, Diffuse = 1 - Ambient, Gain = 1.12;
@@ -78,19 +79,20 @@ namespace Kudutree.Core
             return t == null || t.Color < 0 ? Grey : Palette[t.Color % Palette.Length];
         }
 
-        public static TreemapImage Render(Node root, int width, int height, bool onDisk, FileTypes types, CancellationToken token = default)
+        /// <summary>Draws the treemap. With <paramref name="highlight"/> set to a file type, other files are drawn dark.</summary>
+        public static TreemapImage Render(Node root, int width, int height, bool onDisk, FileTypes types, CancellationToken token = default, int highlight = -1)
         {
             width = Math.Max(1, width);
             height = Math.Max(1, height);
             var image = new TreemapImage { Width = width, Height = height, Pixels = new int[width * height] };
             for (var i = 0; i < image.Pixels.Length; i++) image.Pixels[i] = unchecked((int)0xFF000000) | 0x303030;
             if (root.Measure(onDisk) <= 0) return image;
-            Draw(image, root, 0, 0, width, height, new double[4], Height, true, onDisk, types, token);
+            Draw(image, root, 0, 0, width, height, new double[4], Height, true, onDisk, types, token, highlight);
             return image;
         }
 
         private static void Draw(TreemapImage image, Node node, double x, double y, double w, double h, double[] surface, double ridge,
-            bool asRoot, bool onDisk, FileTypes types, CancellationToken token)
+            bool asRoot, bool onDisk, FileTypes types, CancellationToken token, int highlight)
         {
             int x0 = (int)Math.Round(x), y0 = (int)Math.Round(y), x1 = (int)Math.Round(x + w), y1 = (int)Math.Round(y + h);
             if (x1 <= x0 || y1 <= y0) return;
@@ -103,12 +105,13 @@ namespace Kudutree.Core
                 kids = node.Children.Where(c => !c.Has(NodeFlags.Deleted) && c.Measure(onDisk) > 0).OrderByDescending(c => c.Measure(onDisk)).ToList();
             if (kids == null || kids.Count == 0)
             {
-                Fill(image, x0, y0, x1, y1, s, ColorOf(node, types));
+                var color = highlight >= 0 && (node.IsDir || node.Type != highlight) ? Dimmed : ColorOf(node, types);
+                Fill(image, x0, y0, x1, y1, s, color);
                 return;
             }
             if (image.Tiles.Count % 4096 == 0) token.ThrowIfCancellationRequested();
             foreach (var (child, r) in Layout(kids.Select(k => (double)k.Measure(onDisk)).ToList(), x, y, w, h).Select((r, i) => (kids[i], r)))
-                Draw(image, child, r.X, r.Y, r.W, r.H, s, ridge * ScaleFactor, false, onDisk, types, token);
+                Draw(image, child, r.X, r.Y, r.W, r.H, s, ridge * ScaleFactor, false, onDisk, types, token, highlight);
         }
 
         public struct Rect

@@ -50,12 +50,12 @@ jobs:
         shell: pwsh
         run: dotnet build src/KUDUTREE/KUDUTREE.csproj -c Release "-p:Version=${{ steps.ver.outputs.version }}" -o out/KUDUTREE
 
-      - name: Self-test the app (real syncs, virtual USB drives, a share, Task Scheduler, the tray, every screen)
+      - name: Self-test the app (fast and folder scans of a test VHD and the system drive, every screen, both themes)
         shell: pwsh
-        timeout-minutes: 16
+        timeout-minutes: 12
         run: |
           $p = Start-Process -FilePath out/KUDUTREE/KUDUTREE.exe -ArgumentList '--self-test' -PassThru
-          if (-not $p.WaitForExit(840000)) { $p.Kill(); Write-Host "Self-test timed out"; exit 1 }
+          if (-not $p.WaitForExit(600000)) { $p.Kill(); Write-Host "Self-test timed out"; exit 1 }
           Get-Content out/KUDUTREE/self-test.log -ErrorAction SilentlyContinue
           Remove-Item out/KUDUTREE/self-test.log -ErrorAction SilentlyContinue
           if ($p.ExitCode -ne 0) { Write-Host "Self-test failed with exit code $($p.ExitCode)"; exit 1 }
@@ -68,10 +68,7 @@ jobs:
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force artifacts | Out-Null
-          # The marker file makes the portable copy keep its pairs and logs in a Data folder beside it.
-          Copy-Item -Recurse out/KUDUTREE out/portable
-          Set-Content out/portable/KUDUTREE.portable "KUDUTREE keeps its pairs and logs in the Data folder next to it. Delete this file to use %LOCALAPPDATA%\KUDUTREE instead."
-          Compress-Archive -Path out/portable/* -DestinationPath "artifacts/KUDUTREE-${{ steps.ver.outputs.version }}-portable.zip"
+          Compress-Archive -Path out/KUDUTREE/* -DestinationPath "artifacts/KUDUTREE-${{ steps.ver.outputs.version }}-portable.zip"
 
       - name: Make installer
         shell: pwsh

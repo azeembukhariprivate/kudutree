@@ -72,6 +72,19 @@ namespace Kudutree.Core
             return types;
         }
 
+        /// <summary>Adds the files of a folder that was scanned again (new extensions are drawn grey).</summary>
+        public void Add(Node node)
+        {
+            foreach (var n in Queries.Files(node))
+            {
+                var t = For(n.Extension);
+                n.Type = t.Index;
+                t.Size += n.Size;
+                t.Alloc += n.Alloc;
+                t.Count++;
+            }
+        }
+
         /// <summary>Takes a deleted file (or everything in a deleted folder) off the totals.</summary>
         public void Subtract(Node node)
         {

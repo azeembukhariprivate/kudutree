@@ -156,6 +156,33 @@ namespace Kudutree.Core
             node.Flags |= NodeFlags.Deleted;
         }
 
+        /// <summary>
+        /// Puts a fresh scan of a folder in place of the old one (after "Scan this folder again", or a delete that only
+        /// partly worked): the folders above it get the difference.
+        /// </summary>
+        public static void Replace(ScanResult scan, Node old, Node fresh)
+        {
+            scan.Types.Subtract(old);
+            long size = fresh.Size - old.Size, alloc = fresh.Alloc - old.Alloc;
+            int files = fresh.Files - old.Files, folders = fresh.Folders - old.Folders;
+            for (var p = old.Parent; p != null; p = p.Parent)
+            {
+                p.Size += size;
+                p.Alloc += alloc;
+                p.Files += files;
+                p.Folders += folders;
+            }
+            old.Children = fresh.Children;
+            foreach (var c in old.Children) c.Parent = old;
+            old.Size = fresh.Size;
+            old.Alloc = fresh.Alloc;
+            old.Files = fresh.Files;
+            old.Folders = fresh.Folders;
+            old.Mtime = fresh.Mtime;
+            old.Flags = fresh.Flags;
+            scan.Types.Add(old);
+        }
+
         /// <summary>Finds the node for a path inside a scan, or null.</summary>
         public static Node Find(Node root, string path)
         {
