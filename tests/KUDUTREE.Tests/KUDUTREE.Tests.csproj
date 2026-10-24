@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Checks KUDUTREE's scanners (the fast file-index scan against NTFS drive images built byte by byte, and the folder
+       listing against real folders), the treemap layout, search and the rest. Runs on any OS with:
+       dotnet run, project tests/KUDUTREE.Tests -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <IsPackable>false</IsPackable>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <NoWarn>$(NoWarn);CA1416</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\src\KUDUTREE\Core\*.cs" Exclude="..\..\src\KUDUTREE\Core\ThemeManager.cs" LinkBase="Core" />
+  </ItemGroup>
+
+</Project>
