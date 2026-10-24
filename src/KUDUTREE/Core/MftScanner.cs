@@ -236,14 +236,24 @@ namespace Kudutree.Core
                     case 0xA0: // $INDEX_ALLOCATION (a folder's own index)
                         if (nonResident)
                         {
-                            if (length < 0x40 || BitConverter.ToInt64(d, p + 16) != 0) break; // only the first piece has the sizes
+                            if (length < 0x40) break;
+                            var firstPiece = BitConverter.ToInt64(d, p + 16) == 0;
                             var attrFlags = BitConverter.ToUInt16(d, p + 12);
                             var runsOffset = BitConverter.ToUInt16(d, p + 32);
-                            var allocated = BitConverter.ToInt64(d, p + 40);
-                            if ((attrFlags & 0x8001) != 0 && runsOffset >= 0x48 && length >= 0x48)
-                                allocated = BitConverter.ToInt64(d, p + 0x40); // compressed or sparse: what's really used
-                            _alloc[target] += allocated;
-                            if (type == 0x80 && !named) _size[target] = BitConverter.ToInt64(d, p + 48);
+                            if (runsOffset < 0x40 || runsOffset >= length) break;
+                            if ((attrFlags & 0x0001) != 0 && runsOffset >= 0x48)
+                            {
+                                // Compressed: NTFS keeps the total really used in the first piece.
+                                if (firstPiece) _alloc[target] += BitConverter.ToInt64(d, p + 0x40);
+                            }
+                            else
+                            {
+                                // Everything else: the clusters each piece really has on the drive. Sparse runs take
+                                // none, so sparse files, $UsnJrnl and $BadClus (whose sizes cover huge ranges) count
+                                // only what they use.
+                                _alloc[target] += UsedClusters(d, p + runsOffset, p + length) * Cluster;
+                            }
+                            if (firstPiece && type == 0x80 && !named) _size[target] = BitConverter.ToInt64(d, p + 48);
                         }
                         else if (type == 0x80 && !named)
                         {
@@ -253,6 +263,25 @@ namespace Kudutree.Core
                 }
                 pos += length;
             }
+        }
+
+        /// <summary>Adds up the clusters of a runlist that are really on the drive (not sparse).</summary>
+        private static long UsedClusters(byte[] d, int pos, int end)
+        {
+            long used = 0;
+            while (pos < end)
+            {
+                var header = d[pos++];
+                if (header == 0) break;
+                int lengthBytes = header & 0x0F, offsetBytes = header >> 4;
+                if (lengthBytes == 0 || lengthBytes > 8 || offsetBytes > 8 || pos + lengthBytes + offsetBytes > end) break;
+                long length = 0;
+                for (var i = 0; i < lengthBytes; i++) length |= (long)d[pos + i] << (8 * i);
+                pos += lengthBytes + offsetBytes;
+                if (length <= 0) break;
+                if (offsetBytes != 0) used += length;
+            }
+            return used;
         }
 
         private void FileName(byte[] d, int v, int end, int target)

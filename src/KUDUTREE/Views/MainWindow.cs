@@ -21,7 +21,7 @@ namespace Kudutree.Views
         private readonly Button _update = Ui.Link(string.Empty, (s, e) => AppInfo.OpenUrl(AppInfo.ReleasesUrl + "/latest"));
         private readonly ResultsView _results;
         private readonly DispatcherTimer _ticker = new DispatcherTimer { Interval = TimeSpan.FromSeconds(1) };
-        private readonly TextBox _pathBox = new TextBox { MinHeight = 34 };
+        private TextBox _pathBox;
         private CancellationTokenSource _cancel;
         private ScanProgress _progress;
         private Action _onTick;
@@ -122,7 +122,7 @@ namespace Kudutree.Views
                 var folder = Dialogs.PickFolder(this, "Choose a folder to scan", Settings.LastFolder);
                 if (folder != null) StartScan(folder, false);
             }).At(0, 0));
-            _pathBox.Text = string.Empty;
+            _pathBox = new TextBox { MinHeight = 34 };
             _pathBox.ToolTip = @"A folder path, or a network share like \\server\share";
             _pathBox.KeyDown += (s, e) => { if (e.Key == System.Windows.Input.Key.Enter) ScanTyped(); };
             row.Children.Add(_pathBox.Margin(10, 0, 0, 0).At(0, 1));

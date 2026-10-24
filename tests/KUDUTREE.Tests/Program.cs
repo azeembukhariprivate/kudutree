@@ -163,6 +163,12 @@ namespace Kudutree.Tests
             extension.Attributes.Add(NtfsImage.NonResident(0x80, new[] { (100L, 5L) }, 20000));
             img.Add(extension);
 
+            var sparse = R(33);
+            sparse.Attributes.Add(NtfsImage.StandardInformation(0x200));
+            sparse.Attributes.Add(NtfsImage.FileName(5, 5, "sparse.vhd"));
+            sparse.Attributes.Add(NtfsImage.NonResident(0x80, new[] { (110L, 2L), (-1L, 100000L) }, 100002L * C, flags: 0x8000));
+            img.Add(sparse);
+
             var path = img.Save(Path.Combine(_root, "test-" + Guid.NewGuid().ToString("N").Substring(0, 6) + ".img"));
             using (var device = new ImageDevice(path))
             {
@@ -197,6 +203,8 @@ namespace Kudutree.Tests
             Check(lost.Children.Any(c => c.Name == "orphan.bin") && lost.Children.Any(c => c.Name == "stale parent.bin"), "files whose folder is gone");
             var split = Child(y2026, "big split.iso");
             Check(split.Size == 20000 && split.Alloc == 5 * C, "size from an extension record");
+            var sparse = Child(root, "sparse.vhd");
+            Check(sparse.Size == 100002L * C && sparse.Alloc == 2 * C, $"sparse: only the clusters really there count ({sparse.Alloc})");
             Check(Child(root, "$MFT").Alloc == NtfsImage.MftRecords * NtfsImage.RecordSize, "the file index itself is counted");
 
             Equal(C + 3L * C + 0 + 0 + 2L * C + 5L * C, photos.Alloc, "folder total includes its own index and everything inside");

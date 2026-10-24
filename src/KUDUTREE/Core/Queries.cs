@@ -186,7 +186,7 @@ namespace Kudutree.Core
         /// <summary>Finds the node for a path inside a scan, or null.</summary>
         public static Node Find(Node root, string path)
         {
-            var rootPath = root.Name.TrimEnd('\\', '/');
+            var rootPath = root.Path.TrimEnd('\\', '/');
             path = (path ?? string.Empty).TrimEnd('\\', '/');
             if (path.Equals(rootPath, StringComparison.OrdinalIgnoreCase)) return root;
             if (!path.StartsWith(rootPath + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)) return null;

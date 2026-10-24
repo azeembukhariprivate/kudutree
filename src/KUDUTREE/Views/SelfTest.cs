@@ -324,11 +324,11 @@ namespace Kudutree.Views
             var drive = new DriveInfo(system);
             var used = drive.TotalSize - drive.TotalFreeSpace;
             Note($"{system} fast scan: {scan.Root.Files:N0} files in {scan.Root.Folders:N0} folders, {Format.Size(scan.Root.Alloc)} on disk of {Format.Size(used)} used, {clock.Elapsed.TotalSeconds:0.0} s");
+            Note("biggest on disk: " + string.Join(", ", Queries.Largest(scan.Root, 8, true).Select(n => n.Path + " " + Format.Size(n.Alloc))));
+            Note("top folders: " + string.Join(", ", scan.Root.Children.OrderByDescending(c => c.Alloc).Take(8).Select(c => c.Name + " " + Format.Size(c.Alloc))));
             Expect(scan.Root.Files > 50_000, "a real system drive has many files");
             Expect(Queries.Find(scan.Root, Path.Combine(system, "Windows", "System32")) != null, "Windows\\System32 is found");
             Expect(scan.Root.Alloc > used * 0.6 && scan.Root.Alloc < used * 1.1, "the scan accounts for most of the used space");
-            var largest = Queries.Largest(scan.Root, 5, true);
-            Note("largest: " + string.Join(", ", largest.Select(n => n.Name + " " + Format.Size(n.Alloc))));
             var image = Treemap.Render(scan.Root, 1600, 900, true, scan.Types);
             Note($"treemap of {system}: {image.Tiles.Count:N0} rectangles");
         }
