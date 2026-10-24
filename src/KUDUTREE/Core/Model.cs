@@ -38,6 +38,8 @@ namespace Kudutree.Core
         public long Alloc;
         /// <summary>Last modified, UTC ticks. Folders: the newest file inside (0 for a folder with no files).</summary>
         public long Mtime;
+        /// <summary>Files: last opened, UTC ticks (Windows may update this only roughly, or not at all).</summary>
+        public long Atime;
         /// <summary>Folders: files inside, at any depth.</summary>
         public int Files;
         /// <summary>Folders: folders inside, at any depth.</summary>
@@ -103,6 +105,9 @@ namespace Kudutree.Core
         }
 
         public DateTime Modified => Mtime > 0 ? new DateTime(Mtime, DateTimeKind.Utc).ToLocalTime() : DateTime.MinValue;
+
+        /// <summary>The later of last changed and last opened (files).</summary>
+        public DateTime LastUsed => Math.Max(Mtime, Atime) > 0 ? new DateTime(Math.Max(Mtime, Atime), DateTimeKind.Utc).ToLocalTime() : DateTime.MinValue;
 
         /// <summary>Adds a finished folder listing's totals to a folder and all folders above it (safe from any thread).</summary>
         public void AddUp(long size, long alloc, int files, int folders, long mtime)

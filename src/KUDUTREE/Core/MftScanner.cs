@@ -25,7 +25,7 @@ namespace Kudutree.Core
         private long _mftSize;
 
         // Per record (index = record number).
-        private long[] _size, _alloc, _mtime;
+        private long[] _size, _alloc, _mtime, _atime;
         private int[] _parent;
         private ushort[] _parentSeq, _seq;
         private uint[] _attr;
@@ -161,6 +161,7 @@ namespace Kudutree.Core
             _size = new long[total];
             _alloc = new long[total];
             _mtime = new long[total];
+            _atime = new long[total];
             _parent = new int[total];
             _parentSeq = new ushort[total];
             _seq = new ushort[total];
@@ -225,6 +226,7 @@ namespace Kudutree.Core
                         if (v + 36 <= p + length)
                         {
                             _mtime[target] = Ticks(BitConverter.ToInt64(d, v + 8));
+                            _atime[target] = Ticks(BitConverter.ToInt64(d, v + 24));
                             _attr[target] = BitConverter.ToUInt32(d, v + 32);
                         }
                         break;
@@ -336,6 +338,7 @@ namespace Kudutree.Core
                     Size = isDir ? 0 : _size[i],
                     Alloc = _alloc[i],
                     Mtime = isDir ? 0 : _mtime[i], // a folder's date is the newest file inside it
+                    Atime = isDir ? 0 : _atime[i],
                     Attributes = (FileAttributes)_attr[i] | (isDir ? FileAttributes.Directory : 0),
                     Flags = isDir ? NodeFlags.Listed : NodeFlags.None
                 };
@@ -383,6 +386,7 @@ namespace Kudutree.Core
                     Size = original.Size,
                     Alloc = 0,
                     Mtime = original.Mtime,
+                    Atime = original.Atime,
                     Attributes = original.Attributes,
                     Flags = NodeFlags.HardLink
                 }, parent);

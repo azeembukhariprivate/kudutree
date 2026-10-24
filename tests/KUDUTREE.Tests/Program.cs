@@ -371,6 +371,152 @@ namespace Kudutree.Tests
             Check(image.Bounds(Child(Child(Child(scan.Root, "Docs"), "Old"), "2019")) != null, "small items fall back to a drawn folder");
         }
 
+        // ================================================================== v1.1: saved scans, comparing, duplicates, old and empty
+
+        private static void SameTree(Node a, Node b, string where)
+        {
+            Equal(a.Name, b.Name, where + " name");
+            Equal(a.IsDir, b.IsDir, where + " kind");
+            Equal(a.Size, b.Size, where + " size");
+            Equal(a.Alloc, b.Alloc, where + " space");
+            Equal(a.Mtime, b.Mtime, where + " modified");
+            Equal(a.Atime, b.Atime, where + " opened");
+            Equal(a.Flags & ~NodeFlags.Listed, b.Flags & ~NodeFlags.Listed, where + " flags");
+            if (!a.IsDir) return;
+            Equal(a.Files, b.Files, where + " files");
+            Equal(a.Folders, b.Folders, where + " folders");
+            Equal(a.Children.Count, b.Children.Count, where + " items");
+            for (var i = 0; i < a.Children.Count; i++)
+            {
+                Check(b.Children[i].Parent == b, "parent set");
+                SameTree(a.Children[i], b.Children[i], where + "\\" + a.Children[i].Name);
+            }
+        }
+
+        private static void TestSaveAndOpenScans()
+        {
+            foreach (var scan in new[] { FolderScanner.Scan(MakeTree()), FastScanOfTestDrive() })
+            {
+                scan.DriveTotal = 1000;
+                scan.DriveFree = 100;
+                var file = Path.Combine(_root, "saved-" + Guid.NewGuid().ToString("N").Substring(0, 6) + SavedScan.Extension);
+                SavedScan.Save(scan, file);
+                var back = SavedScan.Load(file);
+                SameTree(scan.Root, back.Root, "root");
+                Equal(scan.Path, back.Path, "path");
+                Equal(scan.Fast, back.Fast, "method");
+                Equal(scan.Started, back.Started, "date");
+                Equal(1000L, back.DriveTotal, "drive size");
+                Equal(scan.Types.All.Sum(t => t.Count), back.Types.All.Sum(t => t.Count), "file types");
+                var info = SavedScan.ReadInfo(file);
+                Equal(scan.Root.Alloc, info.Alloc, "saved summary");
+                Equal(scan.Root.Files, info.Files, "saved file count");
+                Check(SavedScan.DefaultName(scan).EndsWith(SavedScan.Extension), "file name");
+                Check(Queries.Find(back.Root, back.Root.Children[0].Path) == back.Root.Children[0], "paths work after opening");
+            }
+            File.WriteAllText(Path.Combine(_root, "bad" + SavedScan.Extension), "not a scan");
+            try
+            {
+                SavedScan.Load(Path.Combine(_root, "bad" + SavedScan.Extension));
+                throw new Exception("accepted");
+            }
+            catch (InvalidDataException) { }
+            Check(SavedScan.ReadInfo(Path.Combine(_root, "bad" + SavedScan.Extension)) == null, "bad file has no summary");
+        }
+
+        private static void TestCompareScans()
+        {
+            var dir = MakeTree();
+            var then = FolderScanner.Scan(dir);
+            File.WriteAllBytes(Path.Combine(dir, "Videos", "holiday.mp4"), new byte[1_500_000]);       // grew
+            File.Delete(Path.Combine(dir, "Videos", "clip.mp4"));                                        // removed
+            Directory.CreateDirectory(Path.Combine(dir, "Downloads", "setup"));
+            File.WriteAllBytes(Path.Combine(dir, "Downloads", "setup", "installer.exe"), new byte[700_000]); // new folder
+            File.WriteAllBytes(Path.Combine(dir, "Docs", "notes.txt"), new byte[10]);                     // shrank
+            Directory.Delete(Path.Combine(dir, "Docs", "Old"), true);                                      // removed folder
+            var now = FolderScanner.Scan(dir);
+            var cmp = Comparison.Compare(now, then, false);
+            Equal(1_271_000L, cmp.Before, "before");
+            Equal(1_271_000L + 600_000 - 300_000 + 700_000 - 990 - 20_000, cmp.After, "after");
+            Change Of(params string[] parts) => cmp.Changes.Single(c => c.Path == Path.Combine(new[] { dir }.Concat(parts).ToArray()));
+            Equal(ChangeKind.New, Of("Downloads").Kind, "new folder listed once");
+            Check(cmp.Changes.All(c => !c.Path.Contains("installer.exe")), "not what's inside a new folder");
+            Equal(700_000L, Of("Downloads").Delta, "new folder size");
+            Equal(ChangeKind.Grew, Of("Videos", "holiday.mp4").Kind, "grew");
+            Equal(600_000L, Of("Videos", "holiday.mp4").Delta, "growth");
+            Equal(ChangeKind.Removed, Of("Videos", "clip.mp4").Kind, "removed file");
+            Equal(-300_000L, Of("Videos", "clip.mp4").Delta, "removed size");
+            Equal(ChangeKind.Removed, Of("Docs", "Old").Kind, "removed folder");
+            Equal(ChangeKind.Shrank, Of("Docs", "notes.txt").Kind, "shrank");
+            Equal(ChangeKind.Grew, Of("Videos").Kind, "folder total grew");
+            Equal(Of("Downloads"), cmp.Changes[0], "biggest change first");
+            Check(cmp.Changes.All(c => c.Path != Path.Combine(dir, "Docs", "report.pdf")), "unchanged files aren't listed");
+        }
+
+        private static void TestDuplicates()
+        {
+            var dir = Path.Combine(_root, "dups-" + Guid.NewGuid().ToString("N").Substring(0, 6));
+            void Put(string relative, byte[] data)
+            {
+                var p = Path.Combine(dir, relative.Replace('\\', Path.DirectorySeparatorChar));
+                Directory.CreateDirectory(Path.GetDirectoryName(p));
+                File.WriteAllBytes(p, data);
+            }
+            byte[] Bytes(int length, int seed)
+            {
+                var b = new byte[length];
+                new Random(seed).NextBytes(b);
+                return b;
+            }
+            var photo = Bytes(200_000, 1);
+            Put(@"a\photo.jpg", photo);
+            Put(@"b\photo copy.jpg", photo);
+            Put(@"c\deep\photo (2).jpg", photo);
+            Put(@"same size 1.bin", Bytes(200_000, 2));          // same size, different contents
+            var tail1 = Bytes(150_000, 3);
+            var tail2 = (byte[])tail1.Clone();
+            tail2[149_999] ^= 0xFF;                               // same first 64 KB, different end
+            Put(@"tail 1.bin", tail1);
+            Put(@"tail 2.bin", tail2);
+            var small = Bytes(100, 4);
+            Put(@"small 1.txt", small);
+            Put(@"x\small 2.txt", small);
+            Put(@"empty 1.txt", new byte[0]);
+            Put(@"empty 2.txt", new byte[0]);
+
+            var scan = FolderScanner.Scan(dir);
+            var progress = new DuplicateProgress();
+            var groups = Duplicates.Find(scan.Root, 1, progress);
+            Equal(2, groups.Count, "two groups: " + string.Join(" | ", groups.Select(g => string.Join(", ", g.Files.Select(f => f.Name)))));
+            Equal(3, groups[0].Files.Count, "three copies of the photo");
+            Equal(400_000L, groups[0].Wasted, "space wasted by the extra copies");
+            Check(groups[0].Files.All(f => f.Name.StartsWith("photo")), "the photos");
+            Check(groups[1].Files.All(f => f.Name.StartsWith("small")), "the small files");
+            Check(progress.BytesRead > 0 && progress.Unreadable == 0, "read the files");
+            Equal(1, Duplicates.Find(scan.Root, 1000).Count, "a minimum size leaves out small files");
+        }
+
+        private static void TestOldAndEmpty()
+        {
+            var dir = MakeTree();
+            Directory.CreateDirectory(Path.Combine(dir, "Empty folder", "also empty", "and this"));
+            Directory.CreateDirectory(Path.Combine(dir, "Docs", "Old", "nothing here"));
+            var recent = Path.Combine(dir, "Docs", "report.pdf");
+            File.SetLastWriteTimeUtc(recent, DateTime.UtcNow.AddDays(-400));
+            File.SetLastAccessTimeUtc(recent, DateTime.UtcNow.AddDays(-2)); // opened recently: not old
+            var scan = FolderScanner.Scan(dir);
+
+            var empty = Queries.EmptyFolders(scan.Root).Select(n => n.Path).ToList();
+            Check(empty.SequenceEqual(new[] { Path.Combine(dir, "Docs", "Old", "nothing here"), Path.Combine(dir, "Empty folder") }), "outermost empty folders: " + string.Join(", ", empty));
+
+            foreach (var f in Queries.Files(scan.Root)) if (f.Name != "report.pdf") f.Atime = 0; // as if Windows didn't track opening
+            var old = Queries.OldFiles(scan.Root, DateTime.Now.AddDays(-365), 1, false, out var total, out var totalSize);
+            Check(old.All(f => f.Name != "report.pdf"), "a file opened recently isn't old");
+            Equal(4, total, "old files (2024 dates, not empty)");
+            Equal(900_000L + 300_000 + 20_000 + 1_000, totalSize, "their total");
+            Equal("holiday.mp4", old[0].Name, "biggest first");
+        }
+
         // ================================================================== small things
 
         private static void TestPathsAndFormat()

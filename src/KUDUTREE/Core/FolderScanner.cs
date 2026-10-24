@@ -180,7 +180,8 @@ namespace Kudutree.Core
                             {
                                 Name = name,
                                 Attributes = attributes,
-                                Mtime = Ticks(BitConverter.ToInt64(buffer, offset + 24))
+                                Mtime = Ticks(BitConverter.ToInt64(buffer, offset + 24)),
+                                Atime = Ticks(BitConverter.ToInt64(buffer, offset + 16))
                             };
                             if ((attributes & FileAttributes.Directory) != 0)
                             {
@@ -214,7 +215,7 @@ namespace Kudutree.Core
             var list = new List<Node>();
             foreach (var info in new DirectoryInfo(Paths.Long(path)).EnumerateFileSystemInfos())
             {
-                var node = new Node { Name = info.Name, Attributes = info.Attributes, Mtime = info.LastWriteTimeUtc.Ticks };
+                var node = new Node { Name = info.Name, Attributes = info.Attributes, Mtime = info.LastWriteTimeUtc.Ticks, Atime = info.LastAccessTimeUtc.Ticks };
                 if ((info.Attributes & FileAttributes.Directory) != 0)
                 {
                     node.Children = new List<Node>();

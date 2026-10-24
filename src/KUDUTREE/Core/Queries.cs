@@ -136,6 +136,43 @@ namespace Kudutree.Core
         }
 
         /// <summary>
+        /// Files not opened or changed since <paramref name="usedBefore"/>, biggest first. (Windows doesn't always keep track
+        /// of when files are opened, so the later of opened and changed is used.)
+        /// </summary>
+        public static List<Node> OldFiles(Node root, DateTime usedBefore, long minSize, bool onDisk, out int total, out long totalSize, int limit = 5000)
+        {
+            var found = Files(root).Where(f => f.Measure(onDisk) >= minSize && f.LastUsed != DateTime.MinValue && f.LastUsed < usedBefore).ToList();
+            total = found.Count;
+            totalSize = found.Sum(f => f.Measure(onDisk));
+            return found.OrderByDescending(f => f.Measure(onDisk)).Take(limit).ToList();
+        }
+
+        /// <summary>
+        /// Folders with no files in them (perhaps only other empty folders), outermost only: an empty folder holding
+        /// empty folders is listed once. Links and folders that couldn't be read aren't counted as empty.
+        /// </summary>
+        public static List<Node> EmptyFolders(Node root)
+        {
+            bool Empty(Node n) => n.IsDir && n.Files == 0 && n.Has(NodeFlags.Listed) && !n.Has(NodeFlags.Link) && !n.Has(NodeFlags.Unreadable) &&
+                                  n.Children.All(c => c.IsDir && Empty(c));
+            var result = new List<Node>();
+            var stack = new Stack<Node>();
+            stack.Push(root);
+            while (stack.Count > 0)
+            {
+                var n = stack.Pop();
+                if (n.Has(NodeFlags.Deleted) || !n.IsDir || !n.Has(NodeFlags.Listed)) continue;
+                if (n != root && Empty(n))
+                {
+                    result.Add(n);
+                    continue;
+                }
+                foreach (var c in n.Children) if (c.IsDir) stack.Push(c);
+            }
+            return result.OrderBy(n => n.Path, StringComparer.OrdinalIgnoreCase).ToList();
+        }
+
+        /// <summary>
         /// Takes a deleted file or folder out of the scan: its parent folders lose its size and counts, and it's no longer
         /// listed anywhere. (The scan is updated without scanning again.)
         /// </summary>
@@ -189,9 +226,10 @@ namespace Kudutree.Core
             var rootPath = root.Path.TrimEnd('\\', '/');
             path = (path ?? string.Empty).TrimEnd('\\', '/');
             if (path.Equals(rootPath, StringComparison.OrdinalIgnoreCase)) return root;
-            if (!path.StartsWith(rootPath + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase)) return null;
+            if (path.Length <= rootPath.Length + 1 || !path.StartsWith(rootPath, StringComparison.OrdinalIgnoreCase) ||
+                (path[rootPath.Length] != '\\' && path[rootPath.Length] != '/')) return null;
             var node = root;
-            foreach (var part in path.Substring(rootPath.Length + 1).Split(Path.DirectorySeparatorChar))
+            foreach (var part in path.Substring(rootPath.Length + 1).Split('\\', '/'))
             {
                 node = node.IsDir ? node.Children.FirstOrDefault(c => string.Equals(c.Name, part, StringComparison.OrdinalIgnoreCase)) : null;
                 if (node == null) return null;
