@@ -221,7 +221,10 @@ namespace Kudutree.Views
             Add(@"Docs\notes.txt", 120, 6);                // small enough to live inside the file index
             Add(@"Docs\Old\2019\tax.pdf", 70_000, 7);
             Add(@"Docs\Old\2019\receipt.pdf", 30_000, 8);
-            Directory.CreateDirectory(Path.Combine(Data, "Empty folder"));
+            Directory.CreateDirectory(Path.Combine(Data, "Empty folder", "inside"));
+            var longAgo = DateTime.Now.AddYears(-2);
+            File.SetLastWriteTime(Path.Combine(Data, @"Videos\holiday.mp4"), longAgo);
+            File.SetLastAccessTime(Path.Combine(Data, @"Videos\holiday.mp4"), longAgo);
 
             // A compressed file: very compressible content, then NTFS compression.
             var text = Encoding.ASCII.GetBytes(string.Concat(Enumerable.Repeat("KUDUTREE compresses well. ", 200_000)));
@@ -428,6 +431,53 @@ namespace Kudutree.Views
                 Expect(photos.Files == 4 && photos.Size == 2_400_000 + 1_900_000 + 3_100_000 + 500_000, "the new file is counted");
                 Expect(main.Scan.Root.Files == photos.Files + main.Scan.Root.Children.Where(c => c != photos).Sum(c => c.IsDir ? c.Files : 1), "the totals above it follow");
             });
+            Step("Old and empty", () =>
+            {
+                main.Results.ShowTab("Old & empty");
+                Pump();
+                Expect(main.Results.OldRows.Any(r => r.Node.Name == "holiday.mp4"), "the video not used for two years is listed");
+                Expect(main.Results.OldRows.All(r => r.Node.Name != "IMG_0001.jpg"), "a recent file isn't");
+                Expect(main.Results.EmptyRows.Count == 1 && main.Results.EmptyRows[0].Node.Name == "Empty folder", "the empty folder (with an empty folder inside) is listed once");
+                var moved = main.Results.RecycleEmptyFolders(false);
+                Wait(moved, 60, "the empty folders to go");
+                Expect(moved.Result == 1 && !Directory.Exists(Path.Combine(Data, "Empty folder")), "moved to the Recycle Bin");
+            });
+            Step("Duplicates", () =>
+            {
+                var photo = File.ReadAllBytes(Path.Combine(Data, @"Photos\IMG_0001.jpg"));
+                Put(@"Dups\IMG_0001 copy.jpg", photo);
+                Put(@"Dups\Old\IMG_0001 (2).jpg", photo);
+                var almost = (byte[])photo.Clone();
+                almost[almost.Length - 1] ^= 1;
+                Put(@"Dups\IMG_0001 edited.jpg", almost); // same size and start, different end
+                Wait(main.RescanFolderAsync(main.Scan.Root), 60, "the rescan");
+                main.Results.ShowTab("Duplicates");
+                Wait(main.Results.FindDuplicates(1), 120, "the duplicate search");
+                var rows = main.Results.DuplicateRows;
+                Expect(rows.Count == 4 && rows[0].Header && rows.Skip(1).All(r => r.Node != null && r.Node.Name.StartsWith("IMG_0001") && !r.Node.Name.Contains("edited")),
+                    "one set of three identical photos: " + string.Join(", ", rows.Select(r => r.Name)));
+                Wait(main.DeleteNodeAsync(rows[3].Node, false, false), 60, "the delete");
+                Expect(main.Results.DuplicateRows.Count == 3, "a deleted copy leaves the set");
+            });
+            Step("Save, open and compare scans", () =>
+            {
+                var file = Path.Combine(_temp, "Data" + SavedScan.Extension);
+                Wait(main.SaveScanToAsync(file), 60, "the save");
+                Expect(File.Exists(file) && SavedScan.ReadInfo(file).Files == main.Scan.Root.Files, "saved");
+                Put(@"Downloads\setup.exe", Pattern(3_000_000, 10));
+                File.Delete(Path.Combine(Data, @"Videos\holiday.mp4"));
+                Wait(main.StartScanAsync(Data, false), 120, "the new scan");
+                main.Results.ShowTab("Changes");
+                Wait(main.Results.CompareWith(file), 60, "the comparison");
+                var c = main.Results.LastComparison;
+                Expect(c != null && c.Changes.Count > 0, "changes found");
+                Expect(c.Changes.Any(x => x.Kind == ChangeKind.Removed && x.Path.EndsWith("holiday.mp4")), "the deleted video is listed");
+                Expect(Math.Abs(c.Changes[0].Delta) >= 40_000_000, "biggest change first: " + c.Changes[0].Path);
+                Expect(c.Changes.Any(x => x.Kind == ChangeKind.New && x.Path.EndsWith("Downloads") && x.After >= 3_000_000), "the new folder is listed");
+                Expect(main.Results.ChangeRows.Count == c.Changes.Count, "all listed");
+                Wait(main.OpenSavedScanAsync(file), 60, "opening the saved scan");
+                Expect(main.Scan.SavedAs == file && Queries.Find(main.Scan.Root, Path.Combine(Data, @"Videos\holiday.mp4")) != null, "the saved scan shows how it was");
+            });
             Step("Fast scan from the window", () =>
             {
                 Wait(main.StartScanAsync(_drive + "\\", true), 120, "the fast scan");
@@ -441,6 +491,11 @@ namespace Kudutree.Views
                 Pump();
                 main.Results.ShowTab("Search");
                 Pump();
+                foreach (var tab in new[] { "Old & empty", "Duplicates", "Changes" })
+                {
+                    main.Results.ShowTab(tab);
+                    Pump();
+                }
                 main.Results.ShowTab("Folders");
                 main.ShowStart();
                 Pump();

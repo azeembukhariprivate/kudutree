@@ -3,7 +3,7 @@
 ; (The fast scan of a whole drive does: KUDUTREE asks Windows for them when it starts one.)
 
 #ifndef MyAppVersion
-  #define MyAppVersion "1.0.0"
+  #define MyAppVersion "1.1.0"
 #endif
 #ifndef SourceDir
   #define SourceDir "..\out\KUDUTREE"
@@ -62,3 +62,8 @@ Filename: "{app}\{#MyAppExe}"; Parameters: "--unregister"; Flags: runhidden wait
 [Registry]
 ; Remove saved settings when uninstalling.
 Root: HKCU; Subkey: "Software\KUDUTREE"; Flags: uninsdeletekey dontcreatekey
+; Saved scans (.kudutree) open in KUDUTREE.
+Root: HKCU; Subkey: "Software\Classes\.kudutree"; ValueType: string; ValueName: ""; ValueData: "KUDUTREE.Scan"; Flags: uninsdeletevalue
+Root: HKCU; Subkey: "Software\Classes\KUDUTREE.Scan"; ValueType: string; ValueName: ""; ValueData: "KUDUTREE scan"; Flags: uninsdeletekey
+Root: HKCU; Subkey: "Software\Classes\KUDUTREE.Scan\DefaultIcon"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExe}"",0"
+Root: HKCU; Subkey: "Software\Classes\KUDUTREE.Scan\shell\open\command"; ValueType: string; ValueName: ""; ValueData: """{app}\{#MyAppExe}"" --open ""%1"""

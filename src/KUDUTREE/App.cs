@@ -13,6 +13,7 @@ namespace Kudutree
         /// KUDUTREE.exe                     open
         /// KUDUTREE.exe --scan "D:\x"       open and scan a folder or drive (the right-click menu)
         /// KUDUTREE.exe --scan C:\ --fast   the fast scan (used after restarting as administrator)
+        /// KUDUTREE.exe --open scan.kudutree   open a saved scan (also when a .kudutree file is opened)
         /// KUDUTREE.exe --register-shell | --unregister   used by the installer
         /// KUDUTREE.exe --self-test         automated checks for the build
         /// </summary>
@@ -40,13 +41,14 @@ namespace Kudutree
                 ShellIntegration.Remove();
                 return 0;
             }
-            return app.Run(Value("--scan"), Has("--fast"));
+            var open = Value("--open") ?? args.FirstOrDefault(a => a.EndsWith(SavedScan.Extension, StringComparison.OrdinalIgnoreCase));
+            return app.Run(Value("--scan"), Has("--fast"), open);
         }
     }
 
     public sealed class App : Application
     {
-        public int Run(string scan, bool fast)
+        public int Run(string scan, bool fast, string open)
         {
             Startup += (s, e) =>
             {
@@ -55,7 +57,8 @@ namespace Kudutree
                 MainWindow = main;
                 main.Show();
                 ShellIntegration.Refresh();
-                if (!string.IsNullOrEmpty(scan)) main.StartScan(scan, fast ? true : (bool?)null);
+                if (!string.IsNullOrEmpty(open)) main.OpenSavedScan(open);
+                else if (!string.IsNullOrEmpty(scan)) main.StartScan(scan, fast ? true : (bool?)null);
             };
             return Run();
         }

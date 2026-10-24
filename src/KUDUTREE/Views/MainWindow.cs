@@ -131,6 +131,19 @@ namespace Kudutree.Views
             row.HorizontalAlignment = HorizontalAlignment.Left;
             panel.Children.Add(row);
             panel.Children.Add(Ui.Subtle(@"Or type a path, like D:\Projects or \\nas\share. You can also right-click a folder in File Explorer → Show sizes with KUDUTREE (turn it on in Settings).", 12).Margin(0, 8, 0, 0));
+            var saved = SavedScan.List().Take(5).ToList();
+            panel.Children.Add(Ui.Heading("Saved scans", 15).Margin(0, 22, 0, 8));
+            panel.Children.Add(Ui.Button("Open a saved scan…", "IconFolder", "SecondaryButton", (s, e) =>
+            {
+                var file = Dialogs.PickFile(this, "Open a saved scan", SavedScan.FileFilter);
+                if (file != null) OpenSavedScan(file);
+            }).Margin(0, 0, 0, 6));
+            ((FrameworkElement)panel.Children[panel.Children.Count - 1]).HorizontalAlignment = HorizontalAlignment.Left;
+            foreach (var info in saved)
+                panel.Children.Add(Ui.Link($"{info.Path} · {info.Started:g} · {Format.Size(info.Measure(Settings.SizeOnDisk))}", (s, e) => OpenSavedScan(info.File)).Margin(0, 4, 0, 0));
+            if (saved.Count == 0)
+                panel.Children.Add(Ui.Subtle("Save a scan from its results, to look at it again later or see what changed since.", 12));
+
             var last = Settings.LastFolder;
             if (!string.IsNullOrEmpty(last))
                 panel.Children.Add(Ui.Link("Scan again: " + last, (s, e) => StartScan(last, null)).Margin(0, 12, 0, 0));
@@ -337,6 +350,74 @@ namespace Kudutree.Views
         }
 
         public void Stop() => _cancel?.Cancel();
+
+        // ================================================================== saved scans
+
+        public void SaveScan()
+        {
+            var scan = _results.Scan;
+            if (scan == null || IsScanning) return;
+            System.IO.Directory.CreateDirectory(SavedScan.Folder);
+            var dialog = new Microsoft.Win32.SaveFileDialog
+            {
+                Title = "Save the scan",
+                FileName = SavedScan.DefaultName(scan),
+                Filter = SavedScan.FileFilter,
+                InitialDirectory = SavedScan.Folder,
+                OverwritePrompt = true
+            };
+            if (dialog.ShowDialog(this) != true) return;
+            SaveScanTo(dialog.FileName);
+        }
+
+        public async void SaveScanTo(string file) => await SaveScanToAsync(file);
+
+        public async Task SaveScanToAsync(string file)
+        {
+            var scan = _results.Scan;
+            Cursor = System.Windows.Input.Cursors.Wait;
+            try
+            {
+                await Task.Run(() => SavedScan.Save(scan, file));
+                scan.SavedAs = file;
+            }
+            catch (Exception ex) when (ex is IOException || ex is UnauthorizedAccessException)
+            {
+                Dialogs.Error(this, "The scan couldn't be saved: " + ex.Message);
+            }
+            finally
+            {
+                Cursor = null;
+            }
+        }
+
+        /// <summary>Opens a saved scan to look through, without scanning again.</summary>
+        public async void OpenSavedScan(string file) => await OpenSavedScanAsync(file);
+
+        public async Task OpenSavedScanAsync(string file)
+        {
+            if (IsScanning) return;
+            try
+            {
+                Cursor = System.Windows.Input.Cursors.Wait;
+                var scan = await Task.Run(() => SavedScan.Load(file));
+                scan.SavedAs = file;
+                _lastPath = scan.Path;
+                _lastFast = scan.Fast;
+                _results.Show(scan, false);
+                _results.Finished();
+                SetPage(_results, "results");
+                ShowSelection(scan.Root);
+            }
+            catch (Exception ex) when (ex is IOException || ex is InvalidDataException || ex is UnauthorizedAccessException)
+            {
+                Dialogs.Error(this, ex.Message);
+            }
+            finally
+            {
+                Cursor = null;
+            }
+        }
 
         private void ShowFastProgress(string path)
         {

@@ -155,6 +155,8 @@ namespace Kudutree.Core
         /// <summary>For a whole drive: its size and free space, to show what the scan accounts for.</summary>
         public long DriveTotal = -1;
         public long DriveFree = -1;
+        /// <summary>The file this scan was saved to or opened from.</summary>
+        public string SavedAs;
 
         /// <summary>Counts file types, once the scan has finished.</summary>
         public void Finish()

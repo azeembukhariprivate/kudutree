@@ -114,20 +114,47 @@ namespace Kudutree.Views
         }
     }
 
-    /// <summary>A file or folder in the largest files list or search results.</summary>
+    /// <summary>
+    /// A row in the item lists: largest files, search results, old files, empty folders, duplicates and changes.
+    /// Rows without a file or folder (a duplicate group's heading, or something removed since a saved scan) show their own text.
+    /// </summary>
     public sealed class ItemRow : RowBase
     {
         public Node Node { get; set; }
+        public string Title { get; set; }
+        public string Subtitle { get; set; }
+        public string Value { get; set; }
+        public string Extra { get; set; }
+        public string Date { get; set; }
+        public string IconKey { get; set; }
+        public bool Header { get; set; }
+        public bool Nested { get; set; }
+        /// <summary>Show when the file was last opened or changed, rather than changed.</summary>
+        public bool ShowLastUsed { get; set; }
 
-        public string Name => Node.Name;
-        public string Folder => Node.Parent?.Path ?? string.Empty;
-        public string SizeText => Format.Size(Node.Measure(OnDisk));
-        public string ModifiedText => Node.Mtime <= 0 ? string.Empty : Node.Modified.ToString("d");
-        public string FilesText => Node.IsDir ? Format.Count(Node.Files, "file") : string.Empty;
-        public Brush Swatch => Node.IsDir ? System.Windows.Media.Brushes.Transparent : TreeRow.TypeBrush(Node);
-        public Geometry Icon => Node.IsDir ? TreeRow.Res("IconFolder") : null;
-        public Visibility SwatchVisible => Node.IsDir ? Visibility.Collapsed : Visibility.Visible;
-        public Visibility IconVisible => Node.IsDir ? Visibility.Visible : Visibility.Collapsed;
+        public string Name => Title ?? Node?.Name ?? string.Empty;
+        public string Folder => Subtitle ?? Node?.Parent?.Path ?? string.Empty;
+        public string SizeText => Value ?? (Node == null ? string.Empty : Format.Size(Node.Measure(OnDisk)));
+        public string FilesText => Extra ?? (Node != null && Node.IsDir ? Format.Count(Node.Files, "file") : string.Empty);
+
+        public string ModifiedText
+        {
+            get
+            {
+                if (Date != null) return Date;
+                if (Node == null) return string.Empty;
+                var when = ShowLastUsed ? Node.LastUsed : Node.Modified;
+                return when == DateTime.MinValue ? string.Empty : when.ToString("d");
+            }
+        }
+
+        private bool UsesSwatch => IconKey == null && Node != null && !Node.IsDir;
+        public Brush Swatch => UsesSwatch ? TreeRow.TypeBrush(Node) : System.Windows.Media.Brushes.Transparent;
+        public Geometry Icon => TreeRow.Res(IconKey ?? "IconFolder");
+        public Visibility SwatchVisible => UsesSwatch ? Visibility.Visible : Visibility.Collapsed;
+        public Visibility IconVisible => UsesSwatch ? Visibility.Collapsed : Visibility.Visible;
+        public FontWeight Weight => Header ? FontWeights.SemiBold : FontWeights.Normal;
+        public Thickness Indent => new Thickness(Nested ? 26 : 6, 0, 0, 0);
     }
 
     /// <summary>A file type in the file types list.</summary>
@@ -183,8 +210,8 @@ namespace Kudutree.Views
         public static DataTemplate Item => Parse(
             "<DataTemplate " + Ns + "><Grid Height=\"40\" Background=\"Transparent\" ToolTip=\"{Binding Folder}\">" +
             "<Grid.ColumnDefinitions><ColumnDefinition Width=\"*\"/><ColumnDefinition Width=\"100\"/><ColumnDefinition Width=\"90\"/><ColumnDefinition Width=\"100\"/></Grid.ColumnDefinitions>" +
-            "<StackPanel Orientation=\"Horizontal\" Margin=\"6,0,0,0\">" + Icon("SubtleText") +
-            "<StackPanel VerticalAlignment=\"Center\"><TextBlock Text=\"{Binding Name}\" TextTrimming=\"CharacterEllipsis\"/>" +
+            "<StackPanel Orientation=\"Horizontal\" Margin=\"{Binding Indent}\">" + Icon("SubtleText") +
+            "<StackPanel VerticalAlignment=\"Center\"><TextBlock Text=\"{Binding Name}\" FontWeight=\"{Binding Weight}\" TextTrimming=\"CharacterEllipsis\"/>" +
             "<TextBlock Text=\"{Binding Folder}\" FontSize=\"11.5\" Foreground=\"{DynamicResource SubtleText}\" TextTrimming=\"CharacterEllipsis\"/></StackPanel></StackPanel>" +
             "<TextBlock Grid.Column=\"1\" Text=\"{Binding SizeText}\" HorizontalAlignment=\"Right\" VerticalAlignment=\"Center\" Margin=\"0,0,12,0\" FontWeight=\"SemiBold\"/>" +
             "<TextBlock Grid.Column=\"2\" Text=\"{Binding FilesText}\" HorizontalAlignment=\"Right\" VerticalAlignment=\"Center\" Margin=\"0,0,12,0\" Foreground=\"{DynamicResource SubtleText}\"/>" +

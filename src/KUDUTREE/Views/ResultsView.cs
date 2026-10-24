@@ -16,7 +16,7 @@ namespace Kudutree.Views
     /// The results of a scan: the folder tree (or the largest files, or a search) on the left, file types on the right and
     /// the treemap below. Everything follows the same selection. Built once per window and filled for each scan.
     /// </summary>
-    public sealed class ResultsView : Grid
+    public sealed partial class ResultsView : Grid
     {
         private readonly MainWindow _owner;
         private readonly TreeList _tree = new TreeList();
@@ -71,7 +71,7 @@ namespace Kudutree.Views
             RowDefinitions.Add(_mapRow);
 
             // ---- toolbar
-            var toolbar = Ui.Columns(Ui.Auto, Ui.Star(), Ui.Auto, Ui.Auto, Ui.Auto);
+            var toolbar = Ui.Columns(Ui.Auto, Ui.Star(), Ui.Auto, Ui.Auto, Ui.Auto, Ui.Auto);
             _up = Ui.Small(Ui.Button("Up", "IconUp", "SecondaryButton", (s, e) => { if (ViewRoot?.Parent != null) SetViewRoot(ViewRoot.Parent); }));
             _up.ToolTip = "Show the folder above";
             var where = Ui.Column(_place, _summary);
@@ -87,13 +87,16 @@ namespace Kudutree.Views
             _showMap.IsChecked = Settings.ShowTreemap;
             _showMap.Click += (s, e) => SetMapVisible(_showMap.IsChecked == true);
             toolbar.Children.Add(_showMap.Margin(0, 0, 12, 0).At(0, 3));
-            toolbar.Children.Add(Ui.Small(Ui.Button("Scan again", "IconRefresh", "SecondaryButton", (s, e) => _owner.Rescan())).At(0, 4));
+            var save = Ui.Small(Ui.Button("Save scan", "IconSave", "SecondaryButton", (s, e) => _owner.SaveScan()));
+            save.ToolTip = "Save this scan to look at again later, or to compare with a later scan";
+            toolbar.Children.Add(save.Margin(0, 0, 8, 0).At(0, 4));
+            toolbar.Children.Add(Ui.Small(Ui.Button("Scan again", "IconRefresh", "SecondaryButton", (s, e) => _owner.Rescan())).At(0, 5));
             Children.Add(toolbar.Margin(0, 0, 0, 8).At(0));
             Children.Add(_banner.At(1));
 
             // ---- left: tabs
             var tabs = new StackPanel { Orientation = Orientation.Horizontal, Margin = new Thickness(0, 0, 0, 8) };
-            foreach (var name in new[] { "Folders", "Largest files", "Search" })
+            foreach (var name in new[] { "Folders", "Largest files", "Search", "Old & empty", "Duplicates", "Changes" })
             {
                 var tab = new RadioButton { Content = name, GroupName = "tabs", IsChecked = name == "Folders" }.Styled("TabRadio");
                 tab.Checked += (s, e) => ShowTab(name);
@@ -170,16 +173,16 @@ namespace Kudutree.Views
             VirtualizingPanel.SetVirtualizationMode(list, VirtualizationMode.Recycling);
             list.SelectionChanged += (s, e) =>
             {
-                if (list.SelectedItem is ItemRow row) Select(row.Node, list);
+                if (list.SelectedItem is ItemRow row && row.Node != null && !row.Node.Has(NodeFlags.Deleted)) Select(row.Node, list);
             };
             list.MouseDoubleClick += (s, e) =>
             {
-                if (list.SelectedItem is ItemRow row) Actions.Open(row.Node);
+                if (list.SelectedItem is ItemRow row && row.Node != null) Actions.Open(row.Node);
             };
             list.PreviewMouseRightButtonUp += (s, e) =>
             {
                 for (var d = e.OriginalSource as DependencyObject; d != null; d = System.Windows.Media.VisualTreeHelper.GetParent(d))
-                    if (d is ListBoxItem item && item.DataContext is ItemRow row)
+                    if (d is ListBoxItem item && item.DataContext is ItemRow row && row.Node != null)
                     {
                         list.SelectedItem = row;
                         ShowMenu(row.Node, list);
@@ -328,6 +331,15 @@ namespace Kudutree.Views
                     _tab.Content = SearchPage();
                     Dispatcher.BeginInvoke(new Action(() => _query.Focus()));
                     break;
+                case "Old & empty":
+                    _tab.Content = OldPage();
+                    break;
+                case "Duplicates":
+                    _tab.Content = DuplicatesPage();
+                    break;
+                case "Changes":
+                    _tab.Content = ChangesPage();
+                    break;
                 default:
                     _tab.Content = TreePage();
                     break;
@@ -345,6 +357,7 @@ namespace Kudutree.Views
             RowBase.Types = scan.Types;
             _searchRows.Replace(Enumerable.Empty<ItemRow>());
             _searchStatus.Text = string.Empty;
+            ResetExtras();
             SetViewRoot(scan.Root);
         }
 
@@ -416,7 +429,9 @@ namespace Kudutree.Views
             var root = ViewRoot ?? Scan.Root;
             _place.Text = root.Path;
             var text = $"{Format.Count(root.Files, "file")} in {Format.Count(root.Folders, "folder")} · {Format.Size(root.Alloc)} on disk · {Format.Size(root.Size)} in files";
-            if (!_live) text += $" · {Scan.Method.ToLowerInvariant()}, {Format.Duration(Scan.Duration)}";
+            if (!_live) text += Scan.SavedAs != null && Scan.Started < DateTime.Now.AddMinutes(-1)
+                ? $" · saved scan from {Scan.Started:g}"
+                : $" · {Scan.Method.ToLowerInvariant()}, {Format.Duration(Scan.Duration)}";
             _summary.Text = text;
 
             _banner.Content = null;
@@ -542,6 +557,7 @@ namespace Kudutree.Views
         /// <summary>After a delete or a folder was scanned again: update every view.</summary>
         public void AfterChange()
         {
+            PruneExtras();
             _tree.Rebuild();
             _tree.RefreshValues();
             RefreshAll();
