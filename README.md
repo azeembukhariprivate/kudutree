@@ -59,6 +59,14 @@ out\KUDUTREE\KUDUTREE.exe --self-test
 
 The tests build a small NTFS drive image byte by byte (folders, hard links, short and long names, compressed files, extra data streams, files whose details are spread over several index records, deleted files and files whose folder is gone) and check the fast scan against it; scan real folders with the folder listing; and check the treemap layout, search, largest files, file types, deleting, saving and opening scans, comparing them, duplicates, and old and empty items. `--self-test` needs administrator rights: it creates a virtual drive (VHD) with known files (including compressed and sparse files, a hard link and a junction), scans it both ways and checks every size against what was written and against each other, runs a fast scan of the system drive, then uses every screen (tree, treemap, file types, largest files, search, old and empty, duplicates, saving, opening and comparing scans, delete, scan again) in both themes, writes `self-test.log` and exits. To build the installer, install [Inno Setup 6](https://jrsoftware.org/isinfo.php) and compile `installer/KUDUTREE.iss`.
 
+
+### Shared code
+
+Some files (the look, dialogs, the update check, administrator helpers) are shared by the KUDU apps and come from
+[kudu-common](https://github.com/azeembukhariprivate/kudu-common); each starts with a comment saying so, and `.kudu-common`
+lists them. You don't need kudu-common to build this app, but change those files there, not here: the build checks that
+they match.
+
 ## Publishing a new version
 
 1. Change `<Version>` in `src/KUDUTREE/KUDUTREE.csproj` (and `MyAppVersion` in `installer/KUDUTREE.iss`).
