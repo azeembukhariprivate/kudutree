@@ -141,7 +141,8 @@ namespace Kudutree.Core
         /// </summary>
         public static List<Node> OldFiles(Node root, DateTime usedBefore, long minSize, bool onDisk, out int total, out long totalSize, int limit = 5000)
         {
-            var found = Files(root).Where(f => f.Measure(onDisk) >= minSize && f.LastUsed != DateTime.MinValue && f.LastUsed < usedBefore).ToList();
+            var found = Files(root).Where(f => f.Measure(onDisk) >= minSize && f.LastUsed != DateTime.MinValue && f.LastUsed < usedBefore)
+                .Where(f => Protection.Reason(f) == null).ToList();
             total = found.Count;
             totalSize = found.Sum(f => f.Measure(onDisk));
             return found.OrderByDescending(f => f.Measure(onDisk)).Take(limit).ToList();
@@ -162,6 +163,7 @@ namespace Kudutree.Core
             {
                 var n = stack.Pop();
                 if (n.Has(NodeFlags.Deleted) || !n.IsDir || !n.Has(NodeFlags.Listed)) continue;
+                if (n != root && Protection.Reason(n) != null) continue; // Windows' own folders are left alone
                 if (n != root && Empty(n))
                 {
                     result.Add(n);

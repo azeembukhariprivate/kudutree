@@ -475,8 +475,10 @@ namespace Kudutree.Views
             var open = Ui.Small(Ui.Button(node.IsDir ? "Open" : "Open", "IconExternal", "SecondaryButton", (s, e) => Actions.Open(node)));
             var show = Ui.Small(Ui.Button("Show in Explorer", "IconFolder", "SecondaryButton", (s, e) => Actions.ShowInExplorer(node)));
             var delete = Ui.Small(Ui.Button("Delete…", "IconTrash", "SecondaryButton", (s, e) => DeleteNode(node, false)));
-            delete.IsEnabled = node.Parent != null;
-            delete.ToolTip = "Move to the Recycle Bin (Shift+Delete in the list deletes permanently)";
+            var protectedWhy = Protection.Reason(node);
+            delete.IsEnabled = protectedWhy == null;
+            delete.ToolTip = protectedWhy ?? "Move to the Recycle Bin (Shift+Delete in the list deletes permanently)";
+            System.Windows.Controls.ToolTipService.SetShowOnDisabled(delete, true);
             SetFooter(info, open, show, delete);
         }
 
@@ -485,6 +487,11 @@ namespace Kudutree.Views
         public async Task<string> DeleteNodeAsync(Node node, bool permanent, bool ask)
         {
             if (node == null || node.Parent == null || IsScanning) return "Can't delete that.";
+            if (Protection.Reason(node) is string why)
+            {
+                if (ask) Dialogs.Info(this, why);
+                return why;
+            }
             var what = $"\"{node.Name}\" ({Format.Size(node.Measure(Settings.SizeOnDisk))}{(node.IsDir ? ", " + Format.Count(node.Files, "file") : string.Empty)})";
             if (!permanent && Paths.IsUnc(node.Path))
             {

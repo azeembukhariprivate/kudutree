@@ -517,6 +517,39 @@ namespace Kudutree.Tests
             Equal("holiday.mp4", old[0].Name, "biggest first");
         }
 
+        private static void TestSystemItemsCantBeDeleted()
+        {
+            var sys = new Protection.SystemFolders { Windows = "C:\\Windows", Users = "C:\\Users" };
+            sys.Managed.AddRange(new[] { "C:\\Program Files", "C:\\Program Files (x86)", "C:\\ProgramData", "C:\\Users" });
+
+            foreach (var path in new[]
+                     {
+                         "C:\\$MFT", "D:\\$LogFile", "E:\\$Extend", "E:\\$Extend\\$UsnJrnl", "C:\\$Secure",
+                         "D:\\System Volume Information", "D:\\System Volume Information\\tracking.log",
+                         "C:\\$Recycle.Bin", "C:\\$Recycle.Bin\\S-1-5-21\\$R1.txt",
+                         "C:\\pagefile.sys", "C:\\hiberfil.sys", "C:\\Recovery",
+                         "C:\\Windows", "C:\\Windows\\WinSxS", "c:\\windows\\System32\\drivers\\etc\\hosts",
+                         "C:\\Program Files", "C:\\Program Files (x86)", "C:\\ProgramData", "C:\\Users", "C:\\Users\\Azeem"
+                     })
+            {
+                Check(Protection.Reason(path, sys) != null, "protected: " + path);
+            }
+
+            foreach (var path in new[]
+                     {
+                         "C:\\Users\\Azeem\\Downloads", "C:\\Users\\Azeem\\Videos\\holiday.mp4", "C:\\Program Files\\Old App",
+                         "C:\\ProgramData\\Some App\\cache", "D:\\pagefile.sys", "D:\\Recovery", "D:\\Games\\$MFT",
+                         "C:\\$WINDOWS.~BT", "C:\\Windows.old", "D:\\Windows", "D:\\Backup\\Windows\\WinSxS", "\\\\nas\\share\\$MFT"
+                     })
+            {
+                Check(Protection.Reason(path, sys) == null, "can be deleted: " + path);
+            }
+
+            // Without knowing where Windows is (as on this test machine), the drive's own records are still protected.
+            Check(Protection.Reason("C:\\$MFT", new Protection.SystemFolders()) != null, "metafile with unknown Windows folder");
+            Check(Protection.Reason("C:\\Windows", new Protection.SystemFolders()) == null, "unknown Windows folder isn't guessed");
+        }
+
         // ================================================================== small things
 
         private static void TestPathsAndFormat()

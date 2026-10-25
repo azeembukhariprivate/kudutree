@@ -102,7 +102,7 @@ namespace Kudutree.Views
             var done = 0;
             foreach (var folder in folders)
             {
-                if (folder.Files > 0) continue; // something was added since
+                if (folder.Files > 0 || Protection.Reason(folder) != null) continue; // something was added since, or Windows needs it
                 await Actions.Delete(folder, false);
                 if (Actions.Exists(folder)) continue;
                 Queries.Remove(Scan, folder);

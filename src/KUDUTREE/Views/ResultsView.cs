@@ -548,7 +548,7 @@ namespace Kudutree.Views
                 Item("Scan this folder again", () => _owner.RescanFolder(node), !_live);
             }
             menu.Items.Add(new Separator());
-            var canDelete = node != Scan.Root && !_live;
+            var canDelete = node != Scan.Root && !_live && Protection.Reason(node) == null;
             Item("Move to Recycle Bin", () => _owner.DeleteNode(node, false), canDelete, "Delete");
             Item("Delete permanently…", () => _owner.DeleteNode(node, true), canDelete, "Shift+Delete");
             menu.IsOpen = true;
