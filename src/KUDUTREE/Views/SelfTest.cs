@@ -84,6 +84,7 @@ namespace Kudutree.Views
             {
                 action();
                 Pump();
+                Screenshots.All(name);
                 if (Errors.Count > before) throw new Exception(string.Join(" | ", Errors.Skip(before)));
                 _log.AppendLine($"ok    {name} ({(DateTime.UtcNow - started).TotalSeconds:0.0}s)");
             }
@@ -141,6 +142,7 @@ namespace Kudutree.Views
             OffScreen(w);
             w.Show();
             Pump();
+            Screenshots.One(w, w.Title);
             w.Close();
         }
 
@@ -489,16 +491,20 @@ namespace Kudutree.Views
                 ThemeManager.Apply(ThemeMode.Dark);
                 main.Results.ShowTab("Largest files");
                 Pump();
+                Screenshots.All("Dark theme");
                 main.Results.ShowTab("Search");
                 Pump();
+                Screenshots.All("Dark theme");
                 foreach (var tab in new[] { "Old & empty", "Duplicates", "Changes" })
                 {
                     main.Results.ShowTab(tab);
                     Pump();
+                    Screenshots.All("Dark theme");
                 }
                 main.Results.ShowTab("Folders");
                 main.ShowStart();
                 Pump();
+                Screenshots.All("Dark theme");
                 ThemeManager.Apply(ThemeMode.Light);
                 Pump();
             });
