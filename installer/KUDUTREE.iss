@@ -3,7 +3,7 @@
 ; (The fast scan of a whole drive does: KUDUTREE asks Windows for them when it starts one.)
 
 #ifndef MyAppVersion
-  #define MyAppVersion "1.1.1"
+  #define MyAppVersion "1.1.2"
 #endif
 #ifndef SourceDir
   #define SourceDir "..\out\KUDUTREE"
