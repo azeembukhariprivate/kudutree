@@ -536,7 +536,8 @@ namespace Kudutree.Views
                 Expect(result.Freed == 1_300_000, "everything ticked but the file in use, got " + result.Freed);
                 Expect(result.Skipped.Count == 1 && result.Skipped[0].EndsWith("in-use.tmp"), "the file in use is left: " + string.Join(", ", result.Skipped));
                 Expect(File.Exists(busy) && File.Exists(Path.Combine(places.Temp, "just-now.tmp")), "files in use, and recent ones, stay");
-                Expect(!Directory.EnumerateFiles(Path.Combine(places.LocalAppData, "Google", "Chrome", "User Data", "Default", "Cache", "Cache_Data")).Any(), "the cache emptied");
+                var cache = Path.Combine(places.LocalAppData, "Google", "Chrome", "User Data", "Default", "Cache");
+                Expect(Directory.Exists(cache) && !Directory.EnumerateFileSystemEntries(cache).Any(), "the cache emptied (its folder kept; the browser fills it again)");
                 Expect(File.Exists(Path.Combine(places.LocalAppData, "Google", "Chrome", "User Data", "Default", "Bookmarks")), "bookmarks kept");
                 Expect(Directory.Exists(Path.Combine(places.Windows, "SoftwareDistribution", "Download")) && !Directory.Exists(Path.Combine(places.Windows, "SoftwareDistribution", "Download", "abc")),
                     "downloaded updates deleted, their folder kept");
