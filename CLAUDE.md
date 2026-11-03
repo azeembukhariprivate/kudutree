@@ -34,6 +34,15 @@ dotnet build src/KUDUTREE/KUDUTREE.csproj -c Release -o out/KUDUTREE
 out\KUDUTREE\KUDUTREE.exe --self-test        (Windows only; needs administrator rights)
 ```
 
+## Notes
+
+- Safe to clean (1.2): `Core/Cleanup.cs` lists the spots (exact folders under `Places`, so tests use made-up ones),
+  measures each as top-level items (skipping links, folders holding links, and items newer than `MinAge`), and cleans
+  only items strictly inside a spot's folders (`Belongs`): your own files via a recycle callback in batches of 200
+  (a failed batch is retried one by one), Windows-wide ones permanently. `Views/CleanView.cs` is the page;
+  `Recycler` moves batches to the Recycle Bin with SHFileOperation (Windows asks before anything can't go there) and
+  reads/empties it. Windows.old and old system parts are only measured and left to Windows' cleanup (cleanmgr).
+
 ## Shared code (kudu-common)
 
 The files listed in `.kudu-common` (the look and controls in `Controls/`, `Core/Admin.cs`, `AppInfo.cs`, `Args.cs`,

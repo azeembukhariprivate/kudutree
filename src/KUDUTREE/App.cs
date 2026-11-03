@@ -42,13 +42,13 @@ namespace Kudutree
                 return 0;
             }
             var open = Value("--open") ?? args.FirstOrDefault(a => a.EndsWith(SavedScan.Extension, StringComparison.OrdinalIgnoreCase));
-            return app.Run(Value("--scan"), Has("--fast"), open);
+            return app.Run(Value("--scan"), Has("--fast"), open, Has("--clean"));
         }
     }
 
     public sealed class App : Application
     {
-        public int Run(string scan, bool fast, string open)
+        public int Run(string scan, bool fast, string open, bool clean = false)
         {
             Startup += (s, e) =>
             {
@@ -57,7 +57,8 @@ namespace Kudutree
                 MainWindow = main;
                 main.Show();
                 ShellIntegration.Refresh();
-                if (!string.IsNullOrEmpty(open)) main.OpenSavedScan(open);
+                if (clean) main.ShowClean();
+                else if (!string.IsNullOrEmpty(open)) main.OpenSavedScan(open);
                 else if (!string.IsNullOrEmpty(scan)) main.StartScan(scan, fast ? true : (bool?)null);
             };
             return Run();

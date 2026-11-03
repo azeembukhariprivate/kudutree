@@ -45,7 +45,9 @@ namespace Kudutree.Views
             header.Children.Add(brand.At(0, 0));
             _update.Visibility = Visibility.Collapsed;
             header.Children.Add(_update.Margin(0, 0, 14, 0).At(0, 2));
-            header.Children.Add(Ui.Button("Drives and folders", "IconDrive", "GhostButton", (s, e) => { if (!IsScanning) ShowStart(); }).At(0, 3));
+            header.Children.Add(Ui.Row(
+                Ui.Button("Safe to clean", "IconTrash", "GhostButton", (s, e) => { if (!IsScanning) ShowClean(); }),
+                Ui.Button("Drives and folders", "IconDrive", "GhostButton", (s, e) => { if (!IsScanning) ShowStart(); })).At(0, 3));
             header.Children.Add(Ui.Button("Settings", "IconSettings", "GhostButton", (s, e) => new SettingsWindow(this).ShowDialog()).At(0, 4));
             header.Children.Add(Ui.Button("About", "IconInfo", "GhostButton", (s, e) => About.Show(this)).At(0, 5));
             root.Children.Add(new Border { Child = header, BorderThickness = new Thickness(0, 0, 0, 1) }
@@ -115,6 +117,8 @@ namespace Kudutree.Views
             foreach (var d in SafeDrives()) drives.Children.Add(DriveCard(d));
             panel.Children.Add(drives);
 
+            panel.Children.Add(Ui.Row(Ui.Button("Safe to clean", "IconTrash", "SecondaryButton", (s, e) => ShowClean()),
+                Ui.Subtle("Temporary files, browser caches and Windows leftovers that can go without harm.", 12.5, false).Margin(12, 0, 0, 0)).Margin(0, 18, 0, 0));
             panel.Children.Add(Ui.Heading("A folder or network share", 15).Margin(0, 22, 0, 8));
             var row = Ui.Columns(Ui.Auto, Ui.Star(), Ui.Auto);
             row.Children.Add(Ui.Button("Choose a folder…", "IconFolder", "SecondaryButton", (s, e) =>
@@ -150,6 +154,21 @@ namespace Kudutree.Views
 
             SetPage(new ScrollViewer { Content = panel, VerticalScrollBarVisibility = ScrollBarVisibility.Auto, Focusable = false }, "start");
             SetFooter(Ui.Subtle(Admin.IsAdmin ? "Running as administrator: whole NTFS drives use the fast scan." : "The fast scan reads a whole NTFS drive's file index in seconds; it asks for administrator rights.", 12.5, false));
+        }
+
+        // ================================================================== safe to clean
+
+        private CleanView _clean;
+        public CleanView Clean => _clean;
+
+        /// <summary>Shows "Safe to clean" and measures it (again).</summary>
+        public CleanView ShowClean(Places places = null)
+        {
+            if (_clean == null || places != null) _clean = new CleanView(this, places);
+            SetPage(_clean, "clean");
+            _clean.ShowFooter();
+            _ = _clean.Measure();
+            return _clean;
         }
 
         private void ScanTyped()

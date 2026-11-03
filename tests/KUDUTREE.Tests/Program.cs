@@ -43,6 +43,145 @@ namespace Kudutree.Tests
             return _failed == 0 ? 0 : 1;
         }
 
+
+        // ================================================================== safe to clean
+
+        private static Places FakePc(out string root)
+        {
+            root = Path.Combine(_root, "pc-" + Guid.NewGuid().ToString("N").Substring(0, 6));
+            var p = new Places
+            {
+                Temp = Path.Combine(root, "Users", "a", "AppData", "Local", "Temp"),
+                LocalAppData = Path.Combine(root, "Users", "a", "AppData", "Local"),
+                Windows = Path.Combine(root, "Windows"),
+                ProgramData = Path.Combine(root, "ProgramData"),
+                SystemDrive = root
+            };
+            return p;
+        }
+
+        private static string Make(string path, int bytes, DateTime? when = null)
+        {
+            Directory.CreateDirectory(Path.GetDirectoryName(path));
+            File.WriteAllBytes(path, new byte[bytes]);
+            var t = when ?? DateTime.Now.AddDays(-10);
+            File.SetLastWriteTime(path, t);
+            File.SetCreationTime(path, t);
+            return path;
+        }
+
+        private static void Old(string folder)
+        {
+            foreach (var d in Directory.GetDirectories(folder, "*", SearchOption.AllDirectories).Concat(new[] { folder }))
+            {
+                Directory.SetLastWriteTime(d, DateTime.Now.AddDays(-10));
+                Directory.SetCreationTime(d, DateTime.Now.AddDays(-10));
+            }
+        }
+
+        private static void TestSafeToCleanFindsTheRightFiles()
+        {
+            var p = FakePc(out var root);
+            Make(Path.Combine(p.Temp, "old.tmp"), 100);
+            Make(Path.Combine(p.Temp, "now.tmp"), 50, DateTime.Now);
+            Make(Path.Combine(p.Temp, "setup123", "a.bin"), 300);
+            Make(Path.Combine(p.Temp, "setup123", "b.bin"), 200);
+            Old(Path.Combine(p.Temp, "setup123"));
+            Make(Path.Combine(p.LocalAppData, "Microsoft", "Edge", "User Data", "Default", "Cache", "Cache_Data", "f_000001"), 1000);
+            Make(Path.Combine(p.LocalAppData, "Microsoft", "Edge", "User Data", "Profile 1", "Code Cache", "js", "x"), 500);
+            Make(Path.Combine(p.LocalAppData, "Microsoft", "Edge", "User Data", "Default", "History"), 7000);
+            Make(Path.Combine(p.LocalAppData, "Microsoft", "Edge", "User Data", "Default", "Login Data"), 7000);
+            Make(Path.Combine(p.LocalAppData, "Mozilla", "Firefox", "Profiles", "abc.default", "cache2", "entries", "E1"), 400);
+            Make(Path.Combine(p.LocalAppData, "Mozilla", "Firefox", "Profiles", "abc.default", "places.sqlite"), 9000);
+            Make(Path.Combine(p.LocalAppData, "KUDUBROWSE", "Profiles", "Default", "EBWebView", "Default", "Cache", "Cache_Data", "data_1"), 600);
+            Make(Path.Combine(p.LocalAppData, "KUDUBROWSE", "passwords.dat"), 700);
+            Make(Path.Combine(p.LocalAppData, "Microsoft", "Windows", "Explorer", "thumbcache_256.db"), 800);
+            Make(Path.Combine(p.LocalAppData, "Microsoft", "Windows", "Explorer", "iconcache_32.db"), 800);
+            Make(Path.Combine(p.Windows, "SoftwareDistribution", "Download", "abcd", "update.cab"), 5000);
+            Make(Path.Combine(p.Windows, "Minidump", "110126-01.dmp"), 2000);
+            Make(Path.Combine(p.Windows, "MEMORY.DMP"), 9000);
+            Make(Path.Combine(p.Windows, "System32", "kernel32.dll"), 9000);
+            Make(Path.Combine(root, "Windows.old", "Windows", "x.dll"), 3000);
+
+            // A link in the temp folder to your documents, and a folder in temp holding such a link: never followed.
+            var docs = Path.Combine(root, "Documents");
+            Make(Path.Combine(docs, "precious.docx"), 4000);
+            Directory.CreateSymbolicLink(Path.Combine(p.Temp, "link-to-docs"), docs);
+            Directory.CreateDirectory(Path.Combine(p.Temp, "holder"));
+            Directory.CreateSymbolicLink(Path.Combine(p.Temp, "holder", "inner-link"), docs);
+            Old(Path.Combine(p.Temp, "holder"));
+
+            var spots = Cleanup.Spots(p);
+            var now = DateTime.Now;
+            Measured M(string id) => Cleanup.Measure(spots.Single(s => s.Id == id), now);
+
+            var temp = M("temp");
+            Equal(600L, temp.Bytes, "temporary files untouched for a day (a file, and a folder of two)");
+            Equal(1, temp.TooNew, "a file changed just now is left");
+            Check(!temp.Items.Any(i => i.Path.Contains("link-to-docs") || i.Path.Contains("holder")), "links, and folders holding links, are left alone");
+            Equal(1500L, M("edge").Bytes, "the cache of every Edge profile, not its history or passwords");
+            Equal(400L, M("firefox").Bytes, "Firefox's cache, not its history");
+            Equal(600L, M("kudubrowse").Bytes, "KUDUBROWSE's page cache, not its passwords");
+            Equal(800L, M("thumbnails").Bytes, "only the picture previews");
+            Equal(0L, M("chrome").Bytes, "no Chrome: nothing");
+            Equal(5000L, M("updates").Bytes, "downloaded updates");
+            Equal(11000L, M("dumps").Bytes, "crash dumps, and the single memory dump");
+            Equal(3000L, M("windowsold").Bytes, "Windows.old is measured");
+            Check(spots.Single(s => s.Id == "windowsold").Way == CleanWay.WindowsCleanup, "but only Windows' cleanup removes it");
+            Check(spots.Where(s => s.Way == CleanWay.RecycleBin).All(s => !s.NeedsAdmin) && spots.Where(s => s.Way != CleanWay.RecycleBin).All(s => s.NeedsAdmin), "only Windows-wide ones need administrator rights");
+            Check(!Cleanup.Belongs(spots.Single(s => s.Id == "temp"), p.Temp), "a spot's folder itself is never cleaned");
+            Check(!Cleanup.Belongs(spots.Single(s => s.Id == "updates"), Path.Combine(p.Windows, "System32", "kernel32.dll")), "nothing outside the known folders");
+        }
+
+        private static void TestSafeToCleanCleans()
+        {
+            var p = FakePc(out var root);
+            Make(Path.Combine(p.Temp, "a.tmp"), 100);
+            Make(Path.Combine(p.Temp, "in-use.tmp"), 70);
+            Make(Path.Combine(p.Temp, "folder", "b.tmp"), 30);
+            Old(Path.Combine(p.Temp, "folder"));
+            Make(Path.Combine(p.Windows, "SoftwareDistribution", "Download", "x", "u.cab"), 5000);
+            Old(Path.Combine(p.Windows, "SoftwareDistribution", "Download", "x"));
+            var bin = Path.Combine(root, "Recycle Bin");
+            Directory.CreateDirectory(bin);
+            var batches = new List<int>();
+            // Stands in for the Recycle Bin: moves things into a folder; a file "in use" makes its batch fail.
+            bool Recycle(IList<string> paths)
+            {
+                batches.Add(paths.Count);
+                var ok = true;
+                foreach (var path in paths)
+                {
+                    if (path.EndsWith("in-use.tmp")) { ok = false; continue; }
+                    var to = Path.Combine(bin, Guid.NewGuid().ToString("N"));
+                    if (Directory.Exists(path)) Directory.Move(path, to);
+                    else if (File.Exists(path)) File.Move(path, to);
+                }
+                return ok;
+            }
+            var spots = Cleanup.Spots(p);
+            var measured = spots.Where(s => s.Id == "temp" || s.Id == "updates").Select(s => Cleanup.Measure(s, DateTime.Now)).ToList();
+            var steps = new List<long>();
+            var result = Cleanup.Clean(measured, Recycle, steps.Add, System.Threading.CancellationToken.None);
+            Equal(5130L, result.Freed, "everything but the file in use");
+            Equal(new[] { Path.Combine(p.Temp, "in-use.tmp") }.First(), result.Skipped.Single(), "the file in use is skipped, alone");
+            Check(File.Exists(Path.Combine(p.Temp, "in-use.tmp")), "and left where it was");
+            Check(!File.Exists(Path.Combine(p.Temp, "a.tmp")) && !Directory.Exists(Path.Combine(p.Temp, "folder")), "the rest is gone from temp");
+            Equal(2, Directory.GetFileSystemEntries(bin).Length, "your own files went to the Recycle Bin (a file and a folder)");
+            Check(Directory.Exists(p.Temp), "the temp folder itself stays");
+            Check(!Directory.Exists(Path.Combine(p.Windows, "SoftwareDistribution", "Download", "x")) && Directory.Exists(Path.Combine(p.Windows, "SoftwareDistribution", "Download")),
+                "Windows-wide leftovers deleted for good, their folder kept");
+            Check(batches[0] == 3 && batches.Skip(1).All(n => n == 1), "one batch, then one by one after it failed: " + string.Join(",", batches));
+            Check(steps.Count > 0 && steps.Last() == result.Freed, "progress up to what was freed");
+
+            // An item that isn't in the spot's folders is never touched, even if it's in the list.
+            var outside = Make(Path.Combine(root, "Documents", "mine.docx"), 10);
+            var forged = new Measured { Spot = spots.Single(s => s.Id == "updates") };
+            forged.Items.Add(new CleanItem { Path = outside, Bytes = 10, Files = 1 });
+            Cleanup.Clean(new[] { forged }, Recycle, null, System.Threading.CancellationToken.None);
+            Check(File.Exists(outside), "a file outside the known folders stays");
+        }
+
         private static void Check(bool condition, string what)
         {
             if (!condition) throw new Exception("Check failed: " + what);

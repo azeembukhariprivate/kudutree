@@ -486,6 +486,67 @@ namespace Kudutree.Views
                 Expect(main.Scan.Fast && main.PageName == "results", "fast scan results");
                 WaitFor(() => main.Results.Map.Picture != null && !main.Results.Map.IsRendering, 30, "the treemap");
             });
+            Step("Safe to clean: measured, cleaned to the Recycle Bin and for good, files in use left", () =>
+            {
+                // A made-up PC in the test folder, so nothing real is cleaned.
+                var pc = Path.Combine(_temp, "pc");
+                var places = new Places
+                {
+                    Temp = Path.Combine(pc, "Temp"), LocalAppData = Path.Combine(pc, "Local"), Windows = Path.Combine(pc, "Windows"),
+                    ProgramData = Path.Combine(pc, "ProgramData"), SystemDrive = pc
+                };
+                string Old(string path, int bytes)
+                {
+                    Directory.CreateDirectory(Path.GetDirectoryName(path));
+                    File.WriteAllBytes(path, new byte[bytes]);
+                    File.SetLastWriteTime(path, DateTime.Now.AddDays(-5));
+                    File.SetCreationTime(path, DateTime.Now.AddDays(-5));
+                    return path;
+                }
+                Old(Path.Combine(places.Temp, "old.tmp"), 100_000);
+                var busy = Old(Path.Combine(places.Temp, "in-use.tmp"), 50_000);
+                File.WriteAllBytes(Path.Combine(places.Temp, "just-now.tmp"), new byte[10_000]);
+                for (var i = 0; i < 450; i++) Old(Path.Combine(places.LocalAppData, "Google", "Chrome", "User Data", "Default", "Cache", "Cache_Data", $"f_{i:x6}"), 2_000);
+                Old(Path.Combine(places.LocalAppData, "Google", "Chrome", "User Data", "Default", "Bookmarks"), 3_000);
+                Old(Path.Combine(places.Windows, "SoftwareDistribution", "Download", "abc", "update.cab"), 300_000);
+                Old(Path.Combine(pc, "Windows.old", "Windows", "x.dll"), 70_000);
+
+                var page = main.ShowClean(places);
+                page.SkipConfirm = true;
+                Pump();
+                WaitFor(() => !page.IsMeasuring && page.MeasuredOf("windowsold") != null, 60, "measuring");
+                Expect(page.MeasuredOf("temp").Bytes == 150_000, "temporary files untouched for a day, got " + page.MeasuredOf("temp").Bytes);
+                Expect(page.MeasuredOf("chrome").Bytes == 900_000, "Chrome's cache, not its bookmarks");
+                Expect(page.MeasuredOf("updates").Bytes == 300_000, "downloaded updates");
+                Expect(page.MeasuredOf("windowsold").Bytes == 70_000, "Windows.old measured");
+                Expect(page.Ticked.Contains("temp") && page.Ticked.Contains("chrome") && !page.Ticked.Contains("updates"), "your files ticked, Windows-wide ones not");
+                Screenshots.All("Safe to clean");
+
+                page.Tick("updates", true);
+                var binBefore = Recycler.BinSize();
+                CleanResult result;
+                using (new FileStream(busy, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
+                {
+                    var clean = page.Clean();
+                    Wait(clean, 180, "cleaning");
+                    result = clean.Result;
+                }
+                Expect(result != null, "cleaned");
+                Note($"freed {result.Freed:N0} bytes, {result.Skipped.Count} skipped; Recycle Bin {binBefore:N0} → {Recycler.BinSize():N0} bytes");
+                Expect(result.Freed == 1_300_000, "everything ticked but the file in use, got " + result.Freed);
+                Expect(result.Skipped.Count == 1 && result.Skipped[0].EndsWith("in-use.tmp"), "the file in use is left: " + string.Join(", ", result.Skipped));
+                Expect(File.Exists(busy) && File.Exists(Path.Combine(places.Temp, "just-now.tmp")), "files in use, and recent ones, stay");
+                Expect(!Directory.EnumerateFiles(Path.Combine(places.LocalAppData, "Google", "Chrome", "User Data", "Default", "Cache", "Cache_Data")).Any(), "the cache emptied");
+                Expect(File.Exists(Path.Combine(places.LocalAppData, "Google", "Chrome", "User Data", "Default", "Bookmarks")), "bookmarks kept");
+                Expect(Directory.Exists(Path.Combine(places.Windows, "SoftwareDistribution", "Download")) && !Directory.Exists(Path.Combine(places.Windows, "SoftwareDistribution", "Download", "abc")),
+                    "downloaded updates deleted, their folder kept");
+                Expect(Directory.Exists(Path.Combine(pc, "Windows.old")), "Windows.old left to Windows' cleanup");
+                Expect(Recycler.BinSize() >= binBefore + 1_000_000, "your files are in the Recycle Bin");
+                Expect(page.Note.StartsWith("Cleaned"), "a summary: " + page.Note);
+                WaitFor(() => !page.IsMeasuring, 60, "measuring again");
+                Expect(page.MeasuredOf("chrome").Bytes == 0, "measured again: nothing left in the cache");
+                Screenshots.All("Safe to clean: cleaned");
+            });
             Step("Dark theme", () =>
             {
                 ThemeManager.Apply(ThemeMode.Dark);
@@ -502,6 +563,9 @@ namespace Kudutree.Views
                     Screenshots.All("Dark theme");
                 }
                 main.Results.ShowTab("Folders");
+                main.ShowClean();
+                Pump();
+                Screenshots.All("Dark theme");
                 main.ShowStart();
                 Pump();
                 Screenshots.All("Dark theme");
