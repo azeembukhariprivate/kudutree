@@ -12,6 +12,12 @@
   <sub>The installer for Windows 10 and 11, always the latest version · <a href="https://github.com/azeembukhariprivate/kudutree/releases/latest">portable zip and what's new</a></sub>
 </p>
 
+<p align="center">
+  <img src="docs/screenshot-1.png" alt="KUDUTREE showing folders biggest first, the kinds of files, and a treemap of the drive" width="820">
+  <br><br>
+  <img src="docs/screenshot-2.png" alt="KUDUTREE's Safe to clean page, listing what can go and how much room each gives back" width="820">
+</p>
+
 ---
 
 ## Features
