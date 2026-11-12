@@ -43,6 +43,11 @@ out\KUDUTREE\KUDUTREE.exe --self-test        (Windows only; needs administrator 
   `Recycler` moves batches to the Recycle Bin with SHFileOperation (Windows asks before anything can't go there) and
   reads/empties it. Windows.old and old system parts are only measured and left to Windows' cleanup (cleanmgr).
 
+- Other languages (1.3): the shared `Lang`/`LangUi` (kudu-common) put each window into the chosen language as it's shown.
+  Rows drawn from templates (`Views/Rows.cs`) aren't reached by that, so their texts call `Lang.T` in code (file names
+  never go through it). Texts are in `src/KUDUTREE/Lang/<code>.txt`, made and checked with kudu-common's
+  `tools/lang.py`; when adding or changing a text, add it to every language file (`tools/lang.py check ../kudutree`).
+
 ## Shared code (kudu-common)
 
 The files listed in `.kudu-common` (the look and controls in `Controls/`, `Core/Admin.cs`, `AppInfo.cs`, `Args.cs`,

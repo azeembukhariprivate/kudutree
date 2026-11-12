@@ -88,7 +88,7 @@ namespace Kudutree.Views
             _oldStatus.Text = total == 0 ? "None found." : $"{Format.Count(total, "file")}, {Format.Size(totalSize)} in all" + (total > old.Count ? $" (the biggest {old.Count:N0} are listed)" : string.Empty) + ". The date is when each was last opened or changed.";
 
             var empty = Queries.EmptyFolders(ViewRoot);
-            _emptyRows.Replace(empty.Select(n => new ItemRow { Node = n, Extra = n.Folders > 0 ? Format.Count(n.Folders, "empty folder") + " inside" : string.Empty }));
+            _emptyRows.Replace(empty.Select(n => new ItemRow { Node = n, Extra = n.Folders > 0 ? Lang.T("{0} inside", Format.Count(n.Folders, "empty folder")) : string.Empty }));
             _emptyStatus.Text = empty.Count == 0 ? "No empty folders." : $"{Format.Count(empty.Count, "folder")} with no files in them (counting empty folders inside only once).";
             RecycleEmptyButton.IsEnabled = empty.Count > 0;
         }
@@ -134,7 +134,7 @@ namespace Kudutree.Views
                     Ui.Subtle("Files count as duplicates only when their whole contents are the same. Online-only OneDrive files aren't read (that would download them), and hard links are one file already.", 11.5))
                 .Margin(4, 0, 0, 8).At(1));
             grid.Children.Add(ItemList(_dupRows).At(2));
-            _dupStatus.Text = "Looks for identical files in " + (ViewRoot?.Path ?? "the scan") + ".";
+            _dupStatus.Text = Lang.T("Looks for identical files in {0}.", ViewRoot?.Path ?? Lang.T("the scan"));
             return _dupPage = grid;
         }
 
@@ -163,10 +163,10 @@ namespace Kudutree.Views
                     {
                         Header = true,
                         IconKey = "IconCopy",
-                        Title = $"{g.Files.Count} copies of {g.Files[0].Name}",
-                        Subtitle = $"{Format.Size(g.Size)} each",
+                        Title = Lang.T("{0} copies of {1}", g.Files.Count, g.Files[0].Name),
+                        Subtitle = Lang.T("{0} each", Format.Size(g.Size)),
                         Value = Format.Size(g.Wasted),
-                        Extra = "could be freed",
+                        Extra = Lang.T("could be freed"),
                         Date = string.Empty
                     });
                     rows.AddRange(g.Files.Select(f => new ItemRow { Node = f, Nested = true, Value = Format.Size(f.Size) }));
@@ -290,17 +290,19 @@ namespace Kudutree.Views
             {
                 Node = x.Now,
                 Title = x.Path.Length > under.Length ? x.Path.Substring(under.Length).TrimStart('\\', '/') : x.Path,
-                Subtitle = x.Kind == ChangeKind.New ? "New · " + Format.Size(x.After)
-                    : x.Kind == ChangeKind.Removed ? "Gone · was " + Format.Size(x.Before)
-                    : $"Was {Format.Size(x.Before)}, now {Format.Size(x.After)}",
+                Subtitle = x.Kind == ChangeKind.New ? Lang.T("New · {0}", Format.Size(x.After))
+                    : x.Kind == ChangeKind.Removed ? Lang.T("Gone · was {0}", Format.Size(x.Before))
+                    : Lang.T("Was {0}, now {1}", Format.Size(x.Before), Format.Size(x.After)),
                 Value = (x.Delta >= 0 ? "+" : "−") + Format.Size(Math.Abs(x.Delta)),
-                Extra = x.Kind == ChangeKind.New ? "New" : x.Kind == ChangeKind.Removed ? "Removed" : x.Kind == ChangeKind.Grew ? "Grew" : "Shrank",
+                Extra = Lang.T(x.Kind == ChangeKind.New ? "New" : x.Kind == ChangeKind.Removed ? "Removed" : x.Kind == ChangeKind.Grew ? "Grew" : "Shrank"),
                 IconKey = x.IsDir ? "IconFolder" : x.Now == null ? "IconFile" : null,
                 Date = string.Empty
             }));
             var since = c.Then.Started.ToString("g");
-            _changeStatus.Text = $"Since {since}: {(c.Delta >= 0 ? "+" : "−")}{Format.Size(Math.Abs(c.Delta))} (was {Format.Size(c.Before)}, now {Format.Size(c.After)}). " +
-                                 (c.Changes.Count == 0 ? "Nothing changed." : $"{Format.Count(c.Changes.Count, "item")} changed, biggest change first" + (shown.Count >= 3000 ? "; the first 3,000 are listed." : "."));
+            _changeStatus.Text = Lang.T("Since {0}: {1}{2} (was {3}, now {4}).", since, c.Delta >= 0 ? "+" : "−", Format.Size(Math.Abs(c.Delta)), Format.Size(c.Before), Format.Size(c.After)) + " " +
+                                 (c.Changes.Count == 0 ? Lang.T("Nothing changed.")
+                                     : shown.Count >= 3000 ? Lang.T("{0} changed, biggest change first; the first 3,000 are listed.", Format.Count(c.Changes.Count, "item"))
+                                     : Lang.T("{0} changed, biggest change first.", Format.Count(c.Changes.Count, "item")));
         }
 
         // ================================================================== keeping the tabs in step

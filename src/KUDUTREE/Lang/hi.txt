@@ -1,0 +1,366 @@
+Something went wrong:\n\n{0}	कुछ गड़बड़ हो गई:\n\n{0}
+Azeem Bukhari	Azeem Bukhari
+less than a second	एक सेकंड से कम
+{0} h {1} min	{0} घंटे {1} मिनट
+{0} min {1} s	{0} मिनट {1} सेकंड
+Cache	Cache
+Code Cache	Code Cache
+Your temporary files	आपकी अस्थायी फ़ाइलें
+Files programs make while they work and usually forget to remove. Only ones untouched for a day are cleaned, so nothing a program is using now goes.	प्रोग्राम काम करते समय जो फ़ाइलें बनाते हैं और अक्सर हटाना भूल जाते हैं। केवल एक दिन से अनछुई फ़ाइलें साफ़ होती हैं, इसलिए कोई प्रोग्राम अभी जो इस्तेमाल कर रहा है वह नहीं जाता।
+Microsoft Edge	Microsoft Edge
+Microsoft	Microsoft
+Edge	Edge
+User Data	User Data
+Google Chrome	Google Chrome
+Google	Google
+Chrome	Chrome
+Brave	Brave
+Firefox	Firefox
+Mozilla	Mozilla
+Profiles	Profiles
+Picture previews	चित्रों के छोटे पूर्वावलोकन
+Small previews File Explorer keeps of your pictures and videos. They're made again when folders are opened. Some may be in use and stay.	फ़ाइल एक्सप्लोरर आपके चित्रों और वीडियो के छोटे पूर्वावलोकन रखता है। फ़ोल्डर खोलने पर ये फिर बनते हैं। कुछ इस्तेमाल में हो सकते हैं और रह जाते हैं।
+Windows	Windows
+Explorer	Explorer
+Your error reports and crash files	आपकी त्रुटि रिपोर्ट और क्रैश फ़ाइलें
+Reports kept after programs stopped working, and their crash files. Windows has already sent what it needed.	प्रोग्रामों के काम करना बंद करने के बाद रखी गई रिपोर्ट और उनकी क्रैश फ़ाइलें। Windows जो ज़रूरी था वह पहले ही भेज चुका है।
+Downloaded Windows updates	डाउनलोड किए गए Windows अपडेट
+Update files Windows downloaded and has already installed. Windows downloads them again if it ever needs them.	Windows द्वारा डाउनलोड और पहले ही इंस्टॉल की गई अपडेट फ़ाइलें। ज़रूरत पड़ी तो Windows इन्हें फिर डाउनलोड करेगा।
+Download	Download
+Windows' temporary files	Windows की अस्थायी फ़ाइलें
+Windows' own temporary files. Only ones untouched for a day are cleaned.	Windows की अपनी अस्थायी फ़ाइलें। केवल एक दिन से अनछुई फ़ाइलें साफ़ होती हैं।
+Temp	Temp
+Crash dumps and error reports for everyone	सबके क्रैश डंप और त्रुटि रिपोर्ट
+Copies of memory Windows saved when the PC or a program crashed, and error reports for all accounts. Only useful to someone fixing that crash.	पीसी या किसी प्रोग्राम के क्रैश होने पर Windows द्वारा सहेजी मेमोरी की कॉपी, और सभी खातों की त्रुटि रिपोर्ट। केवल उस क्रैश को ठीक करने वाले के काम की।
+Minidump	Minidump
+Update sharing files	अपडेट साझा करने की फ़ाइलें
+Pieces of updates Windows keeps to share with other PCs. They're fetched again if needed.	अपडेट के टुकड़े जो Windows दूसरे पीसी के साथ साझा करने के लिए रखता है। ज़रूरत पड़ी तो फिर लाए जाते हैं।
+Local	Local
+Your previous Windows (Windows.old)	आपका पिछला Windows (Windows.old)
+Kept after a big Windows update, to go back to the earlier version. Windows' cleanup removes it safely (it's usually removed by itself after 10 days).	बड़े Windows अपडेट के बाद, पुराने संस्करण पर लौटने के लिए रखा गया। Windows की सफ़ाई इसे सुरक्षित हटाती है (आमतौर पर 10 दिन बाद यह अपने आप हट जाता है)।
+Old system parts from updates	अपडेट से बचे पुराने सिस्टम हिस्से
+Earlier copies of Windows' own parts that updates replaced. They're shared with the running Windows, so only Windows' cleanup can tell which can go.	Windows के अपने हिस्सों की पुरानी कॉपी जिन्हें अपडेट ने बदल दिया। ये चल रहे Windows के साथ साझा होते हैं, इसलिए केवल Windows की सफ़ाई बता सकती है कि कौन-से जा सकते हैं।
+{0} cache	{0} कैश
+Copies of web pages and pictures {0} keeps to load sites faster. They're fetched again when needed; your passwords, history and logins aren't touched. While {1} is open some of it stays.	वेब पेजों और चित्रों की कॉपी जो {0} साइटें जल्दी खोलने के लिए रखता है। ज़रूरत पड़ने पर फिर लाई जाती हैं; आपके पासवर्ड, इतिहास और लॉगिन नहीं छुए जाते। {1} खुला हो तो कुछ रह जाता है।
+Read past the end of {0}.	{0} के अंत से आगे पढ़ा गया।
+Unexpected end of {0}.	{0} का अचानक अंत।
+Reading a drive directly needs administrator rights.	ड्राइव को सीधे पढ़ने के लिए व्यवस्थापक अधिकार चाहिए।
+Drive {0}: can't be opened: {1}	ड्राइव {0}: खोली नहीं जा सकती: {1}
+Drive {0}:	ड्राइव {0}:
+Not a drive letter: {0}	ड्राइव अक्षर नहीं है: {0}
+Can't move to byte {0} on {1}: {2}	{1} पर बाइट {0} तक नहीं जा सकते: {2}
+Can't read byte {0} on {1}: {2}	{1} पर बाइट {0} नहीं पढ़ा जा सकता: {2}
+Looking for files of the same size	एक ही आकार की फ़ाइलें ढूँढी जा रही हैं
+Comparing the start of each file	हर फ़ाइल की शुरुआत की तुलना
+Comparing whole files	पूरी फ़ाइलों की तुलना
+(no extension)	(कोई एक्सटेंशन नहीं)
+Video	वीडियो
+mp4 mkv mov avi wmv m4v webm mpg mpeg ts mts m2ts 3gp flv vob	mp4 mkv mov avi wmv m4v webm mpg mpeg ts mts m2ts 3gp flv vob
+Pictures	चित्र
+jpg jpeg png gif bmp tif tiff heic heif webp raw cr2 cr3 nef arw dng orf rw2 psd svg ico	jpg jpeg png gif bmp tif tiff heic heif webp raw cr2 cr3 nef arw dng orf rw2 psd svg ico
+Music	संगीत
+mp3 wav flac m4a aac ogg opus wma aiff mid	mp3 wav flac m4a aac ogg opus wma aiff mid
+Documents	दस्तावेज़
+pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv epub one pst ost msg eml	pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv epub one pst ost msg eml
+Archives	आर्काइव
+zip 7z rar gz tgz tar bz2 xz cab iso img vhd vhdx wim esd	zip 7z rar gz tgz tar bz2 xz cab iso img vhd vhdx wim esd
+Programs	प्रोग्राम
+exe dll msi msix appx sys drv ocx cpl mui	exe dll msi msix appx sys drv ocx cpl mui
+Code	कोड
+cs js ts py java c cpp h hpp go rs rb php html css json xml yml yaml sql sh ps1 bat cmd	cs js ts py java c cpp h hpp go rs rb php html css json xml yml yaml sql sh ps1 bat cmd
+Data	डेटा
+db sqlite mdb accdb dat log bak tmp cache pak bin	db sqlite mdb accdb dat log bak tmp cache pak bin
+Other	अन्य
+The folder {0} wasn't found.	फ़ोल्डर {0} नहीं मिला।
+Folder listing	फ़ोल्डर सूची
+KUDUTREE scan {0}	KUDUTREE scan {0}
+Access is denied.	पहुँच अस्वीकृत।
+This drive is locked with BitLocker. Unlock it first.	यह ड्राइव BitLocker से लॉक है। पहले इसे खोलें।
+Reading the file index	फ़ाइल सूची पढ़ी जा रही है
+Building the folder tree	फ़ोल्डर ट्री बन रहा है
+Fast scan (file index)	तेज़ स्कैन (फ़ाइल सूची)
+The drive's file index (MFT) can't be read.	ड्राइव की फ़ाइल सूची (MFT) पढ़ी नहीं जा सकती।
+Position outside the file index.	फ़ाइल सूची के बाहर की स्थिति।
+The drive's top folder isn't in its file index.	ड्राइव का सबसे ऊपर का फ़ोल्डर उसकी फ़ाइल सूची में नहीं है।
+(Files without a folder)	(बिना फ़ोल्डर की फ़ाइलें)
+Scanning	स्कैन हो रहा है
+Damaged runlist.	खराब रनलिस्ट।
+This drive isn't formatted as NTFS.	यह ड्राइव NTFS में फ़ॉर्मैट नहीं है।
+The NTFS boot sector is damaged.	NTFS बूट सेक्टर खराब है।
+System Volume Information	System Volume Information
+Boot	Boot
+Recovery	Recovery
+That's the whole scan.	पूरा स्कैन यही है।
+"{0}" is part of the drive's file system, not a normal file. Deleting it would damage the drive.	"{0}" ड्राइव के फ़ाइल सिस्टम का हिस्सा है, सामान्य फ़ाइल नहीं। इसे हटाने से ड्राइव खराब हो जाएगी।
+{0}\\System Volume Information	{0}\\System Volume Information
+This is part of the drive's file system, which Windows looks after. It can't be deleted here.	यह ड्राइव के फ़ाइल सिस्टम का हिस्सा है, जिसकी देखभाल Windows करता है। इसे यहाँ से हटाया नहीं जा सकता।
+This is the Recycle Bin. Empty it from the Recycle Bin on the desktop instead.	यह रीसायकल बिन है। इसके बजाय डेस्कटॉप के रीसायकल बिन से खाली करें।
+Windows keeps "{0}" on every drive. It can't be deleted here.	Windows हर ड्राइव पर "{0}" रखता है। इसे यहाँ से हटाया नहीं जा सकता।
+Windows needs "{0}" to start and run. Use Settings or Disk Cleanup to make it smaller instead.	Windows को शुरू होने और चलने के लिए "{0}" चाहिए। इसे छोटा करने के लिए Settings या Disk Cleanup का उपयोग करें।
+Windows needs this to run. Use Disk Cleanup (or Settings → System → Storage) to free space in the Windows folder safely.	Windows को चलने के लिए इसकी ज़रूरत है। Windows फ़ोल्डर में सुरक्षित रूप से जगह खाली करने के लिए Disk Cleanup (या Settings → System → Storage) का उपयोग करें।
+Windows needs the "{0}" folder itself. You can delete things inside it, and uninstall apps from Settings → Apps.	Windows को "{0}" फ़ोल्डर की ही ज़रूरत है। आप इसके अंदर की चीज़ें हटा सकते हैं, और ऐप Settings → Apps से अनइंस्टॉल कर सकते हैं।
+This is someone's whole profile folder. Delete things inside it instead, or remove the account in Settings → Accounts.	यह किसी का पूरा प्रोफ़ाइल फ़ोल्डर है। इसके बजाय इसके अंदर की चीज़ें हटाएँ, या Settings → Accounts में खाता हटाएँ।
+KUDUTREE scans (*.kudutree)	KUDUTREE स्कैन (*.kudutree)
+Scans	Scans
+Drive {0}	ड्राइव {0}
+Scan	स्कैन करें
+{0}.saving	{0}.saving
+Damaged scan file.	खराब स्कैन फ़ाइल।
+This scan file can't be read: {0}	यह स्कैन फ़ाइल पढ़ी नहीं जा सकती: {0}
+This isn't a KUDUTREE scan file.	यह KUDUTREE स्कैन फ़ाइल नहीं है।
+Theme	थीम
+Show sizes with KUDUTREE	KUDUTREE से आकार दिखाएँ
+"{0}" --scan "%1"	"{0}" --scan "%1"
+Missing theme resource {0}	Missing theme resource {0}
+Light	हल्का
+Styles	Styles
+Dark	गहरा
+Application	Application
+Cancelled.	रद्द किया गया।
+Safe to clean	साफ़ करने में सुरक्षित
+Kinds of files that can go without harm, and how much room each gives back. Only these exact folders are cleaned; the folders themselves stay, and anything in use is left.	ऐसी फ़ाइलें जो बिना नुकसान के जा सकती हैं, और हर एक कितनी जगह लौटाती है। केवल यही फ़ोल्डर साफ़ होते हैं; फ़ोल्डर खुद रहते हैं, और जो इस्तेमाल में है उसे छोड़ दिया जाता है।
+Your files	आपकी फ़ाइलें
+Ticked to start with. They go to the Recycle Bin, so you can still get them back.	शुरू में टिक किए हुए। ये रीसायकल बिन में जाती हैं, इसलिए आप इन्हें वापस ला सकते हैं।
+Windows-wide leftovers	पूरे Windows के बचे हुए
+Not ticked to start with. Windows doesn't put these in the Recycle Bin, so they're deleted for good (you're asked first).	शुरू में टिक नहीं किए। Windows इन्हें रीसायकल बिन में नहीं डालता, इसलिए ये हमेशा के लिए हटते हैं (पहले पूछा जाता है)।
+These need administrator rights, and are deleted for good (you're asked first).	इन्हें व्यवस्थापक अधिकार चाहिए, और ये हमेशा के लिए हटते हैं (पहले पूछा जाता है)।
+Restart KUDUTREE as administrator	KUDUTREE को व्यवस्थापक के रूप में फिर शुरू करें
+Only Windows' own cleanup can remove these	केवल Windows की अपनी सफ़ाई इन्हें हटा सकती है
+They're tied to how Windows runs and updates, so KUDUTREE doesn't delete them file by file.	ये Windows के चलने और अपडेट होने से जुड़े हैं, इसलिए KUDUTREE इन्हें फ़ाइल-दर-फ़ाइल नहीं हटाता।
+Open Windows' cleanup	Windows की सफ़ाई खोलें
+Clean	साफ़ करें
+Stop	रोकें
+Measure again	फिर से मापें
+Show the files	फ़ाइलें दिखाएँ
+Measuring...	मापा जा रहा है...
+Nothing	कुछ नहीं
+ ({0} recent ones left)	 ({0} हाल की बाकी)
+Tick what to clean.	जो साफ़ करना है उस पर टिक करें।
+Ticked: {0}	टिक किए: {0}
+Clean {0}	{0} साफ़ करें
+Nothing ticked to clean.	साफ़ करने के लिए कुछ टिक नहीं किया गया।
+Delete {0} of Windows-wide leftovers for good? They don't go to the Recycle Bin.	पूरे Windows के बचे हुए में से {0} हमेशा के लिए हटाएँ? ये रीसायकल बिन में नहीं जाते।
+Move {0} of files to the Recycle Bin?	{0} फ़ाइलें रीसायकल बिन में भेजें?
+Cleaning...	साफ़ किया जा रहा है...
+Cleaning: {0} of {1}	साफ़ हो रहा है: {0} / {1}
+Stopped. What was cleaned so far is gone; the rest is still there.	रोका गया। अब तक जो साफ़ हुआ वह गया; बाकी अभी भी है।
+Cleaned {0} ({1}).	{0} साफ़ किया गया ({1})।
+1 item was left because a program has it open (close it and clean again).	1 चीज़ बची, क्योंकि कोई प्रोग्राम उसे खोले हुए है (उसे बंद करके फिर साफ़ करें)।
+{0} items were left because a program has them open (close it and clean again).	{0} चीज़ें बचीं, क्योंकि कोई प्रोग्राम उन्हें खोले हुए है (उसे बंद करके फिर साफ़ करें)।
+{0} is in the Recycle Bin: the space comes back when it's emptied.	{0} रीसायकल बिन में है: इसे खाली करने पर जगह वापस मिलती है।
+Empty the Recycle Bin	रीसायकल बिन खाली करें
+Error message shown: {0}	Error message shown: {0}
+All files	सभी फ़ाइलें
+Save	सहेजें
+Cancel	रद्द करें
+KUDUTREE	KUDUTREE
+Drives and folders	ड्राइव और फ़ोल्डर
+Settings	सेटिंग्स
+About	जानकारी
+KUDUTREE {0} is available	KUDUTREE {0} उपलब्ध है
+What's taking up the space?	जगह कौन घेर रहा है?
+Choose a drive or a folder. KUDUTREE shows how much space every folder and file takes, biggest first.	कोई ड्राइव या फ़ोल्डर चुनें। KUDUTREE दिखाता है कि हर फ़ोल्डर और फ़ाइल कितनी जगह लेता है, सबसे बड़ा पहले।
+Temporary files, browser caches and Windows leftovers that can go without harm.	अस्थायी फ़ाइलें, ब्राउज़र कैश और Windows के बचे हुए जो बिना नुकसान के जा सकते हैं।
+A folder or network share	कोई फ़ोल्डर या नेटवर्क शेयर
+Choose a folder…	फ़ोल्डर चुनें…
+Choose a folder to scan	स्कैन करने के लिए फ़ोल्डर चुनें
+Saved scans	सहेजे गए स्कैन
+Open a saved scan…	सहेजा गया स्कैन खोलें…
+Open a saved scan	सहेजा गया स्कैन खोलें
+Save a scan from its results, to look at it again later or see what changed since.	किसी स्कैन को उसके नतीजों से सहेजें, ताकि बाद में फिर देख सकें या देख सकें कि तब से क्या बदला।
+Scan again: {0}	फिर से स्कैन करें: {0}
+Running as administrator: whole NTFS drives use the fast scan.	व्यवस्थापक के रूप में चल रहा है: पूरी NTFS ड्राइवें तेज़ स्कैन से होती हैं।
+The fast scan reads a whole NTFS drive's file index in seconds; it asks for administrator rights.	तेज़ स्कैन पूरी NTFS ड्राइव की फ़ाइल सूची सेकंडों में पढ़ता है; यह व्यवस्थापक अधिकार माँगता है।
+USB drive	USB ड्राइव
+Network drive	नेटवर्क ड्राइव
+Local disk	लोकल डिस्क
+{0} free of {1}	{1} में से {0} खाली
+Size unknown	आकार अज्ञात
+Fast scan	तेज़ स्कैन
+Reads the drive's file index directly: seconds instead of minutes, and every folder is counted. Asks for administrator rights.	ड्राइव की फ़ाइल सूची सीधे पढ़ता है: मिनटों की जगह सेकंड, और हर फ़ोल्डर गिना जाता है। व्यवस्थापक अधिकार माँगता है।
+Lists folders one by one, without administrator rights. Slower, and folders you can't open aren't counted.	बिना व्यवस्थापक अधिकार के फ़ोल्डर एक-एक करके देखता है। धीमा, और जो फ़ोल्डर आप नहीं खोल सकते वे नहीं गिने जाते।
+{0} wasn't found.	{0} नहीं मिला।
+The fast scan couldn't read this drive ({0}). Scanning it folder by folder instead.	तेज़ स्कैन यह ड्राइव नहीं पढ़ सका ({0})। इसके बजाय फ़ोल्डर-दर-फ़ोल्डर स्कैन हो रहा है।
+Fast scan failed: {0}	तेज़ स्कैन विफल: {0}
+The scan couldn't finish: {0}	स्कैन पूरा नहीं हो सका: {0}
+Save the scan	स्कैन सहेजें
+The scan couldn't be saved: {0}	स्कैन सहेजा नहीं जा सका: {0}
+Opening the drive…	ड्राइव खोली जा रही है…
+Reading the drive's file index. Nothing on the drive is changed.	ड्राइव की फ़ाइल सूची पढ़ी जा रही है। ड्राइव पर कुछ नहीं बदला जाता।
+{0} of {1} index records	{0} / {1} सूची रिकॉर्ड
+Scanning… {0} files in {1} folders · {2} so far. You can look around while it runs.	स्कैन हो रहा है… {1} फ़ोल्डरों में {0} फ़ाइलें · अब तक {2}। चलते समय आप चारों ओर देख सकते हैं।
+newest file {0}	सबसे नई फ़ाइल {0}
+modified {0}	बदला गया {0}
+Open	खोलें
+Show in Explorer	एक्सप्लोरर में दिखाएँ
+Delete…	हटाएँ…
+Move to the Recycle Bin (Shift+Delete in the list deletes permanently)	रीसायकल बिन में भेजें (सूची में Shift+Delete हमेशा के लिए हटाता है)
+Can't delete that.	इसे हटाया नहीं जा सकता।
+Network folders have no Recycle Bin. Delete {0} permanently?\n\nThis can't be undone.	नेटवर्क फ़ोल्डरों में रीसायकल बिन नहीं होता। {0} हमेशा के लिए हटाएँ?\n\nइसे पूर्ववत नहीं किया जा सकता।
+Delete {0} permanently?\n\nIt won't go to the Recycle Bin, so this can't be undone.	{0} हमेशा के लिए हटाएँ?\n\nयह रीसायकल बिन में नहीं जाएगा, इसलिए इसे पूर्ववत नहीं किया जा सकता।
+Move {0} to the Recycle Bin?	{0} को रीसायकल बिन में भेजें?
+Not everything could be deleted: {0}	सब कुछ हटाया नहीं जा सका: {0}
+That folder couldn't be scanned: {0}	वह फ़ोल्डर स्कैन नहीं हो सका: {0}
+Settings · KUDUTREE	सेटिंग्स · KUDUTREE
+Appearance	रूप
+Same as Windows	Windows जैसा ही
+Language	भाषा
+Deleting	हटाना
+Ask before moving items to the Recycle Bin	चीज़ें रीसायकल बिन में भेजने से पहले पूछें
+Deleting permanently always asks first.	हमेशा के लिए हटाने से पहले हमेशा पूछा जाता है।
+File Explorer	फ़ाइल एक्सप्लोरर
+Add "Show sizes with KUDUTREE" to folders' and drives' right-click menu	फ़ोल्डरों और ड्राइवों के राइट-क्लिक मेनू में "Show sizes with KUDUTREE" जोड़ें
+For your Windows account only. On Windows 11 it's under "Show more options".	केवल आपके Windows खाते के लिए। Windows 11 में यह "Show more options" के अंदर है।
+Updates	अपडेट
+Check for a new KUDUTREE version when it starts	शुरू होने पर KUDUTREE का नया संस्करण जाँचें
+Only asks GitHub for the latest version number. Nothing is downloaded without asking.	GitHub से केवल नवीनतम संस्करण संख्या पूछी जाती है। बिना पूछे कुछ भी डाउनलोड नहीं होता।
+About KUDUTREE	KUDUTREE के बारे में
+Close	बंद करें
+Version {0} · See what takes up space	संस्करण {0} · देखें कि जगह कौन लेता है
+Azeem, with Claude and	Azeem, with Claude and
+Made by	Made by
+Licence	लाइसेंस
+MIT · free and open source	MIT · मुफ़्त और ओपन सोर्स
+View	देखें
+Source code	सोर्स कोड
+Its own engine: reads NTFS file indexes directly, or lists folders	अपना इंजन: NTFS फ़ाइल सूचियाँ सीधे पढ़ता है, या फ़ोल्डर देखता है
+Third-party	तीसरे पक्ष के
+Third-party notices	तीसरे पक्ष की सूचनाएँ
+KUDUTREE only reads your drives. Nothing is changed unless you delete something yourself, and moving to the Recycle Bin can be undone.	KUDUTREE आपकी ड्राइवें केवल पढ़ता है। जब तक आप खुद कुछ न हटाएँ, कुछ नहीं बदलता, और रीसायकल बिन में भेजना पूर्ववत हो सकता है।
+Check for updates	अपडेट जाँचें
+Couldn't find any published version yet.	अभी तक कोई प्रकाशित संस्करण नहीं मिला।
+KUDUTREE {0} is available. Open the download page?	KUDUTREE {0} उपलब्ध है। डाउनलोड पेज खोलें?
+You have the latest version.	आपके पास नवीनतम संस्करण है।
+Couldn't check for updates. Check your internet connection and try again.	अपडेट जाँचे नहीं जा सके। अपना इंटरनेट कनेक्शन जाँचें और फिर से कोशिश करें।
+for a year	एक साल से
+for 2 years	2 साल से
+for 3 years	3 साल से
+for 5 years	5 साल से
+of any size	किसी भी आकार की
+of 1 MB or more	1 MB या ज़्यादा की
+of 10 MB or more	10 MB या ज़्यादा की
+of 100 MB or more	100 MB या ज़्यादा की
+100 KB or more	100 KB या ज़्यादा
+1 MB or more	1 MB या ज़्यादा
+10 MB or more	10 MB या ज़्यादा
+100 MB or more	100 MB या ज़्यादा
+Any size	कोई भी आकार
+All	सभी
+Move them all to the Recycle Bin	सबको रीसायकल बिन में भेजें
+Files not opened or changed	फ़ाइलें जो खोली या बदली नहीं गईं
+Windows doesn't always record when a file is opened, so a file counts as old only if it wasn't changed or (as far as Windows knows) opened.	Windows हमेशा यह दर्ज नहीं करता कि फ़ाइल कब खोली गई, इसलिए फ़ाइल तभी पुरानी गिनी जाती है जब वह न बदली गई हो और (जहाँ तक Windows जानता है) न खोली गई हो।
+Empty folders	खाली फ़ोल्डर
+None found.	कुछ नहीं मिला।
+{0}, {1} in all{2}	{0}, कुल {1}{2}
+ (the biggest {0} are listed)	 (सबसे बड़ी {0} सूची में)
+{0}. The date is when each was last opened or changed.	{0}। तारीख वह है जब हर एक आखिरी बार खोली या बदली गई।
+{0} inside	अंदर {0}
+empty folder	खाली फ़ोल्डर
+No empty folders.	कोई खाली फ़ोल्डर नहीं।
+{0} with no files in them (counting empty folders inside only once).	{0} जिनमें कोई फ़ाइल नहीं (अंदर के खाली फ़ोल्डर एक ही बार गिने गए)।
+Find duplicates	डुप्लिकेट ढूँढें
+Files of	फ़ाइलें
+Files count as duplicates only when their whole contents are the same. Online-only OneDrive files aren't read (that would download them), and hard links are one file already.	फ़ाइलें तभी डुप्लिकेट गिनी जाती हैं जब उनकी पूरी सामग्री एक जैसी हो। केवल-ऑनलाइन OneDrive फ़ाइलें नहीं पढ़ी जातीं (इससे वे डाउनलोड हो जाएँगी), और हार्ड लिंक पहले से एक ही फ़ाइल हैं।
+Looks for identical files in {0}.	{0} में एक जैसी फ़ाइलें ढूँढता है।
+the scan	स्कैन
+{0}… {1} of {2} files · {3} read	{0}… {1} / {2} फ़ाइलें · {3} पढ़ा गया
+{0} copies of {1}	{1} की {0} कॉपी
+{0} each	हर एक {0}
+could be freed	खाली हो सकता है
+No duplicates found.	कोई डुप्लिकेट नहीं मिला।
+{0} of identical files; {1} could be freed by keeping one of each.{2}	एक जैसी फ़ाइलें {0}; हर एक की एक कॉपी रखकर {1} खाली हो सकता है।{2}
+The 2,000 biggest sets are listed.	सबसे बड़े 2,000 सेट सूची में हैं।
+ {0} couldn't be read.	 {0} पढ़े नहीं जा सके।
+Stopped.	रोका गया।
+Compare	तुलना करें
+Other file…	दूसरी फ़ाइल…
+Choose a saved scan to compare with	तुलना के लिए सहेजा गया स्कैन चुनें
+Compare with	इससे तुलना
+Folders	फ़ोल्डर
+Files	फ़ाइलें
+New	नया
+Removed	हटाया गया
+No saved scans of this place yet. Use "Save scan" now, and next time you scan it you'll see here what changed.	इस जगह का अभी कोई सहेजा स्कैन नहीं है। अभी "स्कैन सहेजें" करें, और अगली बार स्कैन करने पर यहाँ दिखेगा कि क्या बदला।
+Choose a saved scan to see what grew, shrank, appeared or went away since then.	तब से क्या बढ़ा, घटा, आया या गया यह देखने के लिए सहेजा गया स्कैन चुनें।
+Comparing…	तुलना हो रही है…
+The saved scan couldn't be opened: {0}	सहेजा गया स्कैन खोला नहीं जा सका: {0}
+New · {0}	नया · {0}
+Gone · was {0}	गया · पहले {0}
+Was {0}, now {1}	पहले {0}, अब {1}
+Grew	बढ़ा
+Shrank	घटा
+Since {0}: {1}{2} (was {3}, now {4}).	{0} से: {1}{2} (पहले {3}, अब {4})।
+Nothing changed.	कुछ नहीं बदला।
+{0} changed, biggest change first; the first 3,000 are listed.	{0} बदले, सबसे बड़ा बदलाव पहले; पहले 3,000 सूची में हैं।
+{0} changed, biggest change first.	{0} बदले, सबसे बड़ा बदलाव पहले।
+Treemap	ट्रीमैप
+Click a type to show only its files in the treemap.	ट्रीमैप में केवल उस प्रकार की फ़ाइलें दिखाने के लिए प्रकार पर क्लिक करें।
+1 GB or more	1 GB या ज़्यादा
+Any date	कोई भी तारीख
+Changed in the last 7 days	पिछले 7 दिनों में बदली
+Changed in the last 30 days	पिछले 30 दिनों में बदली
+Not changed for a year	एक साल से नहीं बदली
+Not changed for 3 years	3 साल से नहीं बदली
+Up	ऊपर
+Show the folder above	ऊपर का फ़ोल्डर दिखाएँ
+Size on disk	डिस्क पर आकार
+Space used on the drive: compressed, sparse and online-only files take less; hard links count once	ड्राइव पर इस्तेमाल हुई जगह: संपीड़ित, विरल और केवल-ऑनलाइन फ़ाइलें कम जगह लेती हैं; हार्ड लिंक एक बार गिने जाते हैं
+File size	फ़ाइल का आकार
+The sizes File Explorer shows	फ़ाइल एक्सप्लोरर जो आकार दिखाता है
+Save scan	स्कैन सहेजें
+Save this scan to look at again later, or to compare with a later scan	यह स्कैन सहेजें ताकि बाद में फिर देख सकें, या बाद के स्कैन से तुलना कर सकें
+Scan again	फिर से स्कैन करें
+Largest files	सबसे बड़ी फ़ाइलें
+Search	खोजें
+Old & empty	पुरानी और खाली
+Duplicates	डुप्लिकेट
+Changes	बदलाव
+The treemap shows only {0} files. Click it again to show everything.	ट्रीमैप केवल {0} फ़ाइलें दिखा रहा है। सब दिखाने के लिए फिर क्लिक करें।
+File types	फ़ाइल प्रकार
+Name	नाम
+Size	आकार
+Share of folder	फ़ोल्डर में हिस्सा
+Modified	बदला गया
+Name and folder	नाम और फ़ोल्डर
+Files and folders	फ़ाइलें और फ़ोल्डर
+Part of a name, or a pattern like *.iso or IMG_????.jpg (separate several with ;). Leave it empty to use only the filters.	नाम का हिस्सा, या *.iso या IMG_????.jpg जैसा पैटर्न (कई हों तो ; से अलग करें)। केवल फ़िल्टर इस्तेमाल करने के लिए खाली छोड़ें।
+The largest files are listed when the scan finishes.	स्कैन पूरा होने पर सबसे बड़ी फ़ाइलें सूची में आती हैं।
+The {0} biggest files in {1}.	{1} की सबसे बड़ी {0} फ़ाइलें।
+The treemap appears when the scan finishes.	स्कैन पूरा होने पर ट्रीमैप दिखता है।
+{0} in {1} · {2} on disk · {3} in files	{1} में {0} · डिस्क पर {2} · फ़ाइलों में {3}
+ · saved scan from {0}	 · {0} का सहेजा स्कैन
+The drive has {0} in use, but the scan found {1}. The other {2} is in folders that couldn't be read{3}	ड्राइव पर {0} इस्तेमाल में है, पर स्कैन को {1} मिला। बाकी {2} ऐसे फ़ोल्डरों में है जो पढ़े नहीं जा सके{3}
+or in Windows' own system space (restore points, the page file's reserve).	या Windows की अपनी सिस्टम जगह में (रिस्टोर पॉइंट, पेज फ़ाइल का आरक्षण)।
+(without administrator rights) or in Windows' own system space.	(बिना व्यवस्थापक अधिकार के) या Windows की अपनी सिस्टम जगह में।
+{0} couldn't be read (marked in the tree).	{0} पढ़े नहीं जा सके (ट्री में चिह्नित)।
+Use the fast scan instead (reads the drive's file index, counts everything; asks for administrator rights)	इसके बजाय तेज़ स्कैन करें (ड्राइव की फ़ाइल सूची पढ़ता है, सब कुछ गिनता है; व्यवस्थापक अधिकार माँगता है)
+Searching…	खोजा जा रहा है…
+Nothing found.	कुछ नहीं मिला।
+{0} found; showing the biggest {1} ({2}).	{0} मिले; सबसे बड़े {1} दिखाए जा रहे हैं ({2})।
+{0} found, {1} in all.	{0} मिले, कुल {1}।
+Open folder	फ़ोल्डर खोलें
+Enter	अंदर जाएँ
+Show in File Explorer	फ़ाइल एक्सप्लोरर में दिखाएँ
+Copy path	पथ कॉपी करें
+Show only this folder	केवल यह फ़ोल्डर दिखाएँ
+Scan this folder again	यह फ़ोल्डर फिर से स्कैन करें
+Move to Recycle Bin	रीसायकल बिन में भेजें
+Delete	हटाएँ
+Delete permanently…	हमेशा के लिए हटाएँ…
+Count	गिनती
+{0} smaller items	{0} छोटी चीज़ें
+(couldn't be read)	(पढ़ा नहीं जा सका)
+(link, not followed)	(लिंक, पीछा नहीं किया)
+(hard link)	(हार्ड लिंक)
+Click to show more	और दिखाने के लिए क्लिक करें
+{0} ran into a problem it couldn't get past, and has to close.	{0} में ऐसी समस्या आई जिससे वह आगे नहीं बढ़ सका, इसलिए इसे बंद होना पड़ेगा।
+{0} file	{0} फ़ाइल
+{0} files	{0} फ़ाइलें
+{0} folder	{0} फ़ोल्डर
+{0} folders	{0} फ़ोल्डर
+{0} empty folder	{0} खाली फ़ोल्डर
+{0} empty folders	{0} खाली फ़ोल्डर
+{0} set	{0} सेट
+{0} sets	{0} सेट
+{0} item	{0} चीज़
+{0} items	{0} चीज़ें

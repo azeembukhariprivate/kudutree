@@ -489,7 +489,7 @@ namespace Kudutree.Views
             }
             var size = node.Measure(Settings.SizeOnDisk);
             var details = Format.Size(size) + (node.IsDir ? $" · {Format.Count(node.Files, "file")} · {Format.Count(node.Folders, "folder")}" : string.Empty);
-            if (node.Mtime > 0) details += " · " + (node.IsDir ? "newest file " : "modified ") + node.Modified.ToString("g");
+            if (node.Mtime > 0) details += " · " + Lang.T(node.IsDir ? "newest file {0}" : "modified {0}", node.Modified.ToString("g"));
             var info = Ui.Column(Ui.Text(node.Path, 12.5, bold: true), Ui.Subtle(details, 12, false));
             var open = Ui.Small(Ui.Button(node.IsDir ? "Open" : "Open", "IconExternal", "SecondaryButton", (s, e) => Actions.Open(node)));
             var show = Ui.Small(Ui.Button("Show in Explorer", "IconFolder", "SecondaryButton", (s, e) => Actions.ShowInExplorer(node)));

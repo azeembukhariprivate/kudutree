@@ -1,0 +1,366 @@
+Something went wrong:\n\n{0}	حدث خطأ ما:\n\n{0}
+Azeem Bukhari	Azeem Bukhari
+less than a second	أقل من ثانية
+{0} h {1} min	{0} ساعة {1} دقيقة
+{0} min {1} s	{0} دقيقة {1} ثانية
+Cache	Cache
+Code Cache	Code Cache
+Your temporary files	ملفاتك المؤقتة
+Files programs make while they work and usually forget to remove. Only ones untouched for a day are cleaned, so nothing a program is using now goes.	ملفات تصنعها البرامج أثناء عملها وتنسى غالبًا حذفها. تُنظَّف فقط الملفات التي لم يلمسها أحد منذ يوم، فلا يذهب شيء يستخدمه برنامج الآن.
+Microsoft Edge	Microsoft Edge
+Microsoft	Microsoft
+Edge	Edge
+User Data	User Data
+Google Chrome	Google Chrome
+Google	Google
+Chrome	Chrome
+Brave	Brave
+Firefox	Firefox
+Mozilla	Mozilla
+Profiles	Profiles
+Picture previews	معاينات الصور
+Small previews File Explorer keeps of your pictures and videos. They're made again when folders are opened. Some may be in use and stay.	معاينات صغيرة لصورك ومقاطع الفيديو يحتفظ بها مستكشف الملفات. تُصنع من جديد عند فتح المجلدات. قد يكون بعضها قيد الاستخدام فيبقى.
+Windows	Windows
+Explorer	Explorer
+Your error reports and crash files	تقارير الأخطاء وملفات الأعطال الخاصة بك
+Reports kept after programs stopped working, and their crash files. Windows has already sent what it needed.	تقارير محفوظة بعد توقف البرامج عن العمل، وملفات أعطالها. أرسل Windows ما يحتاجه بالفعل.
+Downloaded Windows updates	تحديثات Windows التي تم تنزيلها
+Update files Windows downloaded and has already installed. Windows downloads them again if it ever needs them.	ملفات تحديث نزّلها Windows وثبّتها بالفعل. يعيد Windows تنزيلها إن احتاج إليها.
+Download	Download
+Windows' temporary files	الملفات المؤقتة لـ Windows
+Windows' own temporary files. Only ones untouched for a day are cleaned.	ملفات Windows المؤقتة الخاصة به. تُنظَّف فقط التي لم يلمسها أحد منذ يوم.
+Temp	Temp
+Crash dumps and error reports for everyone	ملفات الأعطال وتقارير الأخطاء للجميع
+Copies of memory Windows saved when the PC or a program crashed, and error reports for all accounts. Only useful to someone fixing that crash.	نسخ من الذاكرة حفظها Windows عند تعطل الحاسوب أو برنامج، وتقارير أخطاء لكل الحسابات. مفيدة فقط لمن يصلح ذلك العطل.
+Minidump	Minidump
+Update sharing files	ملفات مشاركة التحديثات
+Pieces of updates Windows keeps to share with other PCs. They're fetched again if needed.	أجزاء من التحديثات يحتفظ بها Windows لمشاركتها مع حواسيب أخرى. تُجلب مجددًا عند الحاجة.
+Local	Local
+Your previous Windows (Windows.old)	نسخة Windows السابقة (Windows.old)
+Kept after a big Windows update, to go back to the earlier version. Windows' cleanup removes it safely (it's usually removed by itself after 10 days).	تُحفظ بعد تحديث كبير لـ Windows، للعودة إلى الإصدار السابق. يزيلها تنظيف Windows بأمان (عادةً تُزال تلقائيًا بعد 10 أيام).
+Old system parts from updates	أجزاء نظام قديمة من التحديثات
+Earlier copies of Windows' own parts that updates replaced. They're shared with the running Windows, so only Windows' cleanup can tell which can go.	نسخ سابقة من أجزاء Windows استبدلتها التحديثات. تُشارَك مع Windows العامل، لذا لا يعرف إلا تنظيف Windows أيها يمكن حذفه.
+{0} cache	ذاكرة {0} المؤقتة
+Copies of web pages and pictures {0} keeps to load sites faster. They're fetched again when needed; your passwords, history and logins aren't touched. While {1} is open some of it stays.	نسخ من صفحات الويب والصور يحتفظ بها {0} لتحميل المواقع أسرع. تُجلب مجددًا عند الحاجة؛ لا تُمس كلمات المرور والسجل وتسجيلات الدخول. أثناء فتح {1} يبقى بعضها.
+Read past the end of {0}.	قراءة بعد نهاية {0}.
+Unexpected end of {0}.	نهاية غير متوقعة لـ {0}.
+Reading a drive directly needs administrator rights.	قراءة محرك أقراص مباشرة تتطلب صلاحيات المسؤول.
+Drive {0}: can't be opened: {1}	تعذّر فتح محرك الأقراص {0}: {1}
+Drive {0}:	محرك الأقراص {0}:
+Not a drive letter: {0}	ليس حرف محرك أقراص: {0}
+Can't move to byte {0} on {1}: {2}	تعذّر الانتقال إلى البايت {0} في {1}: {2}
+Can't read byte {0} on {1}: {2}	تعذّرت قراءة البايت {0} في {1}: {2}
+Looking for files of the same size	البحث عن ملفات بالحجم نفسه
+Comparing the start of each file	مقارنة بداية كل ملف
+Comparing whole files	مقارنة الملفات كاملة
+(no extension)	(بلا امتداد)
+Video	فيديو
+mp4 mkv mov avi wmv m4v webm mpg mpeg ts mts m2ts 3gp flv vob	mp4 mkv mov avi wmv m4v webm mpg mpeg ts mts m2ts 3gp flv vob
+Pictures	صور
+jpg jpeg png gif bmp tif tiff heic heif webp raw cr2 cr3 nef arw dng orf rw2 psd svg ico	jpg jpeg png gif bmp tif tiff heic heif webp raw cr2 cr3 nef arw dng orf rw2 psd svg ico
+Music	موسيقى
+mp3 wav flac m4a aac ogg opus wma aiff mid	mp3 wav flac m4a aac ogg opus wma aiff mid
+Documents	مستندات
+pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv epub one pst ost msg eml	pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv epub one pst ost msg eml
+Archives	أرشيفات
+zip 7z rar gz tgz tar bz2 xz cab iso img vhd vhdx wim esd	zip 7z rar gz tgz tar bz2 xz cab iso img vhd vhdx wim esd
+Programs	برامج
+exe dll msi msix appx sys drv ocx cpl mui	exe dll msi msix appx sys drv ocx cpl mui
+Code	شيفرة
+cs js ts py java c cpp h hpp go rs rb php html css json xml yml yaml sql sh ps1 bat cmd	cs js ts py java c cpp h hpp go rs rb php html css json xml yml yaml sql sh ps1 bat cmd
+Data	بيانات
+db sqlite mdb accdb dat log bak tmp cache pak bin	db sqlite mdb accdb dat log bak tmp cache pak bin
+Other	أخرى
+The folder {0} wasn't found.	لم يتم العثور على المجلد {0}.
+Folder listing	قائمة المجلدات
+KUDUTREE scan {0}	KUDUTREE scan {0}
+Access is denied.	تم رفض الوصول.
+This drive is locked with BitLocker. Unlock it first.	محرك الأقراص هذا مقفل بـ BitLocker. افتح قفله أولًا.
+Reading the file index	قراءة فهرس الملفات
+Building the folder tree	بناء شجرة المجلدات
+Fast scan (file index)	فحص سريع (فهرس الملفات)
+The drive's file index (MFT) can't be read.	تعذّرت قراءة فهرس ملفات محرك الأقراص (MFT).
+Position outside the file index.	موضع خارج فهرس الملفات.
+The drive's top folder isn't in its file index.	المجلد العلوي لمحرك الأقراص ليس في فهرس ملفاته.
+(Files without a folder)	(ملفات بلا مجلد)
+Scanning	جارٍ الفحص
+Damaged runlist.	قائمة تشغيل تالفة.
+This drive isn't formatted as NTFS.	محرك الأقراص هذا غير مهيأ بنظام NTFS.
+The NTFS boot sector is damaged.	قطاع إقلاع NTFS تالف.
+System Volume Information	System Volume Information
+Boot	Boot
+Recovery	Recovery
+That's the whole scan.	هذا هو الفحص كله.
+"{0}" is part of the drive's file system, not a normal file. Deleting it would damage the drive.	"{0}" جزء من نظام ملفات محرك الأقراص، وليس ملفًا عاديًا. حذفه سيتلف محرك الأقراص.
+{0}\\System Volume Information	{0}\\System Volume Information
+This is part of the drive's file system, which Windows looks after. It can't be deleted here.	هذا جزء من نظام ملفات محرك الأقراص الذي يعتني به Windows. لا يمكن حذفه هنا.
+This is the Recycle Bin. Empty it from the Recycle Bin on the desktop instead.	هذه سلة المحذوفات. أفرغها من سلة المحذوفات على سطح المكتب بدلًا من ذلك.
+Windows keeps "{0}" on every drive. It can't be deleted here.	يحتفظ Windows بـ "{0}" على كل محرك أقراص. لا يمكن حذفه هنا.
+Windows needs "{0}" to start and run. Use Settings or Disk Cleanup to make it smaller instead.	يحتاج Windows إلى "{0}" ليبدأ ويعمل. استخدم الإعدادات أو تنظيف القرص لتصغيره بدلًا من ذلك.
+Windows needs this to run. Use Disk Cleanup (or Settings → System → Storage) to free space in the Windows folder safely.	يحتاج Windows إلى هذا ليعمل. استخدم تنظيف القرص (أو الإعدادات ← النظام ← التخزين) لتحرير مساحة في مجلد Windows بأمان.
+Windows needs the "{0}" folder itself. You can delete things inside it, and uninstall apps from Settings → Apps.	يحتاج Windows إلى المجلد "{0}" نفسه. يمكنك حذف ما بداخله، وإلغاء تثبيت التطبيقات من الإعدادات ← التطبيقات.
+This is someone's whole profile folder. Delete things inside it instead, or remove the account in Settings → Accounts.	هذا مجلد ملف التعريف الكامل لشخص ما. احذف ما بداخله بدلًا من ذلك، أو أزل الحساب من الإعدادات ← الحسابات.
+KUDUTREE scans (*.kudutree)	فحوصات KUDUTREE (*.kudutree)
+Scans	Scans
+Drive {0}	محرك الأقراص {0}
+Scan	فحص
+{0}.saving	{0}.saving
+Damaged scan file.	ملف فحص تالف.
+This scan file can't be read: {0}	تعذّرت قراءة ملف الفحص هذا: {0}
+This isn't a KUDUTREE scan file.	هذا ليس ملف فحص KUDUTREE.
+Theme	السمة
+Show sizes with KUDUTREE	إظهار الأحجام باستخدام KUDUTREE
+"{0}" --scan "%1"	"{0}" --scan "%1"
+Missing theme resource {0}	Missing theme resource {0}
+Light	فاتح
+Styles	Styles
+Dark	داكن
+Application	Application
+Cancelled.	تم الإلغاء.
+Safe to clean	آمن للتنظيف
+Kinds of files that can go without harm, and how much room each gives back. Only these exact folders are cleaned; the folders themselves stay, and anything in use is left.	أنواع ملفات يمكن حذفها دون ضرر، وكم مساحة يعيد كل منها. تُنظَّف هذه المجلدات بعينها فقط؛ تبقى المجلدات نفسها، ويُترك كل ما هو قيد الاستخدام.
+Your files	ملفاتك
+Ticked to start with. They go to the Recycle Bin, so you can still get them back.	محدّدة في البداية. تذهب إلى سلة المحذوفات، فيمكنك استعادتها.
+Windows-wide leftovers	بقايا Windows العامة
+Not ticked to start with. Windows doesn't put these in the Recycle Bin, so they're deleted for good (you're asked first).	غير محدّدة في البداية. لا يضعها Windows في سلة المحذوفات، فتُحذف نهائيًا (يُطلب تأكيدك أولًا).
+These need administrator rights, and are deleted for good (you're asked first).	تحتاج هذه إلى صلاحيات المسؤول، وتُحذف نهائيًا (يُطلب تأكيدك أولًا).
+Restart KUDUTREE as administrator	إعادة تشغيل KUDUTREE كمسؤول
+Only Windows' own cleanup can remove these	لا يزيل هذه إلا تنظيف Windows نفسه
+They're tied to how Windows runs and updates, so KUDUTREE doesn't delete them file by file.	ترتبط بطريقة عمل Windows وتحديثه، لذا لا يحذفها KUDUTREE ملفًا ملفًا.
+Open Windows' cleanup	فتح تنظيف Windows
+Clean	تنظيف
+Stop	إيقاف
+Measure again	القياس مجددًا
+Show the files	إظهار الملفات
+Measuring...	جارٍ القياس...
+Nothing	لا شيء
+ ({0} recent ones left)	 (بقيت {0} حديثة)
+Tick what to clean.	حدّد ما تريد تنظيفه.
+Ticked: {0}	المحدّد: {0}
+Clean {0}	تنظيف {0}
+Nothing ticked to clean.	لم يُحدَّد شيء للتنظيف.
+Delete {0} of Windows-wide leftovers for good? They don't go to the Recycle Bin.	هل تريد حذف {0} من بقايا Windows العامة نهائيًا؟ لا تذهب إلى سلة المحذوفات.
+Move {0} of files to the Recycle Bin?	هل تريد نقل {0} من الملفات إلى سلة المحذوفات؟
+Cleaning...	جارٍ التنظيف...
+Cleaning: {0} of {1}	جارٍ التنظيف: {0} من {1}
+Stopped. What was cleaned so far is gone; the rest is still there.	توقف. ما نُظِّف حتى الآن ذهب؛ والباقي ما زال موجودًا.
+Cleaned {0} ({1}).	تم تنظيف {0} ({1}).
+1 item was left because a program has it open (close it and clean again).	بقي عنصر واحد لأن برنامجًا يفتحه (أغلقه ونظّف مجددًا).
+{0} items were left because a program has them open (close it and clean again).	بقيت {0} عناصر لأن برنامجًا يفتحها (أغلقه ونظّف مجددًا).
+{0} is in the Recycle Bin: the space comes back when it's emptied.	{0} في سلة المحذوفات: تعود المساحة عند إفراغها.
+Empty the Recycle Bin	إفراغ سلة المحذوفات
+Error message shown: {0}	Error message shown: {0}
+All files	كل الملفات
+Save	حفظ
+Cancel	إلغاء
+KUDUTREE	KUDUTREE
+Drives and folders	محركات الأقراص والمجلدات
+Settings	الإعدادات
+About	حول
+KUDUTREE {0} is available	KUDUTREE {0} متاح
+What's taking up the space?	ما الذي يشغل المساحة؟
+Choose a drive or a folder. KUDUTREE shows how much space every folder and file takes, biggest first.	اختر محرك أقراص أو مجلدًا. يعرض KUDUTREE كم مساحة يأخذ كل مجلد وملف، الأكبر أولًا.
+Temporary files, browser caches and Windows leftovers that can go without harm.	ملفات مؤقتة وذاكرة المتصفحات المؤقتة وبقايا Windows يمكن حذفها دون ضرر.
+A folder or network share	مجلد أو مجلد مشترك على الشبكة
+Choose a folder…	اختيار مجلد…
+Choose a folder to scan	اختر مجلدًا لفحصه
+Saved scans	الفحوصات المحفوظة
+Open a saved scan…	فتح فحص محفوظ…
+Open a saved scan	فتح فحص محفوظ
+Save a scan from its results, to look at it again later or see what changed since.	احفظ فحصًا من نتائجه، لتراه مجددًا لاحقًا أو لترى ما تغيّر منذ ذلك الحين.
+Scan again: {0}	الفحص مجددًا: {0}
+Running as administrator: whole NTFS drives use the fast scan.	يعمل كمسؤول: محركات NTFS الكاملة تستخدم الفحص السريع.
+The fast scan reads a whole NTFS drive's file index in seconds; it asks for administrator rights.	يقرأ الفحص السريع فهرس ملفات محرك NTFS كامل في ثوانٍ؛ ويطلب صلاحيات المسؤول.
+USB drive	محرك USB
+Network drive	محرك شبكة
+Local disk	قرص محلي
+{0} free of {1}	{0} متاحة من {1}
+Size unknown	الحجم غير معروف
+Fast scan	فحص سريع
+Reads the drive's file index directly: seconds instead of minutes, and every folder is counted. Asks for administrator rights.	يقرأ فهرس ملفات محرك الأقراص مباشرة: ثوانٍ بدل دقائق، وكل مجلد يُحسب. يطلب صلاحيات المسؤول.
+Lists folders one by one, without administrator rights. Slower, and folders you can't open aren't counted.	يمر على المجلدات واحدًا تلو الآخر، دون صلاحيات المسؤول. أبطأ، ولا تُحسب المجلدات التي لا يمكنك فتحها.
+{0} wasn't found.	لم يتم العثور على {0}.
+The fast scan couldn't read this drive ({0}). Scanning it folder by folder instead.	تعذّر على الفحص السريع قراءة محرك الأقراص هذا ({0}). يجري الفحص مجلدًا مجلدًا بدلًا من ذلك.
+Fast scan failed: {0}	فشل الفحص السريع: {0}
+The scan couldn't finish: {0}	تعذّر إكمال الفحص: {0}
+Save the scan	حفظ الفحص
+The scan couldn't be saved: {0}	تعذّر حفظ الفحص: {0}
+Opening the drive…	جارٍ فتح محرك الأقراص…
+Reading the drive's file index. Nothing on the drive is changed.	جارٍ قراءة فهرس ملفات محرك الأقراص. لا يتغيّر شيء على محرك الأقراص.
+{0} of {1} index records	{0} من {1} سجلات الفهرس
+Scanning… {0} files in {1} folders · {2} so far. You can look around while it runs.	جارٍ الفحص… {0} ملفات في {1} مجلدات · {2} حتى الآن. يمكنك التجول أثناء ذلك.
+newest file {0}	أحدث ملف {0}
+modified {0}	عُدّل {0}
+Open	فتح
+Show in Explorer	إظهار في المستكشف
+Delete…	حذف…
+Move to the Recycle Bin (Shift+Delete in the list deletes permanently)	نقل إلى سلة المحذوفات (Shift+Delete في القائمة يحذف نهائيًا)
+Can't delete that.	لا يمكن حذف ذلك.
+Network folders have no Recycle Bin. Delete {0} permanently?\n\nThis can't be undone.	مجلدات الشبكة ليس لها سلة محذوفات. هل تريد حذف {0} نهائيًا؟\n\nلا يمكن التراجع عن ذلك.
+Delete {0} permanently?\n\nIt won't go to the Recycle Bin, so this can't be undone.	هل تريد حذف {0} نهائيًا؟\n\nلن يذهب إلى سلة المحذوفات، فلا يمكن التراجع عن ذلك.
+Move {0} to the Recycle Bin?	هل تريد نقل {0} إلى سلة المحذوفات؟
+Not everything could be deleted: {0}	تعذّر حذف كل شيء: {0}
+That folder couldn't be scanned: {0}	تعذّر فحص ذلك المجلد: {0}
+Settings · KUDUTREE	الإعدادات · KUDUTREE
+Appearance	المظهر
+Same as Windows	مثل Windows
+Language	اللغة
+Deleting	الحذف
+Ask before moving items to the Recycle Bin	السؤال قبل نقل العناصر إلى سلة المحذوفات
+Deleting permanently always asks first.	الحذف النهائي يسأل دائمًا أولًا.
+File Explorer	مستكشف الملفات
+Add "Show sizes with KUDUTREE" to folders' and drives' right-click menu	إضافة "Show sizes with KUDUTREE" إلى قائمة النقر الأيمن للمجلدات ومحركات الأقراص
+For your Windows account only. On Windows 11 it's under "Show more options".	لحسابك في Windows فقط. في Windows 11 تجده تحت "إظهار المزيد من الخيارات".
+Updates	التحديثات
+Check for a new KUDUTREE version when it starts	البحث عن إصدار جديد من KUDUTREE عند التشغيل
+Only asks GitHub for the latest version number. Nothing is downloaded without asking.	يسأل GitHub عن رقم أحدث إصدار فقط. لا يتم تنزيل أي شيء دون سؤالك.
+About KUDUTREE	حول KUDUTREE
+Close	إغلاق
+Version {0} · See what takes up space	الإصدار {0} · شاهد ما الذي يشغل المساحة
+Azeem, with Claude and	Azeem, with Claude and
+Made by	Made by
+Licence	الترخيص
+MIT · free and open source	MIT · مجاني ومفتوح المصدر
+View	عرض
+Source code	الشيفرة المصدرية
+Its own engine: reads NTFS file indexes directly, or lists folders	محرّكه الخاص: يقرأ فهارس ملفات NTFS مباشرة، أو يمر على المجلدات
+Third-party	أطراف أخرى
+Third-party notices	إشعارات الأطراف الأخرى
+KUDUTREE only reads your drives. Nothing is changed unless you delete something yourself, and moving to the Recycle Bin can be undone.	يقرأ KUDUTREE محركات أقراصك فقط. لا يتغيّر شيء إلا إذا حذفت أنت شيئًا، ويمكن التراجع عن النقل إلى سلة المحذوفات.
+Check for updates	البحث عن تحديثات
+Couldn't find any published version yet.	لم يتم العثور على أي إصدار منشور بعد.
+KUDUTREE {0} is available. Open the download page?	KUDUTREE {0} متاح. هل تريد فتح صفحة التنزيل؟
+You have the latest version.	لديك أحدث إصدار.
+Couldn't check for updates. Check your internet connection and try again.	تعذّر البحث عن تحديثات. تحقّق من اتصالك بالإنترنت وحاول مرة أخرى.
+for a year	منذ سنة
+for 2 years	منذ سنتين
+for 3 years	منذ 3 سنوات
+for 5 years	منذ 5 سنوات
+of any size	بأي حجم
+of 1 MB or more	بحجم 1 ميغابايت أو أكثر
+of 10 MB or more	بحجم 10 ميغابايت أو أكثر
+of 100 MB or more	بحجم 100 ميغابايت أو أكثر
+100 KB or more	100 كيلوبايت أو أكثر
+1 MB or more	1 ميغابايت أو أكثر
+10 MB or more	10 ميغابايت أو أكثر
+100 MB or more	100 ميغابايت أو أكثر
+Any size	أي حجم
+All	الكل
+Move them all to the Recycle Bin	نقلها كلها إلى سلة المحذوفات
+Files not opened or changed	ملفات لم تُفتح ولم تُعدّل
+Windows doesn't always record when a file is opened, so a file counts as old only if it wasn't changed or (as far as Windows knows) opened.	لا يسجّل Windows دائمًا وقت فتح الملف، لذا يُعدّ الملف قديمًا فقط إذا لم يُعدَّل ولم يُفتح (حسب علم Windows).
+Empty folders	المجلدات الفارغة
+None found.	لم يُعثر على شيء.
+{0}, {1} in all{2}	{0}، {1} إجمالًا{2}
+ (the biggest {0} are listed)	 (تُعرض أكبر {0})
+{0}. The date is when each was last opened or changed.	{0}. التاريخ هو آخر مرة فُتح فيها كل منها أو عُدّل.
+{0} inside	{0} بداخله
+empty folder	مجلد فارغ
+No empty folders.	لا مجلدات فارغة.
+{0} with no files in them (counting empty folders inside only once).	{0} بلا ملفات بداخلها (تُحسب المجلدات الفارغة بداخلها مرة واحدة).
+Find duplicates	البحث عن المكرّرات
+Files of	ملفات
+Files count as duplicates only when their whole contents are the same. Online-only OneDrive files aren't read (that would download them), and hard links are one file already.	تُعدّ الملفات مكرّرة فقط إذا كان محتواها كله متطابقًا. لا تُقرأ ملفات OneDrive المتاحة عبر الإنترنت فقط (فذلك سينزّلها)، والروابط الثابتة ملف واحد بالفعل.
+Looks for identical files in {0}.	يبحث عن ملفات متطابقة في {0}.
+the scan	الفحص
+{0}… {1} of {2} files · {3} read	{0}… {1} من {2} ملفات · {3} مقروءة
+{0} copies of {1}	{0} نسخ من {1}
+{0} each	{0} لكل منها
+could be freed	يمكن تحريرها
+No duplicates found.	لم يتم العثور على مكرّرات.
+{0} of identical files; {1} could be freed by keeping one of each.{2}	{0} من الملفات المتطابقة؛ يمكن تحرير {1} بالاحتفاظ بواحد من كل منها.{2}
+The 2,000 biggest sets are listed.	تُعرض أكبر 2,000 مجموعة.
+ {0} couldn't be read.	 تعذّرت قراءة {0}.
+Stopped.	توقف.
+Compare	مقارنة
+Other file…	ملف آخر…
+Choose a saved scan to compare with	اختر فحصًا محفوظًا للمقارنة
+Compare with	المقارنة مع
+Folders	المجلدات
+Files	الملفات
+New	جديد
+Removed	محذوف
+No saved scans of this place yet. Use "Save scan" now, and next time you scan it you'll see here what changed.	لا توجد فحوصات محفوظة لهذا المكان بعد. استخدم "حفظ الفحص" الآن، وفي المرة القادمة التي تفحصه سترى هنا ما تغيّر.
+Choose a saved scan to see what grew, shrank, appeared or went away since then.	اختر فحصًا محفوظًا لترى ما كبر أو صغر أو ظهر أو اختفى منذ ذلك الحين.
+Comparing…	جارٍ المقارنة…
+The saved scan couldn't be opened: {0}	تعذّر فتح الفحص المحفوظ: {0}
+New · {0}	جديد · {0}
+Gone · was {0}	اختفى · كان {0}
+Was {0}, now {1}	كان {0}، الآن {1}
+Grew	كبر
+Shrank	صغر
+Since {0}: {1}{2} (was {3}, now {4}).	منذ {0}: {1}{2} (كان {3}، الآن {4}).
+Nothing changed.	لم يتغيّر شيء.
+{0} changed, biggest change first; the first 3,000 are listed.	تغيّر {0}، الأكبر تغيّرًا أولًا؛ تُعرض أول 3,000.
+{0} changed, biggest change first.	تغيّر {0}، الأكبر تغيّرًا أولًا.
+Treemap	خريطة شجرية
+Click a type to show only its files in the treemap.	انقر على نوع لإظهار ملفاته فقط في الخريطة الشجرية.
+1 GB or more	1 غيغابايت أو أكثر
+Any date	أي تاريخ
+Changed in the last 7 days	عُدّلت في آخر 7 أيام
+Changed in the last 30 days	عُدّلت في آخر 30 يومًا
+Not changed for a year	لم تُعدّل منذ سنة
+Not changed for 3 years	لم تُعدّل منذ 3 سنوات
+Up	للأعلى
+Show the folder above	إظهار المجلد الأعلى
+Size on disk	الحجم على القرص
+Space used on the drive: compressed, sparse and online-only files take less; hard links count once	المساحة المستخدمة على محرك الأقراص: الملفات المضغوطة والمتفرقة والمتاحة عبر الإنترنت فقط تأخذ أقل؛ والروابط الثابتة تُحسب مرة واحدة
+File size	حجم الملف
+The sizes File Explorer shows	الأحجام التي يعرضها مستكشف الملفات
+Save scan	حفظ الفحص
+Save this scan to look at again later, or to compare with a later scan	احفظ هذا الفحص لتراه مجددًا لاحقًا، أو لتقارنه بفحص لاحق
+Scan again	الفحص مجددًا
+Largest files	أكبر الملفات
+Search	بحث
+Old & empty	القديمة والفارغة
+Duplicates	المكرّرات
+Changes	التغييرات
+The treemap shows only {0} files. Click it again to show everything.	تعرض الخريطة الشجرية ملفات {0} فقط. انقر مجددًا لإظهار كل شيء.
+File types	أنواع الملفات
+Name	الاسم
+Size	الحجم
+Share of folder	النصيب من المجلد
+Modified	عُدّل
+Name and folder	الاسم والمجلد
+Files and folders	الملفات والمجلدات
+Part of a name, or a pattern like *.iso or IMG_????.jpg (separate several with ;). Leave it empty to use only the filters.	جزء من اسم، أو نمط مثل *.iso أو IMG_????.jpg (افصل بين عدة أنماط بـ ;). اتركه فارغًا لاستخدام عوامل التصفية فقط.
+The largest files are listed when the scan finishes.	تُعرض أكبر الملفات عند انتهاء الفحص.
+The {0} biggest files in {1}.	أكبر {0} ملفات في {1}.
+The treemap appears when the scan finishes.	تظهر الخريطة الشجرية عند انتهاء الفحص.
+{0} in {1} · {2} on disk · {3} in files	{0} في {1} · {2} على القرص · {3} في الملفات
+ · saved scan from {0}	 · فحص محفوظ من {0}
+The drive has {0} in use, but the scan found {1}. The other {2} is in folders that couldn't be read{3}	يستخدم محرك الأقراص {0}، لكن الفحص وجد {1}. الـ {2} الأخرى في مجلدات تعذّرت قراءتها{3}
+or in Windows' own system space (restore points, the page file's reserve).	أو في مساحة نظام Windows الخاصة (نقاط الاستعادة، احتياطي ملف الصفحات).
+(without administrator rights) or in Windows' own system space.	(دون صلاحيات المسؤول) أو في مساحة نظام Windows الخاصة.
+{0} couldn't be read (marked in the tree).	تعذّرت قراءة {0} (معلّمة في الشجرة).
+Use the fast scan instead (reads the drive's file index, counts everything; asks for administrator rights)	استخدم الفحص السريع بدلًا من ذلك (يقرأ فهرس ملفات محرك الأقراص، ويحسب كل شيء؛ يطلب صلاحيات المسؤول)
+Searching…	جارٍ البحث…
+Nothing found.	لم يُعثر على شيء.
+{0} found; showing the biggest {1} ({2}).	تم العثور على {0}؛ تُعرض أكبر {1} ({2}).
+{0} found, {1} in all.	تم العثور على {0}، {1} إجمالًا.
+Open folder	فتح المجلد
+Enter	دخول
+Show in File Explorer	إظهار في مستكشف الملفات
+Copy path	نسخ المسار
+Show only this folder	إظهار هذا المجلد فقط
+Scan this folder again	فحص هذا المجلد مجددًا
+Move to Recycle Bin	نقل إلى سلة المحذوفات
+Delete	حذف
+Delete permanently…	حذف نهائي…
+Count	العدد
+{0} smaller items	{0} عناصر أصغر
+(couldn't be read)	(تعذّرت القراءة)
+(link, not followed)	(رابط، لم يُتبع)
+(hard link)	(رابط ثابت)
+Click to show more	انقر لإظهار المزيد
+{0} ran into a problem it couldn't get past, and has to close.	واجه {0} مشكلة لم يستطع تجاوزها، ولا بد من إغلاقه.
+{0} file	{0} ملف
+{0} files	{0} ملفات
+{0} folder	{0} مجلد
+{0} folders	{0} مجلدات
+{0} empty folder	{0} مجلد فارغ
+{0} empty folders	{0} مجلدات فارغة
+{0} set	{0} مجموعة
+{0} sets	{0} مجموعات
+{0} item	{0} عنصر
+{0} items	{0} عناصر

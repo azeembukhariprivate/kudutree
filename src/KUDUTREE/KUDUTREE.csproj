@@ -13,7 +13,7 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <StartupObject>Kudutree.Program</StartupObject>
 
-    <Version>1.2.0</Version>
+    <Version>1.3.0</Version>
     <Product>KUDUTREE</Product>
     <Company>Azeem Bukhari</Company>
     <Authors>Azeem Bukhari</Authors>
@@ -50,6 +50,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Lang\*.txt" LogicalName="Kudutree.Lang.%(Filename).txt" />
     <EmbeddedResource Include="Themes\*.xaml" LogicalName="Kudutree.Themes.%(Filename).xaml" />
     <EmbeddedResource Include="Assets\KUDUTREE.ico" LogicalName="Kudutree.Assets.KUDUTREE.ico" />
     <None Include="..\..\LICENSE" Link="LICENSE.txt" CopyToOutputDirectory="PreserveNewest" />

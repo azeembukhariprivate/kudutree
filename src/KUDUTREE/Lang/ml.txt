@@ -1,0 +1,366 @@
+Something went wrong:\n\n{0}	എന്തോ പിശക് സംഭവിച്ചു:\n\n{0}
+Azeem Bukhari	Azeem Bukhari
+less than a second	ഒരു സെക്കൻഡിൽ താഴെ
+{0} h {1} min	{0} മണിക്കൂർ {1} മിനിറ്റ്
+{0} min {1} s	{0} മിനിറ്റ് {1} സെക്കൻഡ്
+Cache	Cache
+Code Cache	Code Cache
+Your temporary files	നിങ്ങളുടെ താൽക്കാലിക ഫയലുകൾ
+Files programs make while they work and usually forget to remove. Only ones untouched for a day are cleaned, so nothing a program is using now goes.	പ്രോഗ്രാമുകൾ പ്രവർത്തിക്കുമ്പോൾ ഉണ്ടാക്കി നീക്കാൻ മറക്കുന്ന ഫയലുകൾ. ഒരു ദിവസമായി ആരും തൊടാത്തവ മാത്രമേ മായ്ക്കൂ, അതിനാൽ ഇപ്പോൾ ഒരു പ്രോഗ്രാം ഉപയോഗിക്കുന്നതൊന്നും പോകില്ല.
+Microsoft Edge	Microsoft Edge
+Microsoft	Microsoft
+Edge	Edge
+User Data	User Data
+Google Chrome	Google Chrome
+Google	Google
+Chrome	Chrome
+Brave	Brave
+Firefox	Firefox
+Mozilla	Mozilla
+Profiles	Profiles
+Picture previews	ചിത്രങ്ങളുടെ ചെറുരൂപങ്ങൾ
+Small previews File Explorer keeps of your pictures and videos. They're made again when folders are opened. Some may be in use and stay.	നിങ്ങളുടെ ചിത്രങ്ങളുടെയും വീഡിയോകളുടെയും ചെറുരൂപങ്ങൾ ഫയൽ എക്സ്പ്ലോറർ സൂക്ഷിക്കുന്നു. ഫോൾഡറുകൾ തുറക്കുമ്പോൾ വീണ്ടും ഉണ്ടാക്കും. ചിലത് ഉപയോഗത്തിലായിരിക്കാം, അവ നിൽക്കും.
+Windows	Windows
+Explorer	Explorer
+Your error reports and crash files	നിങ്ങളുടെ പിശക് റിപ്പോർട്ടുകളും ക്രാഷ് ഫയലുകളും
+Reports kept after programs stopped working, and their crash files. Windows has already sent what it needed.	പ്രോഗ്രാമുകൾ പ്രവർത്തനം നിർത്തിയതിനുശേഷം സൂക്ഷിച്ച റിപ്പോർട്ടുകളും ക്രാഷ് ഫയലുകളും. വിൻഡോസിന് വേണ്ടത് ഇതിനകം അയച്ചിട്ടുണ്ട്.
+Downloaded Windows updates	ഡൗൺലോഡ് ചെയ്ത വിൻഡോസ് അപ്ഡേറ്റുകൾ
+Update files Windows downloaded and has already installed. Windows downloads them again if it ever needs them.	വിൻഡോസ് ഡൗൺലോഡ് ചെയ്ത് ഇതിനകം ഇൻസ്റ്റാൾ ചെയ്ത അപ്ഡേറ്റ് ഫയലുകൾ. എപ്പോഴെങ്കിലും വേണമെങ്കിൽ വിൻഡോസ് വീണ്ടും ഡൗൺലോഡ് ചെയ്യും.
+Download	Download
+Windows' temporary files	വിൻഡോസിന്റെ താൽക്കാലിക ഫയലുകൾ
+Windows' own temporary files. Only ones untouched for a day are cleaned.	വിൻഡോസിന്റെ സ്വന്തം താൽക്കാലിക ഫയലുകൾ. ഒരു ദിവസമായി ആരും തൊടാത്തവ മാത്രമേ മായ്ക്കൂ.
+Temp	Temp
+Crash dumps and error reports for everyone	എല്ലാവരുടെയും ക്രാഷ് ഡമ്പുകളും പിശക് റിപ്പോർട്ടുകളും
+Copies of memory Windows saved when the PC or a program crashed, and error reports for all accounts. Only useful to someone fixing that crash.	പിസിയോ ഒരു പ്രോഗ്രാമോ ക്രാഷ് ആയപ്പോൾ വിൻഡോസ് സേവ് ചെയ്ത മെമ്മറി പകർപ്പുകളും എല്ലാ അക്കൗണ്ടുകളുടെയും പിശക് റിപ്പോർട്ടുകളും. ആ ക്രാഷ് പരിഹരിക്കുന്ന ഒരാൾക്ക് മാത്രമേ ഉപകാരപ്പെടൂ.
+Minidump	Minidump
+Update sharing files	അപ്ഡേറ്റ് പങ്കിടൽ ഫയലുകൾ
+Pieces of updates Windows keeps to share with other PCs. They're fetched again if needed.	മറ്റ് പിസികളുമായി പങ്കിടാൻ വിൻഡോസ് സൂക്ഷിക്കുന്ന അപ്ഡേറ്റുകളുടെ കഷണങ്ങൾ. വേണമെങ്കിൽ വീണ്ടും എടുക്കും.
+Local	Local
+Your previous Windows (Windows.old)	നിങ്ങളുടെ പഴയ വിൻഡോസ് (Windows.old)
+Kept after a big Windows update, to go back to the earlier version. Windows' cleanup removes it safely (it's usually removed by itself after 10 days).	ഒരു വലിയ വിൻഡോസ് അപ്ഡേറ്റിനുശേഷം, പഴയ പതിപ്പിലേക്ക് മടങ്ങാൻ സൂക്ഷിച്ചത്. വിൻഡോസിന്റെ ക്ലീനപ്പ് ഇത് സുരക്ഷിതമായി നീക്കും (സാധാരണ 10 ദിവസത്തിനുശേഷം തനിയെ നീങ്ങും).
+Old system parts from updates	അപ്ഡേറ്റുകളിൽ നിന്നുള്ള പഴയ സിസ്റ്റം ഭാഗങ്ങൾ
+Earlier copies of Windows' own parts that updates replaced. They're shared with the running Windows, so only Windows' cleanup can tell which can go.	അപ്ഡേറ്റുകൾ മാറ്റിയ വിൻഡോസിന്റെ സ്വന്തം ഭാഗങ്ങളുടെ പഴയ പകർപ്പുകൾ. പ്രവർത്തിക്കുന്ന വിൻഡോസുമായി പങ്കിടുന്നതിനാൽ, ഏതൊക്കെ പോകാമെന്ന് വിൻഡോസിന്റെ ക്ലീനപ്പിന് മാത്രമേ അറിയൂ.
+{0} cache	{0} കാഷ്
+Copies of web pages and pictures {0} keeps to load sites faster. They're fetched again when needed; your passwords, history and logins aren't touched. While {1} is open some of it stays.	സൈറ്റുകൾ വേഗത്തിൽ തുറക്കാൻ {0} സൂക്ഷിക്കുന്ന വെബ് പേജുകളുടെയും ചിത്രങ്ങളുടെയും പകർപ്പുകൾ. വേണ്ടപ്പോൾ വീണ്ടും എടുക്കും; നിങ്ങളുടെ പാസ്‌വേഡുകൾ, ചരിത്രം, ലോഗിനുകൾ എന്നിവ തൊടില്ല. {1} തുറന്നിരിക്കുമ്പോൾ ചിലത് നിൽക്കും.
+Read past the end of {0}.	{0}-ന്റെ അവസാനത്തിനപ്പുറം വായിച്ചു.
+Unexpected end of {0}.	{0} അപ്രതീക്ഷിതമായി അവസാനിച്ചു.
+Reading a drive directly needs administrator rights.	ഒരു ഡ്രൈവ് നേരിട്ട് വായിക്കാൻ അഡ്മിനിസ്ട്രേറ്റർ അനുമതി വേണം.
+Drive {0}: can't be opened: {1}	ഡ്രൈവ് {0}: തുറക്കാനാവില്ല: {1}
+Drive {0}:	ഡ്രൈവ് {0}:
+Not a drive letter: {0}	ഒരു ഡ്രൈവ് അക്ഷരമല്ല: {0}
+Can't move to byte {0} on {1}: {2}	{1}-ൽ ബൈറ്റ് {0}-ലേക്ക് നീങ്ങാനാവില്ല: {2}
+Can't read byte {0} on {1}: {2}	{1}-ൽ ബൈറ്റ് {0} വായിക്കാനാവില്ല: {2}
+Looking for files of the same size	ഒരേ വലുപ്പമുള്ള ഫയലുകൾ തിരയുന്നു
+Comparing the start of each file	ഓരോ ഫയലിന്റെയും തുടക്കം താരതമ്യം ചെയ്യുന്നു
+Comparing whole files	മുഴുവൻ ഫയലുകളും താരതമ്യം ചെയ്യുന്നു
+(no extension)	(എക്സ്റ്റൻഷൻ ഇല്ല)
+Video	വീഡിയോ
+mp4 mkv mov avi wmv m4v webm mpg mpeg ts mts m2ts 3gp flv vob	mp4 mkv mov avi wmv m4v webm mpg mpeg ts mts m2ts 3gp flv vob
+Pictures	ചിത്രങ്ങൾ
+jpg jpeg png gif bmp tif tiff heic heif webp raw cr2 cr3 nef arw dng orf rw2 psd svg ico	jpg jpeg png gif bmp tif tiff heic heif webp raw cr2 cr3 nef arw dng orf rw2 psd svg ico
+Music	സംഗീതം
+mp3 wav flac m4a aac ogg opus wma aiff mid	mp3 wav flac m4a aac ogg opus wma aiff mid
+Documents	ഡോക്യുമെന്റുകൾ
+pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv epub one pst ost msg eml	pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv epub one pst ost msg eml
+Archives	ആർക്കൈവുകൾ
+zip 7z rar gz tgz tar bz2 xz cab iso img vhd vhdx wim esd	zip 7z rar gz tgz tar bz2 xz cab iso img vhd vhdx wim esd
+Programs	പ്രോഗ്രാമുകൾ
+exe dll msi msix appx sys drv ocx cpl mui	exe dll msi msix appx sys drv ocx cpl mui
+Code	കോഡ്
+cs js ts py java c cpp h hpp go rs rb php html css json xml yml yaml sql sh ps1 bat cmd	cs js ts py java c cpp h hpp go rs rb php html css json xml yml yaml sql sh ps1 bat cmd
+Data	ഡാറ്റ
+db sqlite mdb accdb dat log bak tmp cache pak bin	db sqlite mdb accdb dat log bak tmp cache pak bin
+Other	മറ്റുള്ളവ
+The folder {0} wasn't found.	{0} എന്ന ഫോൾഡർ കണ്ടെത്തിയില്ല.
+Folder listing	ഫോൾഡർ പട്ടിക
+KUDUTREE scan {0}	KUDUTREE scan {0}
+Access is denied.	അനുമതി നിഷേധിച്ചു.
+This drive is locked with BitLocker. Unlock it first.	ഈ ഡ്രൈവ് BitLocker കൊണ്ട് പൂട്ടിയിരിക്കുന്നു. ആദ്യം തുറക്കുക.
+Reading the file index	ഫയൽ സൂചിക വായിക്കുന്നു
+Building the folder tree	ഫോൾഡർ ട്രീ ഉണ്ടാക്കുന്നു
+Fast scan (file index)	വേഗത്തിലുള്ള സ്കാൻ (ഫയൽ സൂചിക)
+The drive's file index (MFT) can't be read.	ഡ്രൈവിന്റെ ഫയൽ സൂചിക (MFT) വായിക്കാനാവില്ല.
+Position outside the file index.	ഫയൽ സൂചികയ്ക്ക് പുറത്തുള്ള സ്ഥാനം.
+The drive's top folder isn't in its file index.	ഡ്രൈവിന്റെ മുകളിലെ ഫോൾഡർ ഫയൽ സൂചികയിൽ ഇല്ല.
+(Files without a folder)	(ഫോൾഡറില്ലാത്ത ഫയലുകൾ)
+Scanning	സ്കാൻ ചെയ്യുന്നു
+Damaged runlist.	കേടായ റൺലിസ്റ്റ്.
+This drive isn't formatted as NTFS.	ഈ ഡ്രൈവ് NTFS ആയി ഫോർമാറ്റ് ചെയ്തിട്ടില്ല.
+The NTFS boot sector is damaged.	NTFS ബൂട്ട് സെക്ടർ കേടായിരിക്കുന്നു.
+System Volume Information	System Volume Information
+Boot	Boot
+Recovery	Recovery
+That's the whole scan.	അതാണ് മുഴുവൻ സ്കാൻ.
+"{0}" is part of the drive's file system, not a normal file. Deleting it would damage the drive.	"{0}" ഡ്രൈവിന്റെ ഫയൽ സിസ്റ്റത്തിന്റെ ഭാഗമാണ്, സാധാരണ ഫയലല്ല. ഇല്ലാതാക്കിയാൽ ഡ്രൈവ് കേടാകും.
+{0}\\System Volume Information	{0}\\System Volume Information
+This is part of the drive's file system, which Windows looks after. It can't be deleted here.	ഇത് വിൻഡോസ് നോക്കുന്ന ഡ്രൈവിന്റെ ഫയൽ സിസ്റ്റത്തിന്റെ ഭാഗമാണ്. ഇവിടെ ഇല്ലാതാക്കാനാവില്ല.
+This is the Recycle Bin. Empty it from the Recycle Bin on the desktop instead.	ഇത് റീസൈക്കിൾ ബിൻ ആണ്. പകരം ഡെസ്ക്ടോപ്പിലെ റീസൈക്കിൾ ബിന്നിൽ നിന്ന് കാലിയാക്കുക.
+Windows keeps "{0}" on every drive. It can't be deleted here.	വിൻഡോസ് എല്ലാ ഡ്രൈവിലും "{0}" സൂക്ഷിക്കുന്നു. ഇവിടെ ഇല്ലാതാക്കാനാവില്ല.
+Windows needs "{0}" to start and run. Use Settings or Disk Cleanup to make it smaller instead.	വിൻഡോസിന് തുടങ്ങാനും പ്രവർത്തിക്കാനും "{0}" വേണം. ചെറുതാക്കാൻ പകരം Settings അല്ലെങ്കിൽ Disk Cleanup ഉപയോഗിക്കുക.
+Windows needs this to run. Use Disk Cleanup (or Settings → System → Storage) to free space in the Windows folder safely.	വിൻഡോസിന് പ്രവർത്തിക്കാൻ ഇത് വേണം. വിൻഡോസ് ഫോൾഡറിൽ സുരക്ഷിതമായി സ്ഥലം ഒഴിവാക്കാൻ Disk Cleanup (അല്ലെങ്കിൽ Settings → System → Storage) ഉപയോഗിക്കുക.
+Windows needs the "{0}" folder itself. You can delete things inside it, and uninstall apps from Settings → Apps.	വിൻഡോസിന് "{0}" ഫോൾഡർ തന്നെ വേണം. അതിനുള്ളിലുള്ളവ ഇല്ലാതാക്കാം, ആപ്പുകൾ Settings → Apps-ൽ നിന്ന് അൺഇൻസ്റ്റാൾ ചെയ്യാം.
+This is someone's whole profile folder. Delete things inside it instead, or remove the account in Settings → Accounts.	ഇത് ഒരാളുടെ മുഴുവൻ പ്രൊഫൈൽ ഫോൾഡറാണ്. പകരം അതിനുള്ളിലുള്ളവ ഇല്ലാതാക്കുക, അല്ലെങ്കിൽ Settings → Accounts-ൽ അക്കൗണ്ട് നീക്കുക.
+KUDUTREE scans (*.kudutree)	KUDUTREE സ്കാനുകൾ (*.kudutree)
+Scans	Scans
+Drive {0}	ഡ്രൈവ് {0}
+Scan	സ്കാൻ ചെയ്യുക
+{0}.saving	{0}.saving
+Damaged scan file.	കേടായ സ്കാൻ ഫയൽ.
+This scan file can't be read: {0}	ഈ സ്കാൻ ഫയൽ വായിക്കാനാവില്ല: {0}
+This isn't a KUDUTREE scan file.	ഇതൊരു KUDUTREE സ്കാൻ ഫയലല്ല.
+Theme	തീം
+Show sizes with KUDUTREE	KUDUTREE ഉപയോഗിച്ച് വലുപ്പങ്ങൾ കാണിക്കുക
+"{0}" --scan "%1"	"{0}" --scan "%1"
+Missing theme resource {0}	Missing theme resource {0}
+Light	ഇളം നിറം
+Styles	Styles
+Dark	ഇരുണ്ട നിറം
+Application	Application
+Cancelled.	റദ്ദാക്കി.
+Safe to clean	മായ്ക്കാൻ സുരക്ഷിതം
+Kinds of files that can go without harm, and how much room each gives back. Only these exact folders are cleaned; the folders themselves stay, and anything in use is left.	ദോഷമില്ലാതെ പോകാവുന്ന തരം ഫയലുകൾ, ഓരോന്നും എത്ര സ്ഥലം തിരികെ നൽകുമെന്നും. ഈ കൃത്യമായ ഫോൾഡറുകൾ മാത്രമേ മായ്ക്കൂ; ഫോൾഡറുകൾ തന്നെ നിൽക്കും, ഉപയോഗത്തിലുള്ളതൊന്നും തൊടില്ല.
+Your files	നിങ്ങളുടെ ഫയലുകൾ
+Ticked to start with. They go to the Recycle Bin, so you can still get them back.	തുടക്കത്തിൽ ടിക്ക് ചെയ്തിരിക്കുന്നു. ഇവ റീസൈക്കിൾ ബിന്നിലേക്ക് പോകുന്നതിനാൽ തിരികെ എടുക്കാം.
+Windows-wide leftovers	വിൻഡോസ് മുഴുവനുമുള്ള ബാക്കിവന്നവ
+Not ticked to start with. Windows doesn't put these in the Recycle Bin, so they're deleted for good (you're asked first).	തുടക്കത്തിൽ ടിക്ക് ചെയ്തിട്ടില്ല. വിൻഡോസ് ഇവ റീസൈക്കിൾ ബിന്നിൽ ഇടാത്തതിനാൽ എന്നേക്കുമായി ഇല്ലാതാകും (ആദ്യം ചോദിക്കും).
+These need administrator rights, and are deleted for good (you're asked first).	ഇവയ്ക്ക് അഡ്മിനിസ്ട്രേറ്റർ അനുമതി വേണം; എന്നേക്കുമായി ഇല്ലാതാകും (ആദ്യം ചോദിക്കും).
+Restart KUDUTREE as administrator	KUDUTREE അഡ്മിനിസ്ട്രേറ്ററായി വീണ്ടും തുടങ്ങുക
+Only Windows' own cleanup can remove these	വിൻഡോസിന്റെ സ്വന്തം ക്ലീനപ്പിന് മാത്രമേ ഇവ നീക്കാനാവൂ
+They're tied to how Windows runs and updates, so KUDUTREE doesn't delete them file by file.	വിൻഡോസ് പ്രവർത്തിക്കുന്നതിനോടും അപ്ഡേറ്റ് ചെയ്യുന്നതിനോടും ബന്ധപ്പെട്ടതിനാൽ KUDUTREE ഇവ ഫയൽ ഫയലായി ഇല്ലാതാക്കില്ല.
+Open Windows' cleanup	വിൻഡോസിന്റെ ക്ലീനപ്പ് തുറക്കുക
+Clean	മായ്ക്കുക
+Stop	നിർത്തുക
+Measure again	വീണ്ടും അളക്കുക
+Show the files	ഫയലുകൾ കാണിക്കുക
+Measuring...	അളക്കുന്നു...
+Nothing	ഒന്നുമില്ല
+ ({0} recent ones left)	 ({0} പുതിയവ ബാക്കിയുണ്ട്)
+Tick what to clean.	എന്ത് മായ്ക്കണമെന്ന് ടിക്ക് ചെയ്യുക.
+Ticked: {0}	ടിക്ക് ചെയ്തത്: {0}
+Clean {0}	{0} മായ്ക്കുക
+Nothing ticked to clean.	മായ്ക്കാൻ ഒന്നും ടിക്ക് ചെയ്തിട്ടില്ല.
+Delete {0} of Windows-wide leftovers for good? They don't go to the Recycle Bin.	വിൻഡോസ് മുഴുവനുമുള്ള ബാക്കിവന്നവയിൽ {0} എന്നേക്കുമായി ഇല്ലാതാക്കണോ? അവ റീസൈക്കിൾ ബിന്നിലേക്ക് പോകില്ല.
+Move {0} of files to the Recycle Bin?	{0} ഫയലുകൾ റീസൈക്കിൾ ബിന്നിലേക്ക് മാറ്റണോ?
+Cleaning...	മായ്ക്കുന്നു...
+Cleaning: {0} of {1}	മായ്ക്കുന്നു: {0} / {1}
+Stopped. What was cleaned so far is gone; the rest is still there.	നിർത്തി. ഇതുവരെ മായ്ച്ചത് പോയി; ബാക്കി ഇപ്പോഴും അവിടെയുണ്ട്.
+Cleaned {0} ({1}).	{0} മായ്ച്ചു ({1}).
+1 item was left because a program has it open (close it and clean again).	ഒരു പ്രോഗ്രാം തുറന്നുവച്ചിരിക്കുന്നതിനാൽ 1 ഇനം ബാക്കിയായി (അത് അടച്ച് വീണ്ടും മായ്ക്കുക).
+{0} items were left because a program has them open (close it and clean again).	ഒരു പ്രോഗ്രാം തുറന്നുവച്ചിരിക്കുന്നതിനാൽ {0} ഇനങ്ങൾ ബാക്കിയായി (അത് അടച്ച് വീണ്ടും മായ്ക്കുക).
+{0} is in the Recycle Bin: the space comes back when it's emptied.	{0} റീസൈക്കിൾ ബിന്നിലുണ്ട്: അത് കാലിയാക്കുമ്പോൾ സ്ഥലം തിരികെ കിട്ടും.
+Empty the Recycle Bin	റീസൈക്കിൾ ബിൻ കാലിയാക്കുക
+Error message shown: {0}	Error message shown: {0}
+All files	എല്ലാ ഫയലുകളും
+Save	സേവ് ചെയ്യുക
+Cancel	റദ്ദാക്കുക
+KUDUTREE	KUDUTREE
+Drives and folders	ഡ്രൈവുകളും ഫോൾഡറുകളും
+Settings	ക്രമീകരണങ്ങൾ
+About	വിവരം
+KUDUTREE {0} is available	KUDUTREE {0} ലഭ്യമാണ്
+What's taking up the space?	സ്ഥലം എടുക്കുന്നത് എന്താണ്?
+Choose a drive or a folder. KUDUTREE shows how much space every folder and file takes, biggest first.	ഒരു ഡ്രൈവോ ഫോൾഡറോ തിരഞ്ഞെടുക്കുക. ഓരോ ഫോൾഡറും ഫയലും എത്ര സ്ഥലം എടുക്കുന്നുവെന്ന്, വലുത് ആദ്യം, KUDUTREE കാണിക്കും.
+Temporary files, browser caches and Windows leftovers that can go without harm.	ദോഷമില്ലാതെ പോകാവുന്ന താൽക്കാലിക ഫയലുകൾ, ബ്രൗസർ കാഷുകൾ, വിൻഡോസ് ബാക്കിവന്നവ.
+A folder or network share	ഒരു ഫോൾഡർ അല്ലെങ്കിൽ നെറ്റ്‌വർക്ക് ഷെയർ
+Choose a folder…	ഒരു ഫോൾഡർ തിരഞ്ഞെടുക്കുക…
+Choose a folder to scan	സ്കാൻ ചെയ്യാൻ ഒരു ഫോൾഡർ തിരഞ്ഞെടുക്കുക
+Saved scans	സേവ് ചെയ്ത സ്കാനുകൾ
+Open a saved scan…	സേവ് ചെയ്ത സ്കാൻ തുറക്കുക…
+Open a saved scan	സേവ് ചെയ്ത ഒരു സ്കാൻ തുറക്കുക
+Save a scan from its results, to look at it again later or see what changed since.	പിന്നീട് വീണ്ടും നോക്കാനോ അതിനുശേഷം എന്ത് മാറിയെന്ന് കാണാനോ ഒരു സ്കാൻ അതിന്റെ ഫലങ്ങളിൽ നിന്ന് സേവ് ചെയ്യുക.
+Scan again: {0}	വീണ്ടും സ്കാൻ ചെയ്യുക: {0}
+Running as administrator: whole NTFS drives use the fast scan.	അഡ്മിനിസ്ട്രേറ്ററായി പ്രവർത്തിക്കുന്നു: മുഴുവൻ NTFS ഡ്രൈവുകൾക്കും വേഗത്തിലുള്ള സ്കാൻ ഉപയോഗിക്കുന്നു.
+The fast scan reads a whole NTFS drive's file index in seconds; it asks for administrator rights.	വേഗത്തിലുള്ള സ്കാൻ ഒരു മുഴുവൻ NTFS ഡ്രൈവിന്റെ ഫയൽ സൂചിക സെക്കൻഡുകൾക്കുള്ളിൽ വായിക്കുന്നു; അഡ്മിനിസ്ട്രേറ്റർ അനുമതി ചോദിക്കും.
+USB drive	USB ഡ്രൈവ്
+Network drive	നെറ്റ്‌വർക്ക് ഡ്രൈവ്
+Local disk	ലോക്കൽ ഡിസ്ക്
+{0} free of {1}	{1}-ൽ {0} ഒഴിവുണ്ട്
+Size unknown	വലുപ്പം അറിയില്ല
+Fast scan	വേഗത്തിലുള്ള സ്കാൻ
+Reads the drive's file index directly: seconds instead of minutes, and every folder is counted. Asks for administrator rights.	ഡ്രൈവിന്റെ ഫയൽ സൂചിക നേരിട്ട് വായിക്കുന്നു: മിനിറ്റുകൾക്കു പകരം സെക്കൻഡുകൾ, ഓരോ ഫോൾഡറും കണക്കാക്കും. അഡ്മിനിസ്ട്രേറ്റർ അനുമതി ചോദിക്കും.
+Lists folders one by one, without administrator rights. Slower, and folders you can't open aren't counted.	അഡ്മിനിസ്ട്രേറ്റർ അനുമതിയില്ലാതെ ഫോൾഡറുകൾ ഓരോന്നായി പട്ടികപ്പെടുത്തുന്നു. പതുക്കെ; നിങ്ങൾക്ക് തുറക്കാനാവാത്ത ഫോൾഡറുകൾ കണക്കാക്കില്ല.
+{0} wasn't found.	{0} കണ്ടെത്തിയില്ല.
+The fast scan couldn't read this drive ({0}). Scanning it folder by folder instead.	വേഗത്തിലുള്ള സ്കാനിന് ഈ ഡ്രൈവ് വായിക്കാനായില്ല ({0}). പകരം ഫോൾഡർ ഫോൾഡറായി സ്കാൻ ചെയ്യുന്നു.
+Fast scan failed: {0}	വേഗത്തിലുള്ള സ്കാൻ പരാജയപ്പെട്ടു: {0}
+The scan couldn't finish: {0}	സ്കാൻ പൂർത്തിയാക്കാനായില്ല: {0}
+Save the scan	സ്കാൻ സേവ് ചെയ്യുക
+The scan couldn't be saved: {0}	സ്കാൻ സേവ് ചെയ്യാനായില്ല: {0}
+Opening the drive…	ഡ്രൈവ് തുറക്കുന്നു…
+Reading the drive's file index. Nothing on the drive is changed.	ഡ്രൈവിന്റെ ഫയൽ സൂചിക വായിക്കുന്നു. ഡ്രൈവിൽ ഒന്നും മാറ്റുന്നില്ല.
+{0} of {1} index records	{0} / {1} സൂചിക രേഖകൾ
+Scanning… {0} files in {1} folders · {2} so far. You can look around while it runs.	സ്കാൻ ചെയ്യുന്നു… {1} ഫോൾഡറുകളിൽ {0} ഫയലുകൾ · ഇതുവരെ {2}. ഇത് നടക്കുമ്പോൾ ചുറ്റും നോക്കാം.
+newest file {0}	ഏറ്റവും പുതിയ ഫയൽ {0}
+modified {0}	മാറ്റിയത് {0}
+Open	തുറക്കുക
+Show in Explorer	എക്സ്പ്ലോററിൽ കാണിക്കുക
+Delete…	ഇല്ലാതാക്കുക…
+Move to the Recycle Bin (Shift+Delete in the list deletes permanently)	റീസൈക്കിൾ ബിന്നിലേക്ക് മാറ്റുക (പട്ടികയിൽ Shift+Delete എന്നേക്കുമായി ഇല്ലാതാക്കും)
+Can't delete that.	അത് ഇല്ലാതാക്കാനാവില്ല.
+Network folders have no Recycle Bin. Delete {0} permanently?\n\nThis can't be undone.	നെറ്റ്‌വർക്ക് ഫോൾഡറുകൾക്ക് റീസൈക്കിൾ ബിൻ ഇല്ല. {0} എന്നേക്കുമായി ഇല്ലാതാക്കണോ?\n\nഇത് പഴയപടിയാക്കാനാവില്ല.
+Delete {0} permanently?\n\nIt won't go to the Recycle Bin, so this can't be undone.	{0} എന്നേക്കുമായി ഇല്ലാതാക്കണോ?\n\nഇത് റീസൈക്കിൾ ബിന്നിലേക്ക് പോകില്ല, അതിനാൽ പഴയപടിയാക്കാനാവില്ല.
+Move {0} to the Recycle Bin?	{0} റീസൈക്കിൾ ബിന്നിലേക്ക് മാറ്റണോ?
+Not everything could be deleted: {0}	എല്ലാം ഇല്ലാതാക്കാനായില്ല: {0}
+That folder couldn't be scanned: {0}	ആ ഫോൾഡർ സ്കാൻ ചെയ്യാനായില്ല: {0}
+Settings · KUDUTREE	ക്രമീകരണങ്ങൾ · KUDUTREE
+Appearance	രൂപം
+Same as Windows	വിൻഡോസിലേതു പോലെ
+Language	ഭാഷ
+Deleting	ഇല്ലാതാക്കൽ
+Ask before moving items to the Recycle Bin	ഇനങ്ങൾ റീസൈക്കിൾ ബിന്നിലേക്ക് മാറ്റുന്നതിനുമുമ്പ് ചോദിക്കുക
+Deleting permanently always asks first.	എന്നേക്കുമായി ഇല്ലാതാക്കുന്നതിനുമുമ്പ് എപ്പോഴും ചോദിക്കും.
+File Explorer	ഫയൽ എക്സ്പ്ലോറർ
+Add "Show sizes with KUDUTREE" to folders' and drives' right-click menu	ഫോൾഡറുകളുടെയും ഡ്രൈവുകളുടെയും റൈറ്റ്-ക്ലിക്ക് മെനുവിൽ "Show sizes with KUDUTREE" ചേർക്കുക
+For your Windows account only. On Windows 11 it's under "Show more options".	നിങ്ങളുടെ വിൻഡോസ് അക്കൗണ്ടിന് മാത്രം. വിൻഡോസ് 11-ൽ ഇത് "Show more options"-ന് കീഴിലാണ്.
+Updates	അപ്ഡേറ്റുകൾ
+Check for a new KUDUTREE version when it starts	തുറക്കുമ്പോൾ KUDUTREE-ന്റെ പുതിയ പതിപ്പുണ്ടോ എന്ന് നോക്കുക
+Only asks GitHub for the latest version number. Nothing is downloaded without asking.	ഏറ്റവും പുതിയ പതിപ്പിന്റെ നമ്പർ മാത്രമേ GitHub-നോട് ചോദിക്കൂ. ചോദിക്കാതെ ഒന്നും ഡൗൺലോഡ് ചെയ്യില്ല.
+About KUDUTREE	KUDUTREE-നെക്കുറിച്ച്
+Close	അടയ്ക്കുക
+Version {0} · See what takes up space	പതിപ്പ് {0} · സ്ഥലം എടുക്കുന്നത് എന്താണെന്ന് കാണുക
+Azeem, with Claude and	Azeem, with Claude and
+Made by	Made by
+Licence	ലൈസൻസ്
+MIT · free and open source	MIT · സൗജന്യവും ഓപ്പൺ സോഴ്സും
+View	കാണുക
+Source code	സോഴ്സ് കോഡ്
+Its own engine: reads NTFS file indexes directly, or lists folders	സ്വന്തം സംവിധാനം: NTFS ഫയൽ സൂചികകൾ നേരിട്ട് വായിക്കുന്നു, അല്ലെങ്കിൽ ഫോൾഡറുകൾ പട്ടികപ്പെടുത്തുന്നു
+Third-party	മറ്റുള്ളവരുടേത്
+Third-party notices	മറ്റുള്ളവരുടെ ഭാഗങ്ങളുടെ അറിയിപ്പുകൾ
+KUDUTREE only reads your drives. Nothing is changed unless you delete something yourself, and moving to the Recycle Bin can be undone.	KUDUTREE നിങ്ങളുടെ ഡ്രൈവുകൾ വായിക്കുക മാത്രം ചെയ്യുന്നു. നിങ്ങൾ തന്നെ എന്തെങ്കിലും ഇല്ലാതാക്കിയാലല്ലാതെ ഒന്നും മാറില്ല; റീസൈക്കിൾ ബിന്നിലേക്ക് മാറ്റുന്നത് പഴയപടിയാക്കാം.
+Check for updates	അപ്ഡേറ്റുകൾ പരിശോധിക്കുക
+Couldn't find any published version yet.	പ്രസിദ്ധീകരിച്ച പതിപ്പൊന്നും ഇതുവരെ കണ്ടെത്തിയില്ല.
+KUDUTREE {0} is available. Open the download page?	KUDUTREE {0} ലഭ്യമാണ്. ഡൗൺലോഡ് പേജ് തുറക്കണോ?
+You have the latest version.	നിങ്ങളുടെ കയ്യിലുള്ളത് ഏറ്റവും പുതിയ പതിപ്പാണ്.
+Couldn't check for updates. Check your internet connection and try again.	അപ്ഡേറ്റുകൾ പരിശോധിക്കാനായില്ല. ഇന്റർനെറ്റ് കണക്ഷൻ നോക്കിയിട്ട് വീണ്ടും ശ്രമിക്കുക.
+for a year	ഒരു വർഷമായി
+for 2 years	2 വർഷമായി
+for 3 years	3 വർഷമായി
+for 5 years	5 വർഷമായി
+of any size	ഏത് വലുപ്പവും
+of 1 MB or more	1 MB-യോ കൂടുതലോ
+of 10 MB or more	10 MB-യോ കൂടുതലോ
+of 100 MB or more	100 MB-യോ കൂടുതലോ
+100 KB or more	100 KB-യോ കൂടുതലോ
+1 MB or more	1 MB-യോ കൂടുതലോ
+10 MB or more	10 MB-യോ കൂടുതലോ
+100 MB or more	100 MB-യോ കൂടുതലോ
+Any size	ഏത് വലുപ്പവും
+All	എല്ലാം
+Move them all to the Recycle Bin	അവയെല്ലാം റീസൈക്കിൾ ബിന്നിലേക്ക് മാറ്റുക
+Files not opened or changed	തുറക്കാത്തതോ മാറ്റാത്തതോ ആയ ഫയലുകൾ
+Windows doesn't always record when a file is opened, so a file counts as old only if it wasn't changed or (as far as Windows knows) opened.	ഒരു ഫയൽ തുറന്നത് വിൻഡോസ് എപ്പോഴും രേഖപ്പെടുത്താറില്ല, അതിനാൽ മാറ്റുകയോ (വിൻഡോസ് അറിയുന്നിടത്തോളം) തുറക്കുകയോ ചെയ്യാത്ത ഫയൽ മാത്രമേ പഴയതായി കണക്കാക്കൂ.
+Empty folders	ഒഴിഞ്ഞ ഫോൾഡറുകൾ
+None found.	ഒന്നും കണ്ടെത്തിയില്ല.
+{0}, {1} in all{2}	{0}, ആകെ {1}{2}
+ (the biggest {0} are listed)	 (വലിയ {0} എണ്ണം പട്ടികയിൽ)
+{0}. The date is when each was last opened or changed.	{0}. തീയതി ഓരോന്നും അവസാനം തുറന്നതോ മാറ്റിയതോ ആയ ദിവസം.
+{0} inside	ഉള്ളിൽ {0}
+empty folder	ഒഴിഞ്ഞ ഫോൾഡർ
+No empty folders.	ഒഴിഞ്ഞ ഫോൾഡറുകളില്ല.
+{0} with no files in them (counting empty folders inside only once).	ഫയലുകളൊന്നുമില്ലാത്ത {0} (ഉള്ളിലുള്ള ഒഴിഞ്ഞ ഫോൾഡറുകൾ ഒരിക്കൽ മാത്രം എണ്ണി).
+Find duplicates	ഒരുപോലുള്ളവ കണ്ടെത്തുക
+Files of	ഫയലുകൾ
+Files count as duplicates only when their whole contents are the same. Online-only OneDrive files aren't read (that would download them), and hard links are one file already.	മുഴുവൻ ഉള്ളടക്കവും ഒന്നുതന്നെയാണെങ്കിൽ മാത്രമേ ഫയലുകൾ ഒരുപോലുള്ളവയായി കണക്കാക്കൂ. ഓൺലൈനിൽ മാത്രമുള്ള OneDrive ഫയലുകൾ വായിക്കില്ല (അത് അവ ഡൗൺലോഡ് ചെയ്യും); ഹാർഡ് ലിങ്കുകൾ ഇതിനകം ഒരു ഫയലാണ്.
+Looks for identical files in {0}.	{0}-ൽ ഒരുപോലുള്ള ഫയലുകൾ തിരയുന്നു.
+the scan	സ്കാൻ
+{0}… {1} of {2} files · {3} read	{0}… {1} / {2} ഫയലുകൾ · {3} വായിച്ചു
+{0} copies of {1}	{1}-ന്റെ {0} പകർപ്പുകൾ
+{0} each	ഓരോന്നിനും {0}
+could be freed	ഒഴിവാക്കാം
+No duplicates found.	ഒരുപോലുള്ളവ കണ്ടെത്തിയില്ല.
+{0} of identical files; {1} could be freed by keeping one of each.{2}	ഒരുപോലുള്ള ഫയലുകൾ {0}; ഓരോന്നിന്റെയും ഒന്ന് സൂക്ഷിച്ചാൽ {1} ഒഴിവാക്കാം.{2}
+The 2,000 biggest sets are listed.	ഏറ്റവും വലിയ 2,000 കൂട്ടങ്ങൾ പട്ടികയിലുണ്ട്.
+ {0} couldn't be read.	 {0} വായിക്കാനായില്ല.
+Stopped.	നിർത്തി.
+Compare	താരതമ്യം ചെയ്യുക
+Other file…	മറ്റൊരു ഫയൽ…
+Choose a saved scan to compare with	താരതമ്യം ചെയ്യാൻ സേവ് ചെയ്ത ഒരു സ്കാൻ തിരഞ്ഞെടുക്കുക
+Compare with	ഇതുമായി താരതമ്യം
+Folders	ഫോൾഡറുകൾ
+Files	ഫയലുകൾ
+New	പുതിയത്
+Removed	നീക്കിയത്
+No saved scans of this place yet. Use "Save scan" now, and next time you scan it you'll see here what changed.	ഈ സ്ഥലത്തിന് ഇതുവരെ സേവ് ചെയ്ത സ്കാനുകളില്ല. ഇപ്പോൾ "സ്കാൻ സേവ് ചെയ്യുക" ഉപയോഗിക്കുക; അടുത്ത തവണ സ്കാൻ ചെയ്യുമ്പോൾ എന്ത് മാറിയെന്ന് ഇവിടെ കാണാം.
+Choose a saved scan to see what grew, shrank, appeared or went away since then.	അതിനുശേഷം എന്ത് വളർന്നു, ചുരുങ്ങി, വന്നു, പോയി എന്ന് കാണാൻ സേവ് ചെയ്ത ഒരു സ്കാൻ തിരഞ്ഞെടുക്കുക.
+Comparing…	താരതമ്യം ചെയ്യുന്നു…
+The saved scan couldn't be opened: {0}	സേവ് ചെയ്ത സ്കാൻ തുറക്കാനായില്ല: {0}
+New · {0}	പുതിയത് · {0}
+Gone · was {0}	പോയി · മുമ്പ് {0}
+Was {0}, now {1}	മുമ്പ് {0}, ഇപ്പോൾ {1}
+Grew	വളർന്നു
+Shrank	ചുരുങ്ങി
+Since {0}: {1}{2} (was {3}, now {4}).	{0} മുതൽ: {1}{2} (മുമ്പ് {3}, ഇപ്പോൾ {4}).
+Nothing changed.	ഒന്നും മാറിയില്ല.
+{0} changed, biggest change first; the first 3,000 are listed.	{0} മാറി, വലിയ മാറ്റം ആദ്യം; ആദ്യത്തെ 3,000 എണ്ണം പട്ടികയിലുണ്ട്.
+{0} changed, biggest change first.	{0} മാറി, വലിയ മാറ്റം ആദ്യം.
+Treemap	ട്രീമാപ്പ്
+Click a type to show only its files in the treemap.	ട്രീമാപ്പിൽ ഒരു തരം ഫയലുകൾ മാത്രം കാണിക്കാൻ ആ തരത്തിൽ ക്ലിക്ക് ചെയ്യുക.
+1 GB or more	1 GB-യോ കൂടുതലോ
+Any date	ഏത് തീയതിയും
+Changed in the last 7 days	കഴിഞ്ഞ 7 ദിവസത്തിനുള്ളിൽ മാറ്റിയത്
+Changed in the last 30 days	കഴിഞ്ഞ 30 ദിവസത്തിനുള്ളിൽ മാറ്റിയത്
+Not changed for a year	ഒരു വർഷമായി മാറ്റാത്തത്
+Not changed for 3 years	3 വർഷമായി മാറ്റാത്തത്
+Up	മുകളിലേക്ക്
+Show the folder above	മുകളിലെ ഫോൾഡർ കാണിക്കുക
+Size on disk	ഡിസ്കിലെ വലുപ്പം
+Space used on the drive: compressed, sparse and online-only files take less; hard links count once	ഡ്രൈവിൽ ഉപയോഗിച്ച സ്ഥലം: ചുരുക്കിയതും ഓൺലൈനിൽ മാത്രമുള്ളതുമായ ഫയലുകൾ കുറച്ച് എടുക്കും; ഹാർഡ് ലിങ്കുകൾ ഒരിക്കൽ എണ്ണും
+File size	ഫയൽ വലുപ്പം
+The sizes File Explorer shows	ഫയൽ എക്സ്പ്ലോറർ കാണിക്കുന്ന വലുപ്പങ്ങൾ
+Save scan	സ്കാൻ സേവ് ചെയ്യുക
+Save this scan to look at again later, or to compare with a later scan	പിന്നീട് വീണ്ടും നോക്കാനോ പിന്നീടുള്ള സ്കാനുമായി താരതമ്യം ചെയ്യാനോ ഈ സ്കാൻ സേവ് ചെയ്യുക
+Scan again	വീണ്ടും സ്കാൻ ചെയ്യുക
+Largest files	വലിയ ഫയലുകൾ
+Search	തിരയുക
+Old & empty	പഴയതും ഒഴിഞ്ഞതും
+Duplicates	ഒരുപോലുള്ളവ
+Changes	മാറ്റങ്ങൾ
+The treemap shows only {0} files. Click it again to show everything.	ട്രീമാപ്പ് {0} ഫയലുകൾ മാത്രം കാണിക്കുന്നു. എല്ലാം കാണിക്കാൻ വീണ്ടും ക്ലിക്ക് ചെയ്യുക.
+File types	ഫയൽ തരങ്ങൾ
+Name	പേര്
+Size	വലുപ്പം
+Share of folder	ഫോൾഡറിലെ പങ്ക്
+Modified	മാറ്റിയത്
+Name and folder	പേരും ഫോൾഡറും
+Files and folders	ഫയലുകളും ഫോൾഡറുകളും
+Part of a name, or a pattern like *.iso or IMG_????.jpg (separate several with ;). Leave it empty to use only the filters.	പേരിന്റെ ഒരു ഭാഗം, അല്ലെങ്കിൽ *.iso, IMG_????.jpg പോലുള്ള മാതൃക (പലതുണ്ടെങ്കിൽ ; കൊണ്ട് വേർതിരിക്കുക). ഫിൽട്ടറുകൾ മാത്രം ഉപയോഗിക്കാൻ ഒഴിച്ചിടുക.
+The largest files are listed when the scan finishes.	സ്കാൻ കഴിയുമ്പോൾ വലിയ ഫയലുകൾ പട്ടികയിൽ വരും.
+The {0} biggest files in {1}.	{1}-ലെ ഏറ്റവും വലിയ {0} ഫയലുകൾ.
+The treemap appears when the scan finishes.	സ്കാൻ കഴിയുമ്പോൾ ട്രീമാപ്പ് വരും.
+{0} in {1} · {2} on disk · {3} in files	{1}-ൽ {0} · ഡിസ്കിൽ {2} · ഫയലുകളിൽ {3}
+ · saved scan from {0}	 · {0}-ലെ സേവ് ചെയ്ത സ്കാൻ
+The drive has {0} in use, but the scan found {1}. The other {2} is in folders that couldn't be read{3}	ഡ്രൈവിൽ {0} ഉപയോഗത്തിലുണ്ട്, പക്ഷേ സ്കാൻ കണ്ടെത്തിയത് {1}. ബാക്കി {2} വായിക്കാനാവാത്ത ഫോൾഡറുകളിലാണ്{3}
+or in Windows' own system space (restore points, the page file's reserve).	അല്ലെങ്കിൽ വിൻഡോസിന്റെ സ്വന്തം സിസ്റ്റം സ്ഥലത്താണ് (റീസ്റ്റോർ പോയിന്റുകൾ, പേജ് ഫയലിന്റെ കരുതൽ).
+(without administrator rights) or in Windows' own system space.	(അഡ്മിനിസ്ട്രേറ്റർ അനുമതിയില്ലാതെ) അല്ലെങ്കിൽ വിൻഡോസിന്റെ സ്വന്തം സിസ്റ്റം സ്ഥലത്ത്.
+{0} couldn't be read (marked in the tree).	{0} വായിക്കാനായില്ല (ട്രീയിൽ അടയാളപ്പെടുത്തിയിട്ടുണ്ട്).
+Use the fast scan instead (reads the drive's file index, counts everything; asks for administrator rights)	പകരം വേഗത്തിലുള്ള സ്കാൻ ഉപയോഗിക്കുക (ഡ്രൈവിന്റെ ഫയൽ സൂചിക വായിക്കുന്നു, എല്ലാം കണക്കാക്കുന്നു; അഡ്മിനിസ്ട്രേറ്റർ അനുമതി ചോദിക്കും)
+Searching…	തിരയുന്നു…
+Nothing found.	ഒന്നും കണ്ടെത്തിയില്ല.
+{0} found; showing the biggest {1} ({2}).	{0} കണ്ടെത്തി; വലിയ {1} കാണിക്കുന്നു ({2}).
+{0} found, {1} in all.	{0} കണ്ടെത്തി, ആകെ {1}.
+Open folder	ഫോൾഡർ തുറക്കുക
+Enter	അകത്തേക്ക്
+Show in File Explorer	ഫയൽ എക്സ്പ്ലോററിൽ കാണിക്കുക
+Copy path	വഴി പകർത്തുക
+Show only this folder	ഈ ഫോൾഡർ മാത്രം കാണിക്കുക
+Scan this folder again	ഈ ഫോൾഡർ വീണ്ടും സ്കാൻ ചെയ്യുക
+Move to Recycle Bin	റീസൈക്കിൾ ബിന്നിലേക്ക് മാറ്റുക
+Delete	ഇല്ലാതാക്കുക
+Delete permanently…	എന്നേക്കുമായി ഇല്ലാതാക്കുക…
+Count	എണ്ണം
+{0} smaller items	{0} ചെറിയ ഇനങ്ങൾ
+(couldn't be read)	(വായിക്കാനായില്ല)
+(link, not followed)	(ലിങ്ക്, പിന്തുടർന്നില്ല)
+(hard link)	(ഹാർഡ് ലിങ്ക്)
+Click to show more	കൂടുതൽ കാണിക്കാൻ ക്ലിക്ക് ചെയ്യുക
+{0} ran into a problem it couldn't get past, and has to close.	{0}-ന് മറികടക്കാൻ കഴിയാത്ത ഒരു പ്രശ്നം ഉണ്ടായി; അതിനാൽ അടയ്ക്കേണ്ടിവരുന്നു.
+{0} file	{0} ഫയൽ
+{0} files	{0} ഫയലുകൾ
+{0} folder	{0} ഫോൾഡർ
+{0} folders	{0} ഫോൾഡറുകൾ
+{0} empty folder	{0} ഒഴിഞ്ഞ ഫോൾഡർ
+{0} empty folders	{0} ഒഴിഞ്ഞ ഫോൾഡറുകൾ
+{0} set	{0} കൂട്ടം
+{0} sets	{0} കൂട്ടങ്ങൾ
+{0} item	{0} ഇനം
+{0} items	{0} ഇനങ്ങൾ

@@ -79,6 +79,9 @@ namespace Kudutree.Tests
             }
         }
 
+        private static void TestOtherLanguages() => LangTests.Run();
+
+
         private static void TestSafeToCleanFindsTheRightFiles()
         {
             var p = FakePc(out var root);

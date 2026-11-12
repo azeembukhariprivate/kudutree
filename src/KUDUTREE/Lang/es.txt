@@ -1,0 +1,366 @@
+Something went wrong:\n\n{0}	Algo salió mal:\n\n{0}
+Azeem Bukhari	Azeem Bukhari
+less than a second	menos de un segundo
+{0} h {1} min	{0} h {1} min
+{0} min {1} s	{0} min {1} s
+Cache	Cache
+Code Cache	Code Cache
+Your temporary files	Tus archivos temporales
+Files programs make while they work and usually forget to remove. Only ones untouched for a day are cleaned, so nothing a program is using now goes.	Archivos que los programas crean mientras trabajan y suelen olvidar borrar. Solo se limpian los que nadie ha tocado en un día, así que no se va nada que un programa esté usando.
+Microsoft Edge	Microsoft Edge
+Microsoft	Microsoft
+Edge	Edge
+User Data	User Data
+Google Chrome	Google Chrome
+Google	Google
+Chrome	Chrome
+Brave	Brave
+Firefox	Firefox
+Mozilla	Mozilla
+Profiles	Profiles
+Picture previews	Vistas previas de imágenes
+Small previews File Explorer keeps of your pictures and videos. They're made again when folders are opened. Some may be in use and stay.	Pequeñas vistas previas de tus imágenes y vídeos que guarda el Explorador de archivos. Se vuelven a crear al abrir las carpetas. Algunas pueden estar en uso y quedarse.
+Windows	Windows
+Explorer	Explorer
+Your error reports and crash files	Tus informes de errores y archivos de fallos
+Reports kept after programs stopped working, and their crash files. Windows has already sent what it needed.	Informes guardados después de que los programas dejaran de funcionar, y sus archivos de fallos. Windows ya envió lo que necesitaba.
+Downloaded Windows updates	Actualizaciones de Windows descargadas
+Update files Windows downloaded and has already installed. Windows downloads them again if it ever needs them.	Archivos de actualización que Windows descargó y ya instaló. Windows los vuelve a descargar si alguna vez los necesita.
+Download	Download
+Windows' temporary files	Archivos temporales de Windows
+Windows' own temporary files. Only ones untouched for a day are cleaned.	Los propios archivos temporales de Windows. Solo se limpian los que nadie ha tocado en un día.
+Temp	Temp
+Crash dumps and error reports for everyone	Volcados de fallos e informes de errores de todos
+Copies of memory Windows saved when the PC or a program crashed, and error reports for all accounts. Only useful to someone fixing that crash.	Copias de memoria que Windows guardó cuando el PC o un programa falló, e informes de errores de todas las cuentas. Solo sirven a quien repare ese fallo.
+Minidump	Minidump
+Update sharing files	Archivos para compartir actualizaciones
+Pieces of updates Windows keeps to share with other PCs. They're fetched again if needed.	Partes de actualizaciones que Windows guarda para compartir con otros PC. Se vuelven a obtener si hace falta.
+Local	Local
+Your previous Windows (Windows.old)	Tu Windows anterior (Windows.old)
+Kept after a big Windows update, to go back to the earlier version. Windows' cleanup removes it safely (it's usually removed by itself after 10 days).	Guardado tras una gran actualización de Windows, para volver a la versión anterior. La limpieza de Windows lo quita de forma segura (suele quitarse solo a los 10 días).
+Old system parts from updates	Piezas antiguas del sistema por actualizaciones
+Earlier copies of Windows' own parts that updates replaced. They're shared with the running Windows, so only Windows' cleanup can tell which can go.	Copias anteriores de las piezas de Windows que las actualizaciones reemplazaron. Se comparten con el Windows en uso, así que solo la limpieza de Windows sabe cuáles pueden irse.
+{0} cache	Caché de {0}
+Copies of web pages and pictures {0} keeps to load sites faster. They're fetched again when needed; your passwords, history and logins aren't touched. While {1} is open some of it stays.	Copias de páginas web e imágenes que {0} guarda para cargar los sitios más rápido. Se vuelven a obtener cuando hace falta; no se tocan tus contraseñas, historial ni sesiones. Mientras {1} esté abierto, parte se queda.
+Read past the end of {0}.	Lectura más allá del final de {0}.
+Unexpected end of {0}.	Final inesperado de {0}.
+Reading a drive directly needs administrator rights.	Leer una unidad directamente requiere permisos de administrador.
+Drive {0}: can't be opened: {1}	No se puede abrir la unidad {0}: {1}
+Drive {0}:	Unidad {0}:
+Not a drive letter: {0}	No es una letra de unidad: {0}
+Can't move to byte {0} on {1}: {2}	No se puede ir al byte {0} en {1}: {2}
+Can't read byte {0} on {1}: {2}	No se puede leer el byte {0} en {1}: {2}
+Looking for files of the same size	Buscando archivos del mismo tamaño
+Comparing the start of each file	Comparando el inicio de cada archivo
+Comparing whole files	Comparando archivos completos
+(no extension)	(sin extensión)
+Video	Vídeo
+mp4 mkv mov avi wmv m4v webm mpg mpeg ts mts m2ts 3gp flv vob	mp4 mkv mov avi wmv m4v webm mpg mpeg ts mts m2ts 3gp flv vob
+Pictures	Imágenes
+jpg jpeg png gif bmp tif tiff heic heif webp raw cr2 cr3 nef arw dng orf rw2 psd svg ico	jpg jpeg png gif bmp tif tiff heic heif webp raw cr2 cr3 nef arw dng orf rw2 psd svg ico
+Music	Música
+mp3 wav flac m4a aac ogg opus wma aiff mid	mp3 wav flac m4a aac ogg opus wma aiff mid
+Documents	Documentos
+pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv epub one pst ost msg eml	pdf doc docx xls xlsx ppt pptx odt ods odp rtf txt md csv epub one pst ost msg eml
+Archives	Archivos comprimidos
+zip 7z rar gz tgz tar bz2 xz cab iso img vhd vhdx wim esd	zip 7z rar gz tgz tar bz2 xz cab iso img vhd vhdx wim esd
+Programs	Programas
+exe dll msi msix appx sys drv ocx cpl mui	exe dll msi msix appx sys drv ocx cpl mui
+Code	Código
+cs js ts py java c cpp h hpp go rs rb php html css json xml yml yaml sql sh ps1 bat cmd	cs js ts py java c cpp h hpp go rs rb php html css json xml yml yaml sql sh ps1 bat cmd
+Data	Datos
+db sqlite mdb accdb dat log bak tmp cache pak bin	db sqlite mdb accdb dat log bak tmp cache pak bin
+Other	Otros
+The folder {0} wasn't found.	No se encontró la carpeta {0}.
+Folder listing	Lista de carpetas
+KUDUTREE scan {0}	KUDUTREE scan {0}
+Access is denied.	Acceso denegado.
+This drive is locked with BitLocker. Unlock it first.	Esta unidad está bloqueada con BitLocker. Desbloquéala primero.
+Reading the file index	Leyendo el índice de archivos
+Building the folder tree	Construyendo el árbol de carpetas
+Fast scan (file index)	Análisis rápido (índice de archivos)
+The drive's file index (MFT) can't be read.	No se puede leer el índice de archivos (MFT) de la unidad.
+Position outside the file index.	Posición fuera del índice de archivos.
+The drive's top folder isn't in its file index.	La carpeta principal de la unidad no está en su índice de archivos.
+(Files without a folder)	(Archivos sin carpeta)
+Scanning	Analizando
+Damaged runlist.	Lista de ejecución dañada.
+This drive isn't formatted as NTFS.	Esta unidad no tiene formato NTFS.
+The NTFS boot sector is damaged.	El sector de arranque NTFS está dañado.
+System Volume Information	System Volume Information
+Boot	Boot
+Recovery	Recovery
+That's the whole scan.	Ese es todo el análisis.
+"{0}" is part of the drive's file system, not a normal file. Deleting it would damage the drive.	"{0}" es parte del sistema de archivos de la unidad, no un archivo normal. Eliminarlo dañaría la unidad.
+{0}\\System Volume Information	{0}\\System Volume Information
+This is part of the drive's file system, which Windows looks after. It can't be deleted here.	Esto es parte del sistema de archivos de la unidad, que gestiona Windows. No se puede eliminar aquí.
+This is the Recycle Bin. Empty it from the Recycle Bin on the desktop instead.	Esta es la papelera de reciclaje. Vacíala desde la papelera del escritorio.
+Windows keeps "{0}" on every drive. It can't be deleted here.	Windows guarda "{0}" en todas las unidades. No se puede eliminar aquí.
+Windows needs "{0}" to start and run. Use Settings or Disk Cleanup to make it smaller instead.	Windows necesita "{0}" para arrancar y funcionar. Para reducirlo usa Configuración o el Liberador de espacio.
+Windows needs this to run. Use Disk Cleanup (or Settings → System → Storage) to free space in the Windows folder safely.	Windows necesita esto para funcionar. Usa el Liberador de espacio (o Configuración → Sistema → Almacenamiento) para liberar espacio en la carpeta de Windows de forma segura.
+Windows needs the "{0}" folder itself. You can delete things inside it, and uninstall apps from Settings → Apps.	Windows necesita la carpeta "{0}" en sí. Puedes eliminar lo que hay dentro y desinstalar aplicaciones desde Configuración → Aplicaciones.
+This is someone's whole profile folder. Delete things inside it instead, or remove the account in Settings → Accounts.	Esta es la carpeta de perfil completa de alguien. Elimina lo que hay dentro, o quita la cuenta en Configuración → Cuentas.
+KUDUTREE scans (*.kudutree)	Análisis de KUDUTREE (*.kudutree)
+Scans	Scans
+Drive {0}	Unidad {0}
+Scan	Analizar
+{0}.saving	{0}.saving
+Damaged scan file.	Archivo de análisis dañado.
+This scan file can't be read: {0}	No se puede leer este archivo de análisis: {0}
+This isn't a KUDUTREE scan file.	Esto no es un archivo de análisis de KUDUTREE.
+Theme	Tema
+Show sizes with KUDUTREE	Mostrar tamaños con KUDUTREE
+"{0}" --scan "%1"	"{0}" --scan "%1"
+Missing theme resource {0}	Missing theme resource {0}
+Light	Claro
+Styles	Styles
+Dark	Oscuro
+Application	Application
+Cancelled.	Cancelado.
+Safe to clean	Seguro de limpiar
+Kinds of files that can go without harm, and how much room each gives back. Only these exact folders are cleaned; the folders themselves stay, and anything in use is left.	Tipos de archivos que pueden irse sin daño, y cuánto espacio devuelve cada uno. Solo se limpian estas carpetas exactas; las carpetas se quedan, y lo que esté en uso se deja.
+Your files	Tus archivos
+Ticked to start with. They go to the Recycle Bin, so you can still get them back.	Marcados al empezar. Van a la papelera de reciclaje, así que aún puedes recuperarlos.
+Windows-wide leftovers	Restos de todo Windows
+Not ticked to start with. Windows doesn't put these in the Recycle Bin, so they're deleted for good (you're asked first).	Sin marcar al empezar. Windows no los pone en la papelera, así que se eliminan para siempre (se pregunta antes).
+These need administrator rights, and are deleted for good (you're asked first).	Necesitan permisos de administrador y se eliminan para siempre (se pregunta antes).
+Restart KUDUTREE as administrator	Reiniciar KUDUTREE como administrador
+Only Windows' own cleanup can remove these	Solo la limpieza de Windows puede quitar estos
+They're tied to how Windows runs and updates, so KUDUTREE doesn't delete them file by file.	Están ligados a cómo funciona y se actualiza Windows, así que KUDUTREE no los elimina archivo por archivo.
+Open Windows' cleanup	Abrir la limpieza de Windows
+Clean	Limpiar
+Stop	Detener
+Measure again	Medir de nuevo
+Show the files	Mostrar los archivos
+Measuring...	Midiendo...
+Nothing	Nada
+ ({0} recent ones left)	 (quedan {0} recientes)
+Tick what to clean.	Marca lo que quieres limpiar.
+Ticked: {0}	Marcado: {0}
+Clean {0}	Limpiar {0}
+Nothing ticked to clean.	No hay nada marcado para limpiar.
+Delete {0} of Windows-wide leftovers for good? They don't go to the Recycle Bin.	¿Eliminar para siempre {0} de restos de todo Windows? No van a la papelera de reciclaje.
+Move {0} of files to the Recycle Bin?	¿Mover {0} de archivos a la papelera de reciclaje?
+Cleaning...	Limpiando...
+Cleaning: {0} of {1}	Limpiando: {0} de {1}
+Stopped. What was cleaned so far is gone; the rest is still there.	Detenido. Lo que se limpió hasta ahora ya no está; el resto sigue ahí.
+Cleaned {0} ({1}).	Se limpió {0} ({1}).
+1 item was left because a program has it open (close it and clean again).	Quedó 1 elemento porque un programa lo tiene abierto (ciérralo y vuelve a limpiar).
+{0} items were left because a program has them open (close it and clean again).	Quedaron {0} elementos porque un programa los tiene abiertos (ciérralo y vuelve a limpiar).
+{0} is in the Recycle Bin: the space comes back when it's emptied.	{0} está en la papelera de reciclaje: el espacio vuelve al vaciarla.
+Empty the Recycle Bin	Vaciar la papelera de reciclaje
+Error message shown: {0}	Error message shown: {0}
+All files	Todos los archivos
+Save	Guardar
+Cancel	Cancelar
+KUDUTREE	KUDUTREE
+Drives and folders	Unidades y carpetas
+Settings	Ajustes
+About	Acerca de
+KUDUTREE {0} is available	KUDUTREE {0} está disponible
+What's taking up the space?	¿Qué ocupa el espacio?
+Choose a drive or a folder. KUDUTREE shows how much space every folder and file takes, biggest first.	Elige una unidad o una carpeta. KUDUTREE muestra cuánto espacio ocupa cada carpeta y archivo, de mayor a menor.
+Temporary files, browser caches and Windows leftovers that can go without harm.	Archivos temporales, cachés de navegadores y restos de Windows que pueden irse sin daño.
+A folder or network share	Una carpeta o recurso de red
+Choose a folder…	Elegir una carpeta…
+Choose a folder to scan	Elige una carpeta para analizar
+Saved scans	Análisis guardados
+Open a saved scan…	Abrir un análisis guardado…
+Open a saved scan	Abrir un análisis guardado
+Save a scan from its results, to look at it again later or see what changed since.	Guarda un análisis desde sus resultados, para verlo de nuevo más tarde o ver qué cambió desde entonces.
+Scan again: {0}	Analizar de nuevo: {0}
+Running as administrator: whole NTFS drives use the fast scan.	Ejecutándose como administrador: las unidades NTFS completas usan el análisis rápido.
+The fast scan reads a whole NTFS drive's file index in seconds; it asks for administrator rights.	El análisis rápido lee el índice de archivos de una unidad NTFS completa en segundos; pide permisos de administrador.
+USB drive	Unidad USB
+Network drive	Unidad de red
+Local disk	Disco local
+{0} free of {1}	{0} libres de {1}
+Size unknown	Tamaño desconocido
+Fast scan	Análisis rápido
+Reads the drive's file index directly: seconds instead of minutes, and every folder is counted. Asks for administrator rights.	Lee directamente el índice de archivos de la unidad: segundos en vez de minutos, y cuenta cada carpeta. Pide permisos de administrador.
+Lists folders one by one, without administrator rights. Slower, and folders you can't open aren't counted.	Recorre las carpetas una a una, sin permisos de administrador. Más lento, y no cuenta las carpetas que no puedes abrir.
+{0} wasn't found.	No se encontró {0}.
+The fast scan couldn't read this drive ({0}). Scanning it folder by folder instead.	El análisis rápido no pudo leer esta unidad ({0}). Se analiza carpeta por carpeta.
+Fast scan failed: {0}	Falló el análisis rápido: {0}
+The scan couldn't finish: {0}	El análisis no pudo terminar: {0}
+Save the scan	Guardar el análisis
+The scan couldn't be saved: {0}	No se pudo guardar el análisis: {0}
+Opening the drive…	Abriendo la unidad…
+Reading the drive's file index. Nothing on the drive is changed.	Leyendo el índice de archivos de la unidad. No se cambia nada en la unidad.
+{0} of {1} index records	{0} de {1} registros del índice
+Scanning… {0} files in {1} folders · {2} so far. You can look around while it runs.	Analizando… {0} archivos en {1} carpetas · {2} hasta ahora. Puedes mirar mientras tanto.
+newest file {0}	archivo más reciente {0}
+modified {0}	modificado {0}
+Open	Abrir
+Show in Explorer	Mostrar en el Explorador
+Delete…	Eliminar…
+Move to the Recycle Bin (Shift+Delete in the list deletes permanently)	Mover a la papelera de reciclaje (Mayús+Supr en la lista elimina para siempre)
+Can't delete that.	Eso no se puede eliminar.
+Network folders have no Recycle Bin. Delete {0} permanently?\n\nThis can't be undone.	Las carpetas de red no tienen papelera. ¿Eliminar {0} para siempre?\n\nNo se puede deshacer.
+Delete {0} permanently?\n\nIt won't go to the Recycle Bin, so this can't be undone.	¿Eliminar {0} para siempre?\n\nNo irá a la papelera de reciclaje, así que no se puede deshacer.
+Move {0} to the Recycle Bin?	¿Mover {0} a la papelera de reciclaje?
+Not everything could be deleted: {0}	No se pudo eliminar todo: {0}
+That folder couldn't be scanned: {0}	No se pudo analizar esa carpeta: {0}
+Settings · KUDUTREE	Ajustes · KUDUTREE
+Appearance	Apariencia
+Same as Windows	Igual que Windows
+Language	Idioma
+Deleting	Eliminación
+Ask before moving items to the Recycle Bin	Preguntar antes de mover elementos a la papelera de reciclaje
+Deleting permanently always asks first.	Eliminar para siempre siempre pregunta antes.
+File Explorer	Explorador de archivos
+Add "Show sizes with KUDUTREE" to folders' and drives' right-click menu	Añadir "Show sizes with KUDUTREE" al menú del clic derecho de carpetas y unidades
+For your Windows account only. On Windows 11 it's under "Show more options".	Solo para tu cuenta de Windows. En Windows 11 está en "Mostrar más opciones".
+Updates	Actualizaciones
+Check for a new KUDUTREE version when it starts	Buscar una nueva versión de KUDUTREE al iniciar
+Only asks GitHub for the latest version number. Nothing is downloaded without asking.	Solo pregunta a GitHub el número de la última versión. No se descarga nada sin preguntar.
+About KUDUTREE	Acerca de KUDUTREE
+Close	Cerrar
+Version {0} · See what takes up space	Versión {0} · Mira qué ocupa espacio
+Azeem, with Claude and	Azeem, with Claude and
+Made by	Made by
+Licence	Licencia
+MIT · free and open source	MIT · libre y de código abierto
+View	Ver
+Source code	Código fuente
+Its own engine: reads NTFS file indexes directly, or lists folders	Su propio motor: lee directamente los índices de archivos NTFS, o recorre las carpetas
+Third-party	De terceros
+Third-party notices	Avisos de terceros
+KUDUTREE only reads your drives. Nothing is changed unless you delete something yourself, and moving to the Recycle Bin can be undone.	KUDUTREE solo lee tus unidades. No cambia nada a menos que tú elimines algo, y mover a la papelera se puede deshacer.
+Check for updates	Buscar actualizaciones
+Couldn't find any published version yet.	Aún no se ha encontrado ninguna versión publicada.
+KUDUTREE {0} is available. Open the download page?	KUDUTREE {0} está disponible. ¿Abrir la página de descarga?
+You have the latest version.	Tienes la última versión.
+Couldn't check for updates. Check your internet connection and try again.	No se pudieron buscar actualizaciones. Revisa tu conexión a internet e inténtalo de nuevo.
+for a year	desde hace un año
+for 2 years	desde hace 2 años
+for 3 years	desde hace 3 años
+for 5 years	desde hace 5 años
+of any size	de cualquier tamaño
+of 1 MB or more	de 1 MB o más
+of 10 MB or more	de 10 MB o más
+of 100 MB or more	de 100 MB o más
+100 KB or more	100 KB o más
+1 MB or more	1 MB o más
+10 MB or more	10 MB o más
+100 MB or more	100 MB o más
+Any size	Cualquier tamaño
+All	Todo
+Move them all to the Recycle Bin	Moverlos todos a la papelera de reciclaje
+Files not opened or changed	Archivos no abiertos ni cambiados
+Windows doesn't always record when a file is opened, so a file counts as old only if it wasn't changed or (as far as Windows knows) opened.	Windows no siempre registra cuándo se abre un archivo, así que un archivo cuenta como antiguo solo si no se cambió ni (que Windows sepa) se abrió.
+Empty folders	Carpetas vacías
+None found.	No se encontró ninguno.
+{0}, {1} in all{2}	{0}, {1} en total{2}
+ (the biggest {0} are listed)	 (se muestran los {0} más grandes)
+{0}. The date is when each was last opened or changed.	{0}. La fecha es cuando cada uno se abrió o cambió por última vez.
+{0} inside	{0} dentro
+empty folder	carpeta vacía
+No empty folders.	No hay carpetas vacías.
+{0} with no files in them (counting empty folders inside only once).	{0} sin archivos dentro (las carpetas vacías de dentro se cuentan una vez).
+Find duplicates	Buscar duplicados
+Files of	Archivos de
+Files count as duplicates only when their whole contents are the same. Online-only OneDrive files aren't read (that would download them), and hard links are one file already.	Los archivos cuentan como duplicados solo si todo su contenido es igual. No se leen los archivos de OneDrive solo en línea (eso los descargaría), y los vínculos físicos ya son un mismo archivo.
+Looks for identical files in {0}.	Busca archivos idénticos en {0}.
+the scan	el análisis
+{0}… {1} of {2} files · {3} read	{0}… {1} de {2} archivos · {3} leídos
+{0} copies of {1}	{0} copias de {1}
+{0} each	{0} cada una
+could be freed	se pueden liberar
+No duplicates found.	No se encontraron duplicados.
+{0} of identical files; {1} could be freed by keeping one of each.{2}	{0} de archivos idénticos; se pueden liberar {1} conservando uno de cada.{2}
+The 2,000 biggest sets are listed.	Se muestran los 2.000 grupos más grandes.
+ {0} couldn't be read.	 No se pudieron leer {0}.
+Stopped.	Detenido.
+Compare	Comparar
+Other file…	Otro archivo…
+Choose a saved scan to compare with	Elige un análisis guardado para comparar
+Compare with	Comparar con
+Folders	Carpetas
+Files	Archivos
+New	Nuevo
+Removed	Quitado
+No saved scans of this place yet. Use "Save scan" now, and next time you scan it you'll see here what changed.	Aún no hay análisis guardados de este lugar. Usa ahora "Guardar análisis" y la próxima vez que lo analices verás aquí qué cambió.
+Choose a saved scan to see what grew, shrank, appeared or went away since then.	Elige un análisis guardado para ver qué creció, se redujo, apareció o desapareció desde entonces.
+Comparing…	Comparando…
+The saved scan couldn't be opened: {0}	No se pudo abrir el análisis guardado: {0}
+New · {0}	Nuevo · {0}
+Gone · was {0}	Ya no está · era {0}
+Was {0}, now {1}	Era {0}, ahora {1}
+Grew	Creció
+Shrank	Se redujo
+Since {0}: {1}{2} (was {3}, now {4}).	Desde {0}: {1}{2} (era {3}, ahora {4}).
+Nothing changed.	No cambió nada.
+{0} changed, biggest change first; the first 3,000 are listed.	{0} cambiaron, el cambio más grande primero; se muestran los primeros 3.000.
+{0} changed, biggest change first.	{0} cambiaron, el cambio más grande primero.
+Treemap	Mapa de árbol
+Click a type to show only its files in the treemap.	Haz clic en un tipo para mostrar solo sus archivos en el mapa de árbol.
+1 GB or more	1 GB o más
+Any date	Cualquier fecha
+Changed in the last 7 days	Cambiados en los últimos 7 días
+Changed in the last 30 days	Cambiados en los últimos 30 días
+Not changed for a year	Sin cambiar desde hace un año
+Not changed for 3 years	Sin cambiar desde hace 3 años
+Up	Subir
+Show the folder above	Mostrar la carpeta de arriba
+Size on disk	Tamaño en disco
+Space used on the drive: compressed, sparse and online-only files take less; hard links count once	Espacio usado en la unidad: los archivos comprimidos, dispersos y solo en línea ocupan menos; los vínculos físicos cuentan una vez
+File size	Tamaño de archivo
+The sizes File Explorer shows	Los tamaños que muestra el Explorador de archivos
+Save scan	Guardar análisis
+Save this scan to look at again later, or to compare with a later scan	Guarda este análisis para verlo más tarde o compararlo con uno posterior
+Scan again	Analizar de nuevo
+Largest files	Archivos más grandes
+Search	Buscar
+Old & empty	Antiguos y vacíos
+Duplicates	Duplicados
+Changes	Cambios
+The treemap shows only {0} files. Click it again to show everything.	El mapa de árbol muestra solo los archivos {0}. Haz clic otra vez para mostrar todo.
+File types	Tipos de archivo
+Name	Nombre
+Size	Tamaño
+Share of folder	Parte de la carpeta
+Modified	Modificado
+Name and folder	Nombre y carpeta
+Files and folders	Archivos y carpetas
+Part of a name, or a pattern like *.iso or IMG_????.jpg (separate several with ;). Leave it empty to use only the filters.	Parte de un nombre, o un patrón como *.iso o IMG_????.jpg (separa varios con ;). Déjalo vacío para usar solo los filtros.
+The largest files are listed when the scan finishes.	Los archivos más grandes aparecen cuando termina el análisis.
+The {0} biggest files in {1}.	Los {0} archivos más grandes de {1}.
+The treemap appears when the scan finishes.	El mapa de árbol aparece cuando termina el análisis.
+{0} in {1} · {2} on disk · {3} in files	{0} en {1} · {2} en disco · {3} en archivos
+ · saved scan from {0}	 · análisis guardado del {0}
+The drive has {0} in use, but the scan found {1}. The other {2} is in folders that couldn't be read{3}	La unidad tiene {0} en uso, pero el análisis encontró {1}. Los otros {2} están en carpetas que no se pudieron leer{3}
+or in Windows' own system space (restore points, the page file's reserve).	o en el espacio de sistema de Windows (puntos de restauración, la reserva del archivo de paginación).
+(without administrator rights) or in Windows' own system space.	(sin permisos de administrador) o en el espacio de sistema de Windows.
+{0} couldn't be read (marked in the tree).	No se pudieron leer {0} (marcados en el árbol).
+Use the fast scan instead (reads the drive's file index, counts everything; asks for administrator rights)	Usa en su lugar el análisis rápido (lee el índice de archivos de la unidad, lo cuenta todo; pide permisos de administrador)
+Searching…	Buscando…
+Nothing found.	No se encontró nada.
+{0} found; showing the biggest {1} ({2}).	Se encontraron {0}; se muestran los {1} más grandes ({2}).
+{0} found, {1} in all.	Se encontraron {0}, {1} en total.
+Open folder	Abrir carpeta
+Enter	Entrar
+Show in File Explorer	Mostrar en el Explorador de archivos
+Copy path	Copiar ruta
+Show only this folder	Mostrar solo esta carpeta
+Scan this folder again	Analizar de nuevo esta carpeta
+Move to Recycle Bin	Mover a la papelera de reciclaje
+Delete	Eliminar
+Delete permanently…	Eliminar para siempre…
+Count	Cantidad
+{0} smaller items	{0} elementos más pequeños
+(couldn't be read)	(no se pudo leer)
+(link, not followed)	(vínculo, no seguido)
+(hard link)	(vínculo físico)
+Click to show more	Haz clic para mostrar más
+{0} ran into a problem it couldn't get past, and has to close.	{0} ha encontrado un problema que no ha podido superar y tiene que cerrarse.
+{0} file	{0} archivo
+{0} files	{0} archivos
+{0} folder	{0} carpeta
+{0} folders	{0} carpetas
+{0} empty folder	{0} carpeta vacía
+{0} empty folders	{0} carpetas vacías
+{0} set	{0} grupo
+{0} sets	{0} grupos
+{0} item	{0} elemento
+{0} items	{0} elementos

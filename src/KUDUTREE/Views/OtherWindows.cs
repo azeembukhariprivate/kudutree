@@ -35,6 +35,9 @@ namespace Kudutree.Views
             }
             root.Children.Add(themes);
 
+            root.Children.Add(Ui.Heading("Language", 14).Margin(0, 16, 0, 6));
+            root.Children.Add(LangUi.Picker());
+
             root.Children.Add(Ui.Heading("Deleting", 14).Margin(0, 16, 0, 4));
             var confirm = new CheckBox { Content = "Ask before moving items to the Recycle Bin", IsChecked = Settings.ConfirmRecycle };
             confirm.Click += (s, e) => Settings.ConfirmRecycle = confirm.IsChecked == true;

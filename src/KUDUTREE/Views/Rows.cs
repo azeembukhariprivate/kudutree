@@ -68,11 +68,11 @@ namespace Kudutree.Views
         {
             get
             {
-                if (IsMore) return $"{MoreCount:N0} smaller items";
+                if (IsMore) return Lang.T("{0} smaller items", MoreCount.ToString("N0"));
                 var name = Node.Name;
-                if (Node.Has(NodeFlags.Unreadable)) name += "  (couldn't be read)";
-                else if (Node.Has(NodeFlags.Link)) name += "  (link, not followed)";
-                else if (Node.Has(NodeFlags.HardLink)) name += "  (hard link)";
+                if (Node.Has(NodeFlags.Unreadable)) name += "  " + Lang.T("(couldn't be read)");
+                else if (Node.Has(NodeFlags.Link)) name += "  " + Lang.T("(link, not followed)");
+                else if (Node.Has(NodeFlags.HardLink)) name += "  " + Lang.T("(hard link)");
                 return name;
             }
         }
@@ -95,7 +95,7 @@ namespace Kudutree.Views
         public string PercentText => Node?.Parent == null && !IsMore ? string.Empty : (Share * 100).ToString(Share >= 0.1 || Share == 0 ? "0" : "0.0") + "%";
         public string FilesText => IsMore ? string.Empty : Node.IsDir ? Node.Files.ToString("N0") : string.Empty;
         public string ModifiedText => IsMore || Node.Mtime <= 0 ? string.Empty : Node.Modified.ToString("d");
-        public string Tip => IsMore ? "Click to show more" : Node.Path;
+        public string Tip => IsMore ? Lang.T("Click to show more") : Node.Path;
 
         internal static Geometry Res(string key) => Application.Current?.TryFindResource(key) as Geometry;
 
@@ -163,8 +163,8 @@ namespace Kudutree.Views
         public FileType Type { get; set; }
         public long Total { get; set; }
 
-        public string Name => Type.Title;
-        public string Group => Type.Group + " · " + Format.Count(Type.Count, "file");
+        public string Name => Lang.T(Type.Title); // "(no extension)"; extensions stay as they are
+        public string Group => Lang.T(Type.Group) + " · " + Format.Count(Type.Count, "file");
         public string SizeText => Format.Size(Type.Measure(OnDisk));
         public double BarWidth => Total <= 0 ? 0 : Math.Max(0, Math.Min(1, (double)Type.Measure(OnDisk) / Total)) * 60;
         public string PercentText => Total <= 0 ? string.Empty : ((double)Type.Measure(OnDisk) / Total * 100).ToString("0.0") + "%";

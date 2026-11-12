@@ -209,10 +209,12 @@ namespace Kudutree.Views
 
         private void Report(CleanResult r)
         {
-            var text = $"Cleaned {Format.Size(r.Freed)} ({Format.Count(r.FilesCleaned, "file")}).";
-            if (r.Skipped.Count > 0) text += $" {Format.Count(r.Skipped.Count, "item was", "items were")} left because a program has them open (close it and clean again).";
+            // Whole sentences, each in the language in use.
+            var text = Lang.T("Cleaned {0} ({1}).", Format.Size(r.Freed), Format.Count(r.FilesCleaned, "file"));
+            if (r.Skipped.Count > 0)
+                text += " " + Lang.T(r.Skipped.Count == 1 ? "1 item was left because a program has it open (close it and clean again)." : "{0} items were left because a program has them open (close it and clean again).", r.Skipped.Count.ToString("N0"));
             var bin = Recycler.BinSize();
-            if (bin > 0) text += $" {Format.Size(bin)} is in the Recycle Bin: the space comes back when it's emptied.";
+            if (bin > 0) text += " " + Lang.T("{0} is in the Recycle Bin: the space comes back when it's emptied.", Format.Size(bin));
             ShowNote(text, bin > 0 ? Ui.Small(Ui.Button("Empty the Recycle Bin", "IconTrash", "SecondaryButton", (s, e) =>
             {
                 Recycler.EmptyBin(_owner);

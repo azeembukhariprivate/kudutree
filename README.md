@@ -39,6 +39,7 @@
 - **Safe to clean**: kinds of files that can go without harm, each with how much room it gives back and a plain explanation: your temporary files (only ones untouched for a day), the caches of Edge, Chrome, Brave, Firefox and KUDUBROWSE (not your history, passwords or logins), picture previews and old error reports. They're ticked to start with and go to the Recycle Bin, so you can still get them back. Windows-wide leftovers (downloaded Windows updates, Windows' temporary files, crash dumps, update sharing files) need administrator rights, aren't ticked to start with, and are deleted for good after asking. Your previous Windows (Windows.old) is measured, with a button that opens Windows' own cleanup to remove it. Only those exact folders are cleaned, files in use are left, links inside them are never followed, and afterwards it says what was cleaned and offers to empty the Recycle Bin.
 - **Show only one folder** and go back up, without scanning again.
 - **Right-click a folder or drive** in File Explorer → *Show sizes with KUDUTREE* (optional, chosen when installing or in Settings).
+- **In your language**: English, Malayalam (മലയാളം), Hindi (हिन्दी), Spanish, French and Arabic (with the windows mirrored for right-to-left). KUDUTREE starts in the same language as Windows when it has it; choose another in Settings.
 - Light and dark themes, following Windows.
 
 ## Download
